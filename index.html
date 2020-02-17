@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ICT SBA</title>
+
+
+	<link rel="stylesheet" type="text/css" href="Resources/jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="Resources/Style.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="Resources/jquery.pagepiling.min.js"></script>
+	<script type="text/javascript">
+var deleteLog = false;
+
+		$(document).ready(function() {
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3'],
+			    sectionsColor: ['#bfda00', '#2ebe21', '#2C3E50', '#51bec4'],
+			    loopTop: false,
+			    loopBottom: true
+			});
+	    });
+function MM_changeProp(objId,x,theProp,theValue) { //v9.0
+  var obj = null; with (document){ if (getElementById)
+  obj = getElementById(objId); }
+  if (obj){
+    if (theValue == true || theValue == false)
+      eval("obj.style."+theProp+"="+theValue);
+    else eval("obj.style."+theProp+"='"+theValue+"'");
+  }
+}
+    </script>
+
+
+    <style>
+    .Box {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #777777;
+	text-decoration: none;
+	background-color: #ededed;
+	background-position: bottom;
+	display: inline-block;
+	padding-top: 6px;
+	padding-right: 24px;
+	padding-bottom: 6px;
+	padding-left: 24px;
+}
+    </style>
+
+    <style>
+    	.pp-easing {
+		    -webkit-transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    -moz-transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    -o-transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    /* custom */
+		    -webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    -moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    -o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		    /* custom */
+		}
+    body,td,th {
+	font-family: Lato, Calibri, Arial, sans-serif;
+}
+body {
+	margin-left: 0px;
+}
+    </style>
+
+
+</head>
+<body>
+
+	<ul id="menu">
+		<li data-menuanchor="page3"><a href="#page3">跳過引言</a></li>
+		<li><a href="webpage/universial_index.html">前往主頁</a></li>
+	</ul>
+
+	<div id="pagepiling">
+<div class="section" id="section1">
+  <h1>波動學</h1>
+  	<p>⇩向下滾動以開始⇩</p>
+  </div>
+        
+	    <div class="section" id="section2">
+    	  <div class="intro" align="left">
+    	    <h1 align="center">概念</h1>
+    	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    	      <tr>
+              <td width=1% height="324"></td>
+   	          </tr>
+  	      </table>
+    	  </div>
+	    </div>
+        
+	    <div class="section" id="section3">
+	    	<div class="intro">
+              <p style="color:white;font-size:50px;">你可根據自己的學習進度選擇課程</p>
+				<table align="center" width="30%" border="0">
+                  <tr align="center">
+                    <td height="61" align="right">
+                    	<p align="center" class="Box" id="btn_txt_left" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_left','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_left','','backgroundColor','#ededed','P')"><a style="color:black;;" href="webpage/Test/Test.html">我已有基本認識</a></p>
+                    </td>
+                    <td width="5%">&nbsp;</td>
+                    <td align="left">              
+                      <p align="center" class="Box" id="btn_txt_right" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_right','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_right','','backgroundColor','#ededed','P')"><a href="webpage/universial_index.html" style="color:black;;">我想先前往學習</a></p>
+                    </td>
+                  </tr>
+              </table>
+
+              <p style="color:white;font-size:18px;">⇩向下滾動以重新播放動畫⇩</p></br>
+              <p style="color:lightgrey;font-size:14px;">#網頁中jQureyt取自開源項目-<a style="color:grey;font-size:14px;" href="https://github.com/alvarotrigo/pagePiling.js"><I><U>pagePiling.js</U></I></a>#</p>
+   	      </div>
+	    </div>
+        
+
+</body>
+</html>
