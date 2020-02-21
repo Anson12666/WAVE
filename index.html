@@ -9,6 +9,19 @@
 	<link rel="stylesheet" type="text/css" href="Resources/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="Resources/Style.css" />
 
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<SCRIPT>
+	window.open ("Resources/popup.html", "newwindow", "height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")
+</SCRIPT> 
+
+
+
+
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 	<script type="text/javascript" src="Resources/jquery.pagepiling.min.js"></script>
@@ -18,7 +31,7 @@ var deleteLog = false;
 		$(document).ready(function() {
 	    	$('#pagepiling').pagepiling({
 	    		menu: '#menu',
-	    		anchors: ['page1', 'page2', 'page3'],
+	    		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
 			    sectionsColor: ['#bfda00', '#2ebe21', '#2C3E50', '#51bec4'],
 			    loopTop: false,
 			    loopBottom: true
@@ -37,6 +50,14 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
 
 
     <style>
+	
+	  .blink {
+      animation: blinker 1.5s linear infinite;
+      }
+	  @keyframes blinker {  
+      50% { opacity: 0; }
+      }
+	
     .Box {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
@@ -79,28 +100,139 @@ body {
 <body>
 
 	<ul id="menu">
-		<li data-menuanchor="page3"><a href="#page3">跳過引言</a></li>
+		<li data-menuanchor="page7"><a href="#page7">跳過引言</a></li>
 		<li><a href="webpage/universial_index.html">前往主頁</a></li>
 	</ul>
 
 	<div id="pagepiling">
-<div class="section" id="section1">
+<div class="section" id="section1" >
   <h1>波動學</h1>
   	<p>⇩向下滾動以開始⇩</p>
   </div>
         
-	    <div class="section" id="section2">
+	    <div class="section" id="section2" style="background-color:#f1c40f">
     	  <div class="intro" align="left">
     	    <h1 align="center">概念</h1>
-    	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    	    <table width="100%" border="0">
     	      <tr>
-              <td width=1% height="324"></td>
+    	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">振幅</a><br>振幅是粒子振動時與平衡位置的最大距離。
+</td>
+              <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
-  	      </table>
+    	      <tr>
+    	        <td width="50%" style="font-size:36px"><a>                單位：米 (m)
+                <br>
+                符號：A </a></td>
+    	        <td style="font-size:36px"  width="333" height="319" align="center"><img  width="333" height="319" align="center" src="Resources/Teaching/振幅.png"></td>
+  	          </tr>
+  	        </table>
     	  </div>
 	    </div>
         
-	    <div class="section" id="section3">
+        
+        
+        
+	    <div class="section" id="section3" style="background-color:#27ae60">
+    	  <div class="intro" align="left">
+    	    <h1 align="center">概念</h1>
+    	    <table width="100%" border="0">
+    	      <tr>
+    	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">週期</a><br>週期是粒子完成一次完整振動所需的時間。
+</td>
+              <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+   	          </tr>
+    	      <tr>
+    	        <td width="50%" style="font-size:36px"><a>   	            單位：秒 (s) 	<br>
+   	            符號：T <br>
+    	        </a></td>
+    	        <td  width="333" height="319" align="center"  style="font-size:36px"><img src="Resources/Teaching/周期.gif" width="402"></td>
+  	          </tr>
+  	        </table>
+    	  </div>
+	    </div>
+        
+        
+	    <div class="section" id="section4" style="background-color:#3498db">
+    	  <div class="intro" align="left">
+    	    <h1 align="center">概念</h1>
+    	    <table width="100%" border="0">
+    	      <tr>
+    	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+    	        <td height="132" colspan="2" style="font-size:36px"><a style="font-size:72px">振幅 </a><br>
+    	          頻率是粒子在一秒內振動的次數。
+</td>
+              <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+   	          </tr>
+    	      <tr>
+    	        <td width="50%" style="font-size:36px"><a>單位：Hz（即每秒的振動次數） <br>
+符號：f </a><br></td>
+    	        <td width="333" align="center" style="font-size:36px">
+                
+                $$f = { 1 \over T}$$
+                <br></td>
+  	          </tr>
+   	        </table>
+    	  </div>
+	    </div>
+        
+        
+        
+        
+	    <div class="section" id="section5" style="background-color:#8e44ad">
+    	  <div class="intro" align="left">
+    	    <h1 align="center">概念</h1>
+    	    <table width="100%" border="0">
+    	      <tr>
+    	        <td rowspan="3" width="10%" style="font-size:36px">&nbsp;</td>
+    	        <td style="font-size:36px"><a style="font-size:72px">波長</a><br>
+   	            波長是波形重複的最短距離。 </td>
+              <td rowspan="3" width="10%" style="font-size:36px">&nbsp;</td>
+   	          </tr>
+    	      <tr>
+    	        <td height="102" style="font-size:36px"><img src="Resources/Teaching/波長.gif" width="75%"></td>
+   	          </tr>
+    	      <tr>
+    	        <td height="159" style="font-size:36px">單位：米 (m) 	<br>
+   	            符號：ג</td>
+  	        </tr>
+  	        </table>
+    	  </div>
+	    </div>
+        
+        
+        
+        
+        
+        
+	    <div class="section" id="section6" style="background-color:#16a085">
+    	  <div class="intro" align="left">
+    	    <h1 align="center">概念</h1>
+    	    <table width="100%" border="0">
+    	      <tr>
+    	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">波速率</a><br>
+   	            波速率是波在一秒內行進的距離。 </td>
+              <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
+   	          </tr>
+    	      <tr>
+    	        <td width="50%" style="font-size:36px"><a>單位：ms<sup>–1</sup><br>
+   	            符號：v </a></td>
+    	        <td style="font-size:36px" width="333" height="319" align="center">v  =  fג</td>
+  	          </tr>
+  	        </table>
+    	  </div>
+	    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+<div class="section" id="section7" style="background-color:#2c3e50">
 	    	<div class="intro">
               <p style="color:white;font-size:50px;">你可根據自己的學習進度選擇課程</p>
 				<table align="center" width="30%" border="0">
@@ -115,8 +247,10 @@ body {
                   </tr>
               </table>
 
-              <p style="color:white;font-size:18px;">⇩向下滾動以重新播放動畫⇩</p></br>
-              <p style="color:lightgrey;font-size:14px;">#網頁中jQureyt取自開源項目-<a style="color:grey;font-size:14px;" href="https://github.com/alvarotrigo/pagePiling.js"><I><U>pagePiling.js</U></I></a>#</p>
+              <p style="color:white;font-size:18px;"><Blink><span class="blink">*請確保你在進入網頁前熟悉本引入内容*</span></Blink><br>
+              ⇩向下滾動以重新播放動畫⇩</p></br>
+              <p style="color:lightgrey;font-size:14px;">#網頁中jQureyt取自開源項目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color:grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>
+              #網頁中大部分數學方程引用<a style="color:grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I></em></a>以正確顯示#</p>
    	      </div>
 	    </div>
         

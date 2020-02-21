@@ -6,6 +6,8 @@
 <style type="text/css">
 </style>
 <link href="Essentials/navbar.css" rel="stylesheet" type="text/css" />
+
+<script src="/Universial/Language.js"></script>
 <script type="text/javascript">
 function MM_changeProp(objId,x,theProp,theValue) { //v9.0
   var obj = null; with (document){ if (getElementById)
@@ -17,6 +19,12 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
   }
 }
 </script>
+<script>
+function eng() {document.cookie = "lang=eng";};
+function simp() {document.cookie = "lang=simp";};
+function trad() {document.cookie = "lang=trad";};
+</script>
+
 </head><body bgcolor="#000000">
 <h1 align="center" style="color:white;">波動學</h1>
 <table width="100%" border="1">
@@ -26,30 +34,33 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
     
     
 <ol>
-  <li><a href="Homepage/Home.html" target="mainFrame">主頁</a></li>
+  <li><a href="Homepage/Home.html" target="mainFrame" data-reload>主頁</a></li>
   <li><a href="../index.html" target="_parent">引入</a></li>
-  <li onmouseover="MM_changeProp('lesson','','display','block','DIV')" onmouseout="MM_changeProp('lesson','','display','none','DIV')">課程内容
+  <li id="trans" onmouseover="MM_changeProp('lesson','','display','block','DIV')" onmouseout="MM_changeProp('lesson','','display','none','DIV')">課程内容
   	<div id="lesson">
     	<a href="Teaching/basic/index.html" target="mainFrame">波的基本性質</br>
-    	</a>        <a href="Teaching/phenomenon/index.html" target="mainFrame">波動現象</a></br>
-        在日常生活的應用</br>
-    </div>
+    	</a>        <a href="Teaching/phenomenon/index.html" target="mainFrame">波動現象</a></div>
   </li>
+  <li><a href="Game/Game.html" target="new">小游戲</a></li>
   <li><a href="Test/Test.html" target="mainFrame">測試站</a></li>
   <li><a href="Opinion/Opinion.html" target="mainFrame">意見反映</a></li>
-  <li onmouseover="MM_changeProp('lang','','display','block','DIV')" onmouseout="MM_changeProp('lang','','display','none','DIV')">語言
+  <li onmouseover="MM_changeProp('lang','','display','block','DIV')" onmouseout="MM_changeProp('lang','','display','none','DIV')">語言 Language
     <div id="lang">
-    	繁體中文</br>
-        簡體中文</br>
-        英文
-    </div>
+    	<a href="javascript:trad();">繁體中文</a></br>
+        <a href="javascript:simp();">簡體中文</a></br>
+        <a href="javascript:eng();">英文 </a></div>
   </li>
-  <li>網頁地圖</li>
+  <li><a href="Essentials/PureTextMap.html" target="mainFrame">網頁地圖</a></li>
 </ol>
 
 
 
 </td>
+<tr>
+<td style="color:white">
+網頁仍在更新，點擊按鈕清理緩存
+  <button onclick="javascript:location.reload(true);"> clear cache</button>
+</td></tr>
 </table>
 <p align="center" style="color:white;">&nbsp;</p>
 
