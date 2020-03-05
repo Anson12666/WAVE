@@ -3,21 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-
-<script src="/Universial/Language.js"></script>
-
-<script>
-window.status="網頁最後更新日期：21/2/2020";
-
-function listCookies() {
-var x = document.cookie; 
-window.alert(x);
-}
-
-</script>
-
-
-
 <style type="text/css">
 body {
 	border-top-width: 0px;
@@ -28,46 +13,93 @@ body {
 	padding: 0px;
 }
 </style>
+<script>
+function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
+function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
+function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
+</script>
 </head>
 
-<body background="Elements/background.png" style="background-repeat:no-repeat; background-color:black;">
-<table width="1000" border="0" align="center">
+<body background="Elements/background.jpg" style="background-repeat:no-repeat; background-color:black; background-position:top center;">
+<table width="1000" border="0" align="center" style="border-collapse: collapse;">
   <tr>
-    <td colspan="2" height="150" align="center"><img src="Elements/banner.jpg" width="1000" height="150"/></td>
+    <td height="217" colspan="2" align="center" valign="top" style="margin:0px; padding:0px;"><img src="Elements/banner.jpg" width="100%" style="margin:0px; padding:0px;"/></td>
   </tr>
  
  
-  <tr>
-    <td width="800" rowspan="2"><img src="Elements/Wave.gif" width="100%"></td>
-    <td height="346">&nbsp;</td>
+  <tr id="no_translate">
+    <td align="center" valign="middle" id="video_td"><img width="75%" src="Elements/Wave.gif" alt="WAVE_GIF" /><br/>
+      <br />
+      <br />
+    影片播放方式： <a href="javascript:playlocal();">(1)本網頁内串流(Edge Only)</a>  <a href="javascript:playyoutube();">(2)Youtube播放</a> <a href="javascript:playnothing();">(3)關閉影片</a></td>
+    <td width="20%" valign="bottom" id="right_td"><p>&nbsp;</p>
+      <p>&nbsp;</p>      
+      <a href="../Teaching/basic/"><img src="Elements/Start_learning_btn.png" width="95%" alt="Start_Learning" /></a>
+    
+    
+ </td>
   </tr>
   <tr>
-    <td width="200"><a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="100%" alt="Start_Learning" /></a></td>
-  </tr>
-  <tr>
-  
-  
-    <td height="460" colspan="2"><table width="100%" border="1" cellspacing="20">
-      <tr>
-        <td id="trans">
-        <span>
-        <p id="hi">波是透過震動而形成的一種物理現象，傳遞路徑上的其他介質也作同一形式振動，但不會傳遞介質。</p>
-        </span>
-          <p>除了電磁波、重力波能夠在真空中傳播外，大部分波如機械波只能在介質中傳播。</p>
-          <p>在此網頁中，你可學到</p>
-          <ul>
-            <li>波的影響</li>
-            <li>波的基本性質</li>
-            <li>波動的現象</li>
-        </ul></td>
+    <td height="460" colspan="2" >
+      
+      <table width="100%" border="1" cellspacing="10" id="content">
+        <tr>
+          <td>
+            <p>波是透過震動而形成的一種物理現象，傳遞路徑上的其他介質也作同一形式振動，但不會傳遞介質。</p>
+            <p>除了電磁波、重力波能夠在真空中傳播外，大部分波如機械波只能在介質中傳播。</p>
+            <p>在此網頁中，你可學到</p>
+            <ul>
+              <li>波的基本性質</li>
+              <li>波動的現象</li>
+          </ul></td>
         </tr>
     </table></td>
   </tr>
   <tr>
-  	<td colspan="3" style="color:white"><p align="center">建議使用瀏覽器: Google Chrome</p>
+  	<td colspan="2" style="color:white"><p align="center" id="Pref1">建議使用瀏覽器: Google Chrome</p>
   	  <p align="center"><img src="https://www.google.com/intl/zh-TW/chrome/static/images/chrome-logo.svg" /></p>
-    <p align="center">建議螢幕解像度: 1920 x 1080 </p></td>
+    <p align="center" id="Pref2">建議螢幕解像度: 1920 x 1080</p></td>
   </tr>
 </table>
 </body>
 </html>
+
+
+<script>
+function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+
+var choose_player_txt = '<br/><br/><br/>影片播放方式： <a href="javascript:playlocal();">(1)本網頁内串流(Edge Only)</a>  <a href="javascript:playyoutube();">(2)Youtube播放</a> <a href="javascript:playnothing();">(3)關閉影片</a>';
+	if(getCookie("playmethod") === "local") {
+		document.getElementById('video_td').innerHTML = '<video width=90% src="Video_Loader.m3u8" controls autoplay></video>' + choose_player_txt;
+	}
+	else{
+		if(getCookie("playmethod") === "youtube"){
+			document.getElementById('video_td').innerHTML = '<iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/Or2spONud2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + choose_player_txt;
+		}
+		else 
+		{
+			if(getCookie("playmethod") === "music"){
+			document.getElementById('video_td').innerHTML = '<img width="75%" src="Elements/Wave.gif" alt="WAVE_GIF" />' + choose_player_txt;
+		}
+		}
+	}
+	
+
+if(getCookie("lang") === "eng") {
+	document.getElementById('content').innerHTML = '<tr> <td> <p id = "content"> A wave is a physical phenomenon formed by vibration. Other media on the transmission path also vibrate in the same form, but no medium is passed.<p> except electromagnetic waves and gravity waves can be in a vacuum Outside of medium propagation, most waves such as mechanical waves can only propagate in the medium. </ p> <p> In this page, you can learn </ p> <ul> <li> Basic properties of waves </ li> <li> The phenomenon of fluctuations </ li> </ ul> </ td> </ tr> ';
+	
+	document.getElementById('Pref1').innerHTML = 'Browser recommended: Google Chrome';
+	document.getElementById('Pref2').innerHTML = 'Recommended screen resolution: 1920 x 1080';
+	document.getElementById('no_translate').innerHTML = '<td align="center" valign="middle" colspan="2"><p><img width="100%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>'
+}
+else{
+	if(getCookie("lang") === "simp"){
+		document.getElementById('content').innerHTML = '<tr><td><p id="content">波是透过震动而形成的一种物理现象，传递路径上的其他介质也作同一形式振动，但不会传递介质。<p>除了电磁波、重力波能够在真空中传播外，大部分波如机械波只能在介质中传播。 </p><p>在此网页中，你可学到</p><ul><li>波的基本性质</li><li>波动的现象</li> </ul></td></tr>';
+	document.getElementById('Pref1').innerHTML = '建议使用浏览器: Google Chrome';
+	document.getElementById('Pref2').innerHTML = '建议萤幕解像度: 1920 x 1080';
+	document.getElementById('no_translate').innerHTML = '<td align="center" valign="middle" colspan="2"><p><img width="100%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>'
+	}
+}
+
+
+</script>

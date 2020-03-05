@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -13,12 +13,16 @@
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 <SCRIPT>
 	window.open ("Resources/popup.html", "newwindow", "height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")
 </SCRIPT> 
 
-
+<script>
+function eng() {document.cookie = "langi=eng";parent.location.reload(false);};
+function simp() {document.cookie = "langi=simp";parent.location.reload(false);};
+function trad() {document.cookie = "langi=trad";parent.location.reload(false);};
+</script>
 
 
 
@@ -74,7 +78,7 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
 }
     </style>
 
-    <style>
+<style>
     	.pp-easing {
 		    -webkit-transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
 		    -moz-transition: all 3000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
@@ -94,34 +98,50 @@ body {
 	margin-left: 0px;
 }
     </style>
-
-
+    <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 	<ul id="menu">
-		<li data-menuanchor="page7"><a href="#page7">跳過引言</a></li>
-		<li><a href="webpage/universial_index.html">前往主頁</a></li>
+		<li id="Skip Intro" data-menuanchor="page7"><a href="#page7">跳過引言</a></li>
+		<li id="Homepage"><a href="webpage">前往主頁</a></li>
 	</ul>
 
 	<div id="pagepiling">
 <div class="section" id="section1" >
-  <h1>波動學</h1>
-  	<p>⇩向下滾動以開始⇩</p>
+  <h1 id="title1">波動學</h1>
+  <p id="title2">⇩向下滾動以開始⇩<br>
+  </p>
+  <table width="0%" height="100" border="0" align="center">
+    <tr>
+      <td>  
+      <div align="center">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a class="MenuBarItemSubmenu" href="#">語言 Language</a>
+        <ul>
+          <li><a href="javascript:trad();">繁體中文</a></li>
+          <li><a href="javascript:simp();">簡體中文</a></li>
+          <li><a href="javascript:eng();">English</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
+  </td>
+    </tr>
+  </table>
+</div>
         
 	    <div class="section" id="section2" style="background-color:#f1c40f">
     	  <div class="intro" align="left">
-    	    <h1 align="center">概念</h1>
+    	    <h1 align="center" id="sect_title1">概念</h1>
     	    <table width="100%" border="0">
     	      <tr>
     	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
-    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">振幅</a><br>振幅是粒子振動時與平衡位置的最大距離。
-</td>
+    	        <td colspan="2" id="Sect1_1" style="font-size:36px"><a style="font-size:72px">振幅</a><br>振幅是粒子振動時與平衡位置的最大距離。</td>
               <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
     	      <tr>
-    	        <td width="50%" style="font-size:36px"><a>                單位：米 (m)
+    	        <td width="50%" id="Sect1_2" style="font-size:36px"><a>                單位：米 (m)
                 <br>
                 符號：A </a></td>
     	        <td style="font-size:36px"  width="333" height="319" align="center"><img  width="333" height="319" align="center" src="Resources/Teaching/振幅.png"></td>
@@ -135,16 +155,16 @@ body {
         
 	    <div class="section" id="section3" style="background-color:#27ae60">
     	  <div class="intro" align="left">
-    	    <h1 align="center">概念</h1>
+    	    <h1 align="center" id="sect_title2">概念</h1>
     	    <table width="100%" border="0">
     	      <tr>
     	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
-    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">週期</a><br>週期是粒子完成一次完整振動所需的時間。
+    	        <td colspan="2" id="Sect2_1" style="font-size:36px"><a style="font-size:72px">週期</a><br>週期是粒子完成一次完整振動所需的時間。
 </td>
               <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
     	      <tr>
-    	        <td width="50%" style="font-size:36px"><a>   	            單位：秒 (s) 	<br>
+    	        <td width="50%" id="Sect2_2" style="font-size:36px"><a>   	            單位：秒 (s) 	<br>
    	            符號：T <br>
     	        </a></td>
     	        <td  width="333" height="319" align="center"  style="font-size:36px"><img src="Resources/Teaching/周期.gif" width="402"></td>
@@ -156,17 +176,17 @@ body {
         
 	    <div class="section" id="section4" style="background-color:#3498db">
     	  <div class="intro" align="left">
-    	    <h1 align="center">概念</h1>
+    	    <h1 align="center" id="sect_title3">概念</h1>
     	    <table width="100%" border="0">
     	      <tr>
     	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
-    	        <td height="132" colspan="2" style="font-size:36px"><a style="font-size:72px">振幅 </a><br>
+    	        <td height="132" colspan="2" id="Sect3_1" style="font-size:36px"><a style="font-size:72px">振幅 </a><br>
     	          頻率是粒子在一秒內振動的次數。
 </td>
               <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
     	      <tr>
-    	        <td width="50%" style="font-size:36px"><a>單位：Hz（即每秒的振動次數） <br>
+    	        <td width="50%" id="Sect3_2" style="font-size:36px"><a>單位：Hz<a style="font-size:24px">（即每秒的振動次數） </a><br>
 符號：f </a><br></td>
     	        <td width="333" align="center" style="font-size:36px">
                 
@@ -182,11 +202,11 @@ body {
         
 	    <div class="section" id="section5" style="background-color:#8e44ad">
     	  <div class="intro" align="left">
-    	    <h1 align="center">概念</h1>
+    	    <h1 align="center" id="sect_title4">概念</h1>
     	    <table width="100%" border="0">
     	      <tr>
     	        <td rowspan="3" width="10%" style="font-size:36px">&nbsp;</td>
-    	        <td style="font-size:36px"><a style="font-size:72px">波長</a><br>
+    	        <td id="Sect4_1" style="font-size:36px"><a style="font-size:72px">波長</a><br>
    	            波長是波形重複的最短距離。 </td>
               <td rowspan="3" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
@@ -194,7 +214,7 @@ body {
     	        <td height="102" style="font-size:36px"><img src="Resources/Teaching/波長.gif" width="75%"></td>
    	          </tr>
     	      <tr>
-    	        <td height="159" style="font-size:36px">單位：米 (m) 	<br>
+    	        <td height="159" id="Sect4_2" style="font-size:36px">單位：米 (m) 	<br>
    	            符號：ג</td>
   	        </tr>
   	        </table>
@@ -208,16 +228,16 @@ body {
         
 	    <div class="section" id="section6" style="background-color:#16a085">
     	  <div class="intro" align="left">
-    	    <h1 align="center">概念</h1>
+    	    <h1 align="center" id="sect_title5">概念</h1>
     	    <table width="100%" border="0">
     	      <tr>
     	        <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
-    	        <td colspan="2" style="font-size:36px"><a style="font-size:72px">波速率</a><br>
+    	        <td colspan="2" id="Sect5_1" style="font-size:36px"><a style="font-size:72px">波速率</a><br>
    	            波速率是波在一秒內行進的距離。 </td>
               <td rowspan="2" width="10%" style="font-size:36px">&nbsp;</td>
    	          </tr>
     	      <tr>
-    	        <td width="50%" style="font-size:36px"><a>單位：ms<sup>–1</sup><br>
+    	        <td width="50%" id="Sect5_2" style="font-size:36px"><a>單位：ms<sup>–1</sup><br>
    	            符號：v </a></td>
     	        <td style="font-size:36px" width="333" height="319" align="center">v  =  fג</td>
   	          </tr>
@@ -234,7 +254,7 @@ body {
         
 <div class="section" id="section7" style="background-color:#2c3e50">
 	    	<div class="intro">
-              <p style="color:white;font-size:50px;">你可根據自己的學習進度選擇課程</p>
+              <p id="FTitle1" style="color:white;font-size:50px;">你可根據自己的學習進度選擇課程</p>
 				<table align="center" width="30%" border="0">
                   <tr align="center">
                     <td height="61" align="right">
@@ -242,18 +262,78 @@ body {
                     </td>
                     <td width="5%">&nbsp;</td>
                     <td align="left">              
-                      <p align="center" class="Box" id="btn_txt_right" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_right','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_right','','backgroundColor','#ededed','P')"><a href="webpage/universial_index.html" style="color:black;;">我想先前往學習</a></p>
+                      <p align="center" class="Box" id="btn_txt_right" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_right','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_right','','backgroundColor','#ededed','P')"><a href="webpage" style="color:black;;">我想先前往學習</a></p>
                     </td>
                   </tr>
               </table>
 
-              <p style="color:white;font-size:18px;"><Blink><span class="blink">*請確保你在進入網頁前熟悉本引入内容*</span></Blink><br>
+              <p id="F_remindtxt" style="color:white;font-size:18px;"><Blink><span class="blink">*請確保你在進入網頁前熟悉本引入内容*</span></Blink><br>
               ⇩向下滾動以重新播放動畫⇩</p></br>
-              <p style="color:lightgrey;font-size:14px;">#網頁中jQureyt取自開源項目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color:grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>
+              <p id="source" style="color:lightgrey;font-size:14px;">#網頁中jQureyt取自開源項目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color:grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>
               #網頁中大部分數學方程引用<a style="color:grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I></em></a>以正確顯示#</p>
    	      </div>
-	    </div>
-        
-
+</div>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
 </body>
 </html>
+
+<script>
+function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+
+if(getCookie("langi") === "eng") {
+		document.getElementById('title1').innerHTML = 'Wave';
+		document.getElementById('title2').innerHTML = '⇩Scroll Down and Know More⇩';
+		document.getElementById('Homepage').innerHTML = '<a href="webpage">Go to Homepage</a>';
+		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">Skip Introduction</a>';
+		document.getElementById('sect_title1').innerHTML = 'Concept';
+		document.getElementById('sect_title2').innerHTML = 'Concept';
+		document.getElementById('sect_title3').innerHTML = 'Concept';
+		document.getElementById('sect_title4').innerHTML = 'Concept';
+		document.getElementById('sect_title5').innerHTML = 'Concept';
+document.getElementById ('Sect1_1'). innerHTML = '<a style="font-size:72px">Amplitude </a> <br> Amplitude is the maximum distance from the equilibrium position of a particle when it vibrates. ';
+document.getElementById ('Sect1_2'). innerHTML = '<a> Unit: meter (m) <br> Symbol: A </a>';
+document.getElementById ('Sect2_1'). innerHTML = '<a style="font-size:72px"> Cycle </a> <br> A cycle is the time it takes for a particle to complete a complete vibration. ';
+document.getElementById ('Sect2_2'). innerHTML = '<a> Unit: Second (s) <br> Symbol: T <br> </a>';
+document.getElementById ('Sect3_1'). innerHTML = '<a style="font-size:72px"> Frequency </a> <br> Frequency is the number of times a particle vibrates in one second. ';
+document.getElementById ('Sect3_2'). innerHTML = '<a> Unit: Hz (number of vibrations per second) <br> Symbol: f </a> <br>';
+document.getElementById ('Sect4_1'). innerHTML = '<a style="font-size:72px">Wavelength </a> <br> Wavelength is the shortest distance that a waveform repeats. ';
+document.getElementById ('Sect4_2'). innerHTML = 'Unit: meter (m) <br> Symbol: ג';
+document.getElementById ('Sect5_1'). innerHTML = '<a style="font-size:72px"> Wave Rate </a> <br> Wave Rate is the distance the wave travels in one second. ';
+document.getElementById ('Sect5_2'). innerHTML = '<a> Unit: ms <sup> –1 </ sup> <br> Symbol: v </a>';
+document.getElementById ('FTitle1'). innerHTML = 'You can choose courses according to your learning progress';
+document.getElementById ('btn_txt_left'). innerHTML = '<a style="color:black;;" href="webpage/Test/Test.html"> Have a Test </a>';
+document.getElementById ('btn_txt_right'). innerHTML = '<a href="webpage" style="color:black;;"> Learn More</a>';
+document.getElementById ('F_remindtxt'). innerHTML = '<Blink> <span class = "blink"> * Please make sure you are familiar with this introduction before entering the webpage * </span> </Blink> <br> ⇩Down Scroll to replay animation ⇩ ';
+document.getElementById ('source'). innerHTML = 'All the content are translated from Chinese Version';
+}
+else{
+	if(getCookie("langi") === "simp"){
+		document.getElementById('title1').innerHTML = '波动学';
+		document.getElementById('title2').innerHTML = '⇩向下滚动以开始⇩';
+		document.getElementById('Homepage').innerHTML = '<a href="webpage">前往主页</a>';
+		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">跳过引言</a>';
+		document.getElementById('sect_title1').innerHTML = '概念';
+		document.getElementById('sect_title2').innerHTML = '概念';
+		document.getElementById('sect_title3').innerHTML = '概念';
+		document.getElementById('sect_title4').innerHTML = '概念';
+		document.getElementById('sect_title5').innerHTML = '概念';
+		document.getElementById('Sect1_1').innerHTML = '<a style="font-size:72px">振幅</a><br>振幅是粒子振动时与平衡位置的最大距离。 ';
+		document.getElementById('Sect1_2').innerHTML = '<a>单位：米 (m)<br>符号：A </a>';
+		document.getElementById('Sect2_1').innerHTML = '<a style="font-size:72px">周期</a><br>周期是粒子完成一次完整振动所需的时间。 ';
+		document.getElementById('Sect2_2').innerHTML = '<a>单位：秒 (s)<br>符号：T <br></a>';
+		document.getElementById('Sect3_1').innerHTML = '<a style="font-size:72px">頻率 </a><br>频率是粒子在一秒内振动的次数。 ';
+		document.getElementById('Sect3_2').innerHTML = '<a>单位：Hz（即每秒的振动次数）<br>符号：f </a><br>';
+		document.getElementById('Sect4_1').innerHTML = '<a style="font-size:72px">波长</a><br>波长是波形重复的最短距离。 ';
+		document.getElementById('Sect4_2').innerHTML = '单位：米 (m)<br>符号：ג';
+		document.getElementById('Sect5_1').innerHTML = '<a style="font-size:72px">波速率</a><br>波速率是波在一秒内行进的距离。 ';
+		document.getElementById('Sect5_2').innerHTML = '<a>单位：ms<sup>–1</sup><br>符号：v </a>';
+		document.getElementById('FTitle1').innerHTML = '你可根据自己的学习进度选择课程';
+		document.getElementById('btn_txt_left').innerHTML = '<a style="color:black;;" href="webpage/Test/Test.html">我已有基本认识</a>';
+		document.getElementById('btn_txt_right').innerHTML = '<a href="webpage" style="color:black;;">我想先前往学习</a>';
+		document.getElementById('F_remindtxt').innerHTML = '<Blink><span class="blink">*请确保你在进入网页前熟悉本引入内容*</span></Blink><br>⇩向下滚动以重新播放动画⇩';
+		document.getElementById('source').innerHTML = '#网页中jQureyt取自开源项目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color: grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>#网页中大部分数学方程引用<a style="color: grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I> </em></a>以正确显示#';
+}
+}
+</script>

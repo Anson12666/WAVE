@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>&#28961;&#27161;&#38988;&#25991;&#20214;</title>
+</head>
+
+<script>
+window.status = '網頁最後更新日期：21/2/2020';
+
+</script>
+
+<frameset cols="200,*" framespacing="0" frameborder="no" border="0" bordercolor="#000000" id="Frame" style="overflow:hidden; height:100%; width:100%; border:hidden; border-collapse:collapse">
+  <frame src="universial_topframe.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+  <frame src="Homepage/Home.html" name="mainFrame" id="mainFrame" title="mainFrame" />
+</frameset>
+<noframes><body>
+<a href="Essentials/PureTextMap.html">Click me to pure text map</a>
+</body>
+</noframes></html>
+
+<script>
+        var a = "a";
+        window.alert(a);
+    if(window.top.location.hash.substr(1) === "test")
+    {
+      document.getElementById('Frame').innerHTML = '<frame src="universial_topframe.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" /><frame src="/Test/Test.html" name="mainFrame" id="mainFrame" title="mainFrame" />';
+    }
+</script>

@@ -22,17 +22,17 @@
 <form id="form2" name="form2" method="post" action="Opinion.php">
   <table width="40%" border="0" align="center" cellspacing="30">
     <tr>
-      <td colspan="2" align="center"><h1>用戶回饋</h1></td>
+      <td colspan="2" align="center"><h1 id="Title_Txt">用戶回饋</h1></td>
     </tr>
     <tr>
-      <td width="40%">姓名：</td>
+      <td width="40%" id="Name_Label">姓名：</td>
       <td><span id="sprytextfield1">
         <label for="Name"></label>
         <input type="text" name="Name" id="Name" style="width:100%"/>
-      <span class="textfieldRequiredMsg">需要有一個值。</span></span></td>
+      <span class="textfieldRequiredMsg" id="spry1">需要有一個值。</span></span></td>
     </tr>
     <tr>
-      <td>年紀：</td>
+      <td id="Age_Label">年紀：</td>
       <td><label for="Age"></label>
         <span id="spryselect1">
         <label for="Age2"></label>
@@ -45,10 +45,10 @@
           <option value="5">45-60</option>
           <option value="6">&gt;60</option>
         </select>
-      <span class="selectInvalidMsg">請選取有效的項目。</span><span class="selectRequiredMsg">請選取項目。</span></span></td>
+      <span class="selectInvalidMsg" id="spry2">請選取有效的項目。</span><span class="selectRequiredMsg" id="spry3">請選取項目。</span></span></td>
     </tr>
     <tr>
-      <td>你從哪裏得識此網站:</td>
+      <td id="Known_Label">你從哪裏得識此網站:</td>
       <td><span id="sprycheckbox1">
       
       
@@ -69,7 +69,7 @@
       <span class="checkboxRequiredMsg">請進行選取。</span></span> </td>
     </tr>
     <tr>
-      <td>網頁評分：<br />
+      <td id="Rank_Label">網頁評分：<br />
 (一分最低五分最高)</td>
       <td><div id="spryradio1">
         <table width="100%">
@@ -94,11 +94,11 @@
       <span class="radioRequiredMsg">請進行選取。</span></div></td>
     </tr>
     <tr>
-      <td>其他意見：</td>
+      <td id="Opinion_Label">其他意見：</td>
       <td><span id="sprytextarea1">
         <label for="Opinion"></label>
         <textarea style="width:100%" name="Opinion" id="Opinion" cols="45" rows="5"></textarea>
-      <span class="textareaRequiredMsg">需要有一個值。</span></span></td>
+      <span class="textareaRequiredMsg" id="spry4">需要有一個值。</span></span></td>
     </tr>
     <tr align="center">
       <td colspan="2"><input type="submit" name="Submit" id="Submit" value="Submit" />&nbsp;<input type="Reset" name="Reset" id="Reset" value="Reset" /></td>
@@ -115,3 +115,39 @@ var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
 </script>
 </body>
 </html>
+
+
+<script>
+function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+
+if(getCookie("lang") === "eng") {
+		document.getElementById ('Title_Txt'). innerHTML = 'User feedback';
+		document.getElementById ('Name_Label'). innerHTML = 'Name:';
+		document.getElementById ('Age_Label'). innerHTML = 'Age:';
+		document.getElementById ('Known_Label'). innerHTML = 'Where did you find this site:';
+		document.getElementById('sprycheckbox1').innerHTML='<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Friend recommendation</label><span class="checkboxRequiredMsg">Please Make a selection.</span>';
+		document.getElementById ('Rank_Label'). innerHTML = 'Webpage rating: <br/> (lowest:1)';
+		document.getElementById('spryradio1').innerHTML='<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">Please select it.</span>';
+		document.getElementById ('Opinion_Label'). innerHTML = 'Other comments:';
+		document.getElementById ('spry1'). innerHTML = 'Requires a value. ';
+		document.getElementById ('spry2'). innerHTML = 'Please select a valid item. ';
+		document.getElementById ('spry3'). innerHTML = 'Please select an item. ';
+		document.getElementById ('spry4'). innerHTML = 'Requires a value. ';
+}
+else{
+	if(getCookie("lang") === "simp"){
+		document.getElementById('Title_Txt').innerHTML = '用户回馈';
+		document.getElementById('Name_Label').innerHTML = '姓名：';
+		document.getElementById('Age_Label').innerHTML = '年纪：';
+		document.getElementById('Known_Label').innerHTML = '你从哪里得识此网站:';
+		document.getElementById('sprycheckbox1').innerHTML='<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">朋友推荐</label><span class="checkboxRequiredMsg">请进行选取。</span>';
+		document.getElementById ('Rank_Label'). innerHTML = '网页评分：<br/>(一分最低五分最高)';
+		document.getElementById('spryradio1').innerHTML='<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">请进行选取。</span>';
+		document.getElementById('Opinion_Label').innerHTML = '其他意见：';
+		document.getElementById('spry1').innerHTML = '需要有一个值。 ';
+		document.getElementById('spry2').innerHTML = '请选取有效的项目。 ';
+		document.getElementById('spry3').innerHTML = '请选取项目。 ';
+		document.getElementById('spry4').innerHTML = '需要有一个值。 ';
+}
+}
+</script>

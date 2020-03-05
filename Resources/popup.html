@@ -18,10 +18,26 @@ body {
 <body>
 <table align="center" width="350" height="250" border="0">
   <tr align="center">
-    <td><p>本網站之教學内容僅供參考之用<br />
+    <td><p id="Alert">本網站之教學内容僅供參考之用<br />
     如有缺失，請在<a href="../webpage/Opinion/Opinion.html" target="new">網頁内</a>提交意見。</p>
-    <p><a href="report.txt" target="new">臨時網頁報告</a> <a href="https://drive.google.com/drive/folders/1eHsAD_-SsGMndFZZT3Qh7E5WCFZ4L45t" target="new">網頁壓縮檔</a></p></td>
+    <p id="Temp"><a href="../report.txt" target="new">臨時網頁報告</a> <a href="https://drive.google.com/drive/folders/1eHsAD_-SsGMndFZZT3Qh7E5WCFZ4L45t" target="new">網頁壓縮檔</a></p></td>
   </tr>
 </table>
 </body>
 </html>
+
+<script>
+function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+
+if(getCookie("lang") === "eng") {
+	document.getElementById('Alert').innerHTML = 'The teaching content of this website is for reference only. <br> If it is missing, please submit your comments on the <a href="../webpage/Opinion/Opinion.html" target="new"> page </a>.';
+	
+	document.getElementById ('Temp').innerHTML = 'Report available in Traditional Chinese only';
+}
+else{
+	if(getCookie("lang") === "simp"){
+		document.getElementById('Alert').innerHTML = '<tr><td><p id="content">本网站之教学内容仅供参考之用<br>如有缺失，请在<a href="../webpage/Opinion/Opinion.html" target="new">网页内</a>提交意见。';
+	document.getElementById('Temp').innerHTML = '報告只提供繁体中文版本';
+}
+}
+</script>
