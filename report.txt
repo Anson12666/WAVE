@@ -120,3 +120,14 @@ Log
 (1)波的現象——調換影像+dblclick
 （2）universial_index rename + rename all index url 減少url長度
 (3)no frames support
+
+5/3/2020(Backup)
+(1)Rebuild Homepage again
+(2)Build Steaming System + Youtube
+(3)Create video
+-Known issue: intro to homepage language not same
+
+6/3/2020
+(1)stop translation work on Map
+(2)Recoding HomePage
+(3)ready for a new host(usage full)
