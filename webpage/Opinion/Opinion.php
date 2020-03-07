@@ -1,10 +1,9 @@
 
 <?php
-
 $host = "localhost";
-$userName = "id12674694_ictsba";
-$password = "hYvbux-vawkip-9jykwy";
-$dbName = "id12674694_opinion";
+$userName = "hkclouds_SBAOPIN";
+$password = "m%al@$=X%d?p[S*+Dk";
+$dbName = "hkclouds_ICTSBA_Opinion";
 // Create database connection
 $conn = new mysqli($host, $userName, $password, $dbName);
 // Check connection
@@ -18,7 +17,8 @@ $Known = $conn->real_escape_string($_POST['Known']);
 $Rank = $conn->real_escape_string($_POST['Rank']);
 $Opinion = $conn->real_escape_string($_POST['Opinion']);
 $Submit = $conn->real_escape_string($_POST['Submit']);
-
+if($Submit == "Submit")
+{
 $sql="INSERT INTO `Opinion` (`Name`, `Age`, `Known`, `Rank`, `Opinion`, `Submit`) VALUES ('".$Name."','".$Age."','".$Known."','".$Rank."','".$Opinion."','".$Submit."')";
 
 if(!$result = $conn->query($sql)){
@@ -26,27 +26,26 @@ die('SQL server Error [' . $conn->error . ']');
 }
 else
 {
-	echo "
-		<h1>Success</h1>
-	";
-}
-?>
-
-	<body style="text-align:center">
-	
+	echo '
+		<h1 align="center">Success</h1>
 		<table align="center" width="50%" border="10" style="font-size:30px">
 		  <tr align="center">
 		    <td>本表格將於SBA報告完成后刪除</td>
 	      </tr>
 		  <tr>
-		    <td>SQL hostname:databases.000webhost.com <br />
-		      Debug website: <a href="https://databases.000webhost.com/sql.php?db=id12674694_opinion&table=Opinion&pos=0" target="new">Direct Link</a> <br />
-		      Username: id12674694_ictsba<br />
-		      Password: hYvbux-vawkip-9jykwy<br />
+		    <td>SQL <br/>
+		      Debug website: <a href="https://hkcloudstorage.online/SBA_PHP_DEBUG/sql.php?db=hkclouds_ICTSBA_Opinion&table=Opinion&pos=0" target="new">Direct Link</a> (wait few sec)<br />
+		      Username: hkclouds_SBAOPIN<br>
+		      Password: m%al@$=X%d?p[S*+Dk<br>
 		      <a style="font-size:16px">For copy and paste:
-		      id12674694_ictsba hYvbux-vawkip-9jykwy</a><br />
-		      Database Name: id12674694_opinion<br />
+		      hkclouds_SBAOPIN    m%al@$=X%d?p[S*+Dk</a><br>
+		      Database: hkclouds_ICTSBA_Opinion<br>
 	        Table: Opinion</td>
 	      </tr>
     </table>
-	</body>
+	';
+}
+}
+?>
+
+
