@@ -1,5 +1,5 @@
 ﻿遞交網址： http://ictsba5m03.epizy.com
-網頁壓縮檔： https://backup.hkcloudstorage.online
+網頁壓縮檔： https://drive.google.com/drive/folders/1eHsAD_-SsGMndFZZT3Qh7E5WCFZ4L45t
 ###所有原圖、原片於各項目的Elements内的Original子資料夾内
 完成5頁網頁：
 1.	/index.html
@@ -134,4 +134,3 @@ Log
 
 7/3/2020 
 (1)Sucessfully Moved Host
-(2)HomePage scale bug fix
