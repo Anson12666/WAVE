@@ -26,8 +26,6 @@ function winpop() {
 	var no_more_translation = "Available in Traditional Chinese only///只提供繁体中文版本"; 
 	window.alert(no_more_translation);
 	}
-	
-
 </script>
 
 </head><body bgcolor="#000000">
@@ -61,15 +59,12 @@ function winpop() {
 
 
 </td>
-<tr>
-<td style="color:white">
-測試用按鈕<br>
 <script>
 function clearcache() {
  var c = document.cookie.split("; ");
  for (i in c) 
   document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";    
-  parent.location.reload(true)
+  parent.location.reload(true);
 }
 function debug() {
 var x = "<cookies> " + document.cookie; 
@@ -78,6 +73,9 @@ var y = "<windows.anchor> " + window.top.location.hash.substr(1)
 window.alert(y);
 }
 </script>
+<tr id="debug">
+<td style="color:white">
+測試用按鈕<br>
   <button onclick="javascript:clearcache();"> clear cache</button>
     <button onclick="javascript:debug();"> show debug msg</button>
 </td></tr>
@@ -112,6 +110,10 @@ else{
 	document.getElementById('Opinion').innerHTML = '<a href="Opinion/Opinion.html" target="mainFrame">意见反映</a>';
 	document.getElementById('Map').innerHTML = '<a href="javascript:winpop();" target="mainFrame">网页地图</a>';
 	document.getElementById('Title').innerHTML = '波动学';
+}
+if(location.hostname != "beta.ictsba.hkcloudstorage.online")
+{
+		document.getElementById('debug').innerHTML = '';
 }
 }
 </script>
