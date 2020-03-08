@@ -6,7 +6,7 @@
 2.	/Resources/popup.html
 2.	/webpage/index.html
 2.1	/webpage/universial_topframe.html
-2.2	/webpage/Homepage/Home.html
+2.2	/webpage/Homepage/index.html
 3.	/webpage/Game/Game.html
 4.	/webpage/Opinion/Opinion.html
 5.	/webpage/Essentials/PureTextMap.html
@@ -140,3 +140,4 @@ Log
 
 8/3/2020
 (1)cookies (+ path:"/")
+(2)ADD ADUIO to homepage
