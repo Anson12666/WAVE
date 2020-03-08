@@ -7,8 +7,12 @@
 
 <script>
 window.status = '網頁最後更新日期：21/2/2020';
+</script>
+
+
+<script>
 function Change_Frame()
-	{
+{
 		if(location.hash == "#test")
 		{
 		document.getElementById('mainFrame').src = "Test/Test.html"
@@ -18,8 +22,9 @@ function Change_Frame()
 		{
 		document.getElementById('mainFrame').src = "Homepage/Home.html"
 		}
-	}
+}
 </script>
+
 
 <frameset onload="Change_Frame();" cols="200,*" framespacing="0" frameborder="no" border="0" bordercolor="#000000" id="Frame_parent0" style="overflow:hidden; height:100%; width:100%; border:hidden; border-collapse:collapse">
   <frame src="universial_topframe.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />

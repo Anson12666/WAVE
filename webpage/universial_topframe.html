@@ -19,9 +19,10 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
 }
 </script>
 <script>
-function eng() {document.cookie = "lang=eng";parent.location.reload(false);};
-function simp() {document.cookie = "lang=simp";parent.location.reload(false);};
-function trad() {document.cookie = "lang=trad";parent.location.reload(false);};
+function eng() {document.cookie = "lang=eng;path=/webpage/";document.cookie = "lang=eng;path=/";parent.location.reload(false);};
+function simp() {document.cookie = "lang=simp;path=/webpage/";document.cookie = "lang=simp;path=/";parent.location.reload(false);};
+function trad() {document.cookie = "lang=trad;path=/webpage/";document.cookie = "lang=trad;path=/";parent.location.reload(false);};
+</script>
 function winpop() {
 	var no_more_translation = "Available in Traditional Chinese only///只提供繁体中文版本"; 
 	window.alert(no_more_translation);

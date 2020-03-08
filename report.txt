@@ -137,3 +137,6 @@ Log
 (2)HomePage scale bug fix
 (3)Complete hash detection (intro to test)
 (4)Build Teaching Pages(using anchor)
+
+8/3/2020
+(1)cookies (+ path:"/")
