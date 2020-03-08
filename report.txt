@@ -141,3 +141,4 @@ Log
 8/3/2020
 (1)cookies (+ path:"/")
 (2)ADD ADUIO to homepage
+***Fixed bugs
