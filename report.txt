@@ -142,3 +142,7 @@ Log
 (1)cookies (+ path:"/")
 (2)ADD ADUIO to homepage
 ***Fixed bugs
+
+9/3/2020
+(1)Rebuild phenomenon index
+(2)Rebuild Teaching Theme

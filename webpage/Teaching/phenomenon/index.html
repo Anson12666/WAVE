@@ -44,23 +44,43 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
 </script>
 </head>
 
-<body onload="MM_preloadImages('Elements/refraction.jpg','Elements/diffraction.gif','Elements/interference.jpg')">
-<div align="center">
-  <h1>波的現象</h1>
-  <p>波主要有四種現象，分別為反射、折射、繞射及干涉現象</p>
-</div>
-<table width="60%" align="center" border="1">
-  <tr>
-    <td colspan="4" align="center" valign="top" height="465"><p><img src="Elements/reflection.gif" name="PIC" height="400" id="PIC" />
-    <p id="notice" style="display:none"><B><U>雙擊文字進入網頁</U></B></p></td>
-  </tr>
-  <tr align="center">
-    <td height="100" width="25%" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','reflection/');return document.MM_returnValue" onmouseover="MM_swapImgRestore()"><p>反射</p></td>
-    <td width="25%" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','refraction/');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/refraction.jpg',1)"><p>折射</p></td>
-    <td width="25%" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','https://cu.nsysu.edu.tw/base/10001/course/10040512/content/public/generalMaterials/GP2_Lecture16.pdf');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/diffraction.gif',1)"><p>繞射</p></td>
-    <td width="25%" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','interference/');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/interference.jpg',1)"><p>干涉</p></td>
+<body onload="MM_preloadImages('Elements/diffraction.gif','Elements/refraction.gif','Elements/interference.gif')" bgcolor="#32ff7e">
+
+<table border="0" style="height: 98%; width:98%; position: absolute; overflow: hidden;">
+  <tr style="color:black">
+    <td width="40%" align="center" valign="middle"><table width="100%" border="0">
+      <tr>
+        <td align="center" valign="middle">
+        
+              <h1>波的現象</h1>
+      <p>波主要有四種現象，<br />
+      分別為反射、折射、繞射及干涉現象</p>
+
+      <p>&nbsp;</p>
+      <table width="80%" border="1">
+        <tr>
+        <td width="50%" height="100" align="center" valign="middle" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','reflection/');return document.MM_returnValue" onmouseover="MM_swapImgRestore()"><p>反射</p></td>
+        <td width="50%" align="center" valign="middle" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','refraction/');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/refraction.gif',1)"><p>折射</p></td>
+      </tr>
+      <tr>
+        <td height="100" align="center" valign="middle" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','https://cu.nsysu.edu.tw/base/10001/course/10040512/content/public/generalMaterials/GP2_Lecture16.pdf');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/diffraction.gif',1)"><p>繞射</p></td>
+        <td align="center" valign="middle" onclick="MM_changeProp('notice','','display','inline','P')" ondblclick="MM_goToURL('self','interference/');return document.MM_returnValue" onmouseover="MM_swapImage('PIC','','Elements/interference.gif',1)"><p>干涉</p></td>
+      </tr>
+  </table>
+	</br>
+        
+        </td>
+      </tr>
+      <tr>
+        <td height="30" align="center" valign="middle"><p id="notice" style="display:none"><B><U>雙擊文字進入網頁</U></B></p></td>
+      </tr>
+    </table>
+
+  </td>
+    <td align="center" valign="middle"><img src="Elements/reflection.gif" name="PIC" width="80%" id="PIC" />
+    </td>
   </tr>
 </table>
-<p>&nbsp;</p>
 </body>
 </html>
+<!-- UI color notes: https://flatuicolors.com/palette/tr --->
