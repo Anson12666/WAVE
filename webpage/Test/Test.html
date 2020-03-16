@@ -16,8 +16,12 @@
 </style>
 <link href="../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
 <link href="../../SpryAssets/SpryValidationCheckbox.css" rel="stylesheet" type="text/css" />
+<link href="../../SpryAssets/SpryValidationRadio.css" rel="stylesheet" type="text/css" />
+<link href="../../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <script src="../../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <script src="../../SpryAssets/SpryValidationCheckbox.js" type="text/javascript"></script>
+<script src="../../SpryAssets/SpryValidationRadio.js" type="text/javascript"></script>
+<script src="../../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <script type="text/javascript">
 function MM_scanStyles(obj, prop) { //v9.0
   var inlineStyle = null; var ccProp = prop; var dash = ccProp.indexOf("-");
@@ -187,7 +191,7 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
     <td height="200" colspan="3" bgcolor="#33FFCC"><h1 align="center">測試站</h1></td>
   </tr>
   <tr>
-    <td colspan="3"><a href="../Teaching/Summary.html">先觀看總結</a></td>
+    <td colspan="3"><a href="../Teaching/Summary.pdf">下載筆記</a> <a href="Question.docx">下載測驗題目</a></td>
   </tr>
   <tr>
     <td colspan="3"><p>建議你在X分鐘内完成測驗。爲方便查看時間，你可以拖動以下計時器。（設定計時器可能需要雙擊）</p>
@@ -202,35 +206,150 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
   </tr>
   <tr>
     <td width="17" align="right" valign="top"><p>1</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>在橫波中，以下哪項選項不正確</p>
+      <div id="spryradio1">
+        <table width="100%">
+          <tr>
+            <td width="25%"><label>
+              <input type="radio" name="Q1MC" value="A" id="Q1MC_0" />
+              粒子的振幅 = 波的振幅</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q1MC" value="B" id="Q1MC_1" />
+              粒子的頻率 = 波的頻率</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q1MC" value="C" id="Q1MC_2" />
+              粒子的速率 = 波的速率</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q1MC" value="D" id="Q1MC_3" />
+              粒子的周期 = 波的周期</label></td>
+          </tr>
+        </table>
+        <span class="radioRequiredMsg">請進行選取。</span></div>
+      <p>【C】</p></td>
   </tr>
    <tr>
     <td align="right" valign="top"><p>2</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>請選擇正確答案【A】</p>
+      <p>行波可以傳遞        </p>
+      <div id="spryradio7">
+        <table width="100%">
+          <tr>
+            <td width="25%"><label>
+              <input type="radio" name="Q3" value="A" id="Q3_0" />
+              能量</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q3" value="B" id="Q3_1" />
+              物質</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q3" value="C" id="Q3_2" />
+              以上皆可</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="Q3" value="D" id="Q3_3" />
+              以上皆不可</label></td>
+          </tr>
+        </table>
+      <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
     <tr>
     <td align="right" valign="top"><p>3</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>小明正在研究波動【1】<br />
+    他向一個距離發射器500cm的障礙物發射一個5ms<sup>-1</sup>的波</p>
+      <p>問：他需要多少秒才能接收到反射的波。<span id="sprytextfield1">
+        <label for="Q3"></label>
+        <input name="Q3" type="text" id="Q3" size="3" maxlength="2" />
+      <span class="textfieldRequiredMsg">需要有一個值。</span></span>秒</p></td>
   </tr>
    <tr>
     <td align="right" valign="top"><p>4</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>試根據以下數據計算敵軍飛機距離雷達的距離：【34】<br />
+    雷達發出超聲波信號，0.001秒後收到回音，已知超聲波的頻率是20000Hz，波長為0.017米</p>
+      <p>問：<span id="sprytextfield2">
+        <label for="Q4"></label>
+        <input name="Q4" type="text" id="Q4" size="4" maxlength="3" />
+      <span class="textfieldRequiredMsg">需要有一個值。</span></span>厘米</p></td>
   </tr>
     <tr>
     <td align="right" valign="top"><p>5</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>當水波由深水區進入淺水區時會發生哪項改變【D】</p>
+      <div id="spryradio6">
+        <table width="100%">
+          <tr>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup5" value="A" id="RadioGroup5_0" />
+              波速上升</label></td>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup5" value="B" id="RadioGroup5_1" />
+              波長增加</label></td>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup5" value="C" id="RadioGroup5_2" />
+              偏離法綫</label></td>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup5" value="D" id="RadioGroup5_3" />
+              偏向法綫</label></td>
+          </tr>
+        </table>
+      <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
    <tr>
     <td align="right" valign="top"><p>6</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>繞射的別稱是什麽【B】</p>
+      <div id="spryradio5">
+        <table width="100%">
+          <tr>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup4" value="A" id="RadioGroup4_0" />
+              反射</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup4" value="B" id="RadioGroup4_1" />
+              衍射</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup4" value="C" id="RadioGroup4_2" />
+              鐳射</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup4" value="D" id="RadioGroup4_3" />
+              輻射</label></td>
+          </tr>
+        </table>
+        <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
     <tr>
     <td align="right" valign="top"><p>7</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>試猜猜以下哪種情況與繞射現象最有關係【右上】</p>
+      <div id="spryradio4">
+        <table width="100%">
+          <tr>
+            <td width="50%"><label>
+              <input type="radio" name="RadioGroup3" value="A" id="RadioGroup3_0" />
+              水波進入深水區時偏折</label></td>
+            <td width="50%"><label>
+              <input type="radio" name="RadioGroup3" value="B" id="RadioGroup3_1" />
+              在山谷大喊時聽到回音</label></td>
+          </tr>
+          <tr>
+            <td width="50%"><label>
+              <input type="radio" name="RadioGroup3" value="C" id="RadioGroup3_2" />
+              在四面環山下仍收到電話信號</label></td>
+            <td width="50%"><label>
+              <input type="radio" name="RadioGroup3" value="D" id="RadioGroup3_3" />
+              將光綫通過光柵</label></td>
+          </tr>
+        </table>
+        <span class="radioRequiredMsg">請進行選取。</span></div>
+      <p>&nbsp;</p></td>
   </tr>
    <tr>
     <td align="right" valign="top"><p>8</p></td>
-    <td width="800">假設下圖實綫與實綫之間的距離為1ג，試選出音量最大的一點，請在右方選取答案或點擊下圖的麥克風作答。<br />      
+    <td width="800">假設下圖實綫與實綫之間的距離為1ג，試選出音量最大的一點，請在右方選取答案或點擊下圖的麥克風作答。<br />
+      【右】<br />      
      <img src="Question_Elements/Q (8)/pic.jpg" width="729" usemap="#Map" border="0" /></td>
     <td>
       <span id="spryselect1">
@@ -241,14 +360,21 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
           <option value="2">右</option>
         </select>
         <span class="selectInvalidMsg"><br />
-        請選取有效的項目。</span><span class="selectRequiredMsg">請選取項目。</span></span></td>
+      請選取有效的項目。</span><span class="selectRequiredMsg">請選取項目。</span></span></td>
   </tr>
     <tr>
     <td align="right" valign="top"><p>9</p></td>
-    <td colspan="2"><p>試聆聽以下音訊，並選取他們的不同。</p>
+    <td colspan="2"><p>試聆聽以下音訊，並選取他們的不同。(如瀏覽器無法播放，請點擊下載。)【音品、音調、頻率、波形】</p>
       <table width="100%" border="0">
         <tr>
-          <td width="400" valign="middle"><audio controls="controls" src="Question_Elements/Q (9)/Guitar.wav"></audio><a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a></td>
+          <td width="400" height="50" valign="middle">
+          
+    <audio id="Test_Audio" controls style="width:40%"；> 
+        <source src="Question_Elements/Q (9)/Guitar.wma" type="audio/mpeg"> 
+    </audio>
+          <a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a>
+          
+          </td>
           <td rowspan="2" valign="middle"><p>聲音性質的不同：<span id="sprycheckbox1">
           <input type="checkbox" name="Q9i" id="Q9i" value="1" />
 音調
@@ -265,13 +391,66 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
 波形 <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span></p></td>
         </tr>
         <tr>
-          <td valign="middle"><audio controls="controls" src="Question_Elements/Q (9)/Trombone.wav"></audio><a href="Question_Elements/Q (9)/Trombone.mid">[下載]</a></td>
+          <td height="50" valign="middle">
+          
+
+    <audio id="Test_Audio" controls style="width:40%"；> 
+        <source src="Question_Elements/Q (9)/Trombone.wav" type="audio/mpeg">
+    </audio>
+          <a href="Question_Elements/Q (9)/Trombone.mid">[下載]</a>
+          </td>
           </tr>
       </table></td>
   </tr>
   <tr>
     <td align="right" valign="top"><p>10</p></td>
-    <td colspan="2">未有題目</td>
+    <td colspan="2"><p>請判斷下述的陳述是否正確</p>
+      <p>光是
+      【C】<div id="spryradio2">
+        <table width="100%">
+          <tr>
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup1" value="A" id="RadioGroup1_0" />
+              粒子</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup1" value="B" id="RadioGroup1_1" />
+              波</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup1" value="C" id="RadioGroup1_2" />
+              以上皆是</label></td>
+
+            <td width="25%"><label>
+              <input type="radio" name="RadioGroup1" value="D" id="RadioGroup1_3" />
+              以上皆不是</label></td>
+          </tr>
+        </table>
+        <span class="radioRequiredMsg">請進行選取。</span></div>
+        <p>&nbsp;</p>
+        <p>科學家透過哪項實驗得出以上結論 【A】       </p>
+        <div id="spryradio3">
+          <table width="100%">
+            <tr>
+              <td width="25%"><label>
+                <input type="radio" name="RadioGroup2" value="A" id="RadioGroup2_0" />
+                雙縫實驗</label></td>
+
+              <td width="25%"><label>
+                <input type="radio" name="RadioGroup2" value="B" id="RadioGroup2_1" />
+              相干實驗</label></td>
+
+              <td width="25%"><label>
+                <input type="radio" name="RadioGroup2" value="C" id="RadioGroup2_2" />
+              干涉實驗</label></td>
+
+              <td width="25%"><label>
+                <input type="radio" name="RadioGroup2" value="D" id="RadioGroup2_3" />
+              不清楚</label></td>
+            </tr>
+          </table>
+          <span class="radioRequiredMsg">請進行選取。</span></div>
+        <p>&nbsp; </p></td>
   </tr>
   <tr>
     <td colspan="3" align="center" valign="middle"><button>Working on it</button></td>
@@ -286,6 +465,15 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
 var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0"});
 var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false, minSelections:1});
 var sprycheckbox2 = new Spry.Widget.ValidationCheckbox("sprycheckbox2", {isRequired:false, minSelections:1});
+var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
+var spryradio2 = new Spry.Widget.ValidationRadio("spryradio2");
+var spryradio3 = new Spry.Widget.ValidationRadio("spryradio3");
+var spryradio4 = new Spry.Widget.ValidationRadio("spryradio4");
+var spryradio5 = new Spry.Widget.ValidationRadio("spryradio5");
+var spryradio6 = new Spry.Widget.ValidationRadio("spryradio6");
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
+var spryradio7 = new Spry.Widget.ValidationRadio("spryradio7");
 </script>
 </body>
 </html>
