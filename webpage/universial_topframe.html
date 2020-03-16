@@ -27,8 +27,8 @@ function winpop() {
 	}
 </script>
 
-</head><body bgcolor="#000000">
-<h1 align="center" id="Title" style="color:white;">波動學</h1>
+</head><body bgcolor="#000000" style="color:white">
+<h1 align="center" id="Title">波動學</h1>
 <table width="95%" border="1" align="center">
   <tr>
     <td>
@@ -36,14 +36,14 @@ function winpop() {
     
     
 <ol>
-  <li id="Home"><a href="Homepage" target="mainFrame">主頁</a></li>
-  <li id="Intro"><a href="../" target="_parent">引入</a></li>
+  <li id="Home"><a href="Homepage/index.html" target="mainFrame">主頁</a></li>
+  <li id="Intro"><a href="../index.html" target="_parent">引入</a></li>
   <li id="Lesson" onmouseover="MM_changeProp('lesson','','display','block','DIV')" onmouseout="MM_changeProp('lesson','','display','none','DIV')"><a>課程内容</a>
 <div id="lesson">
-    	<a href="Teaching/basic/" target="mainFrame">波的基本性質</br>
-    	</a>        <a href="Teaching/phenomenon/" target="mainFrame">波動現象</a></div>
+    	<a href="Teaching/basic/index.html" target="mainFrame">波的基本性質</br>
+    	</a>        <a href="Teaching/phenomenon/index.html" target="mainFrame">波動現象</a></div>
   </li>
-  <li id="MiniGames"><a href="Game/" target="new">小游戲</a></li>
+  <li id="MiniGames"><a href="Game/index.html" target="new">小游戲</a></li>
   <li id="Test"><a href="Test/Test.html" target="mainFrame">測試站</a></li>
   <li id="Opinion"><a href="Opinion/Opinion.html" target="mainFrame">意見反映</a></li>
   <li onmouseover="MM_changeProp('lang','','display','block','DIV')" onmouseout="MM_changeProp('lang','','display','none','DIV')">語言 Language
@@ -52,14 +52,14 @@ function winpop() {
         <a href="javascript:simp();">簡體中文</a></br>
         <a href="javascript:eng();">English</a></div>
   </li>
-  <li id="Map"><a href="Essentials/PureTextMap.html" target="mainFrame">網頁地圖</a></li>
+  <li id="Map"><a href="Essentials/PureTextMap.html" target="_parent">網頁地圖</a></li>
 </ol>
 
 
 
 </td>
-<tr id="debug">
-<td style="color:white">
+  <tr id="debug">
+<td>
 測試用按鈕<br>
 <script>
 function clearcache() {
@@ -80,6 +80,16 @@ window.alert(y);
     <button onclick="javascript:debug();"> show debug msg</button>
 </td></tr>
 </table>
+<table style="position:absolute; bottom:1%; width:95%" width="100%" cellspacing="20" >
+<tr align="center">
+  <td colspan="3">作者聯絡方式</td>
+  </tr>
+<tr align="center">
+<td width="33%"><a href="https://www.facebook.com/Anson.cheng03" target="new"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" width="100%" border="0"/></a></td>
+<td width="33%"><a href="https://www.instagram.com/heart_creat/" target="new"><img width="100%" src="https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw"/></a></td>
+<td width="33%"><a href="http://t.me/AnsonCheng03" target="new"><img width="100%" src="https://store-images.s-microsoft.com/image/apps.38955.9007199266722211.565d6b3f-07d3-47a7-adfa-2a2f2e2cc6f0.6dac87a1-75b5-4c5f-b7a9-3afb037201c9?mode=scale&q=90&h=300&w=300"/></a></td>
+</tr>
+</table>
 </body>
 </html>
 
@@ -88,9 +98,9 @@ var no_more_work = "只提供繁体中文版本 Available in Traditional Chinese
 function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
 
 if(getCookie("lang") === "eng") {
-	document.getElementById('Home').innerHTML = '<a href="Homepage" target="mainFrame">Homepage</a>';
-	document.getElementById('Intro').innerHTML = '<a href="../" target="_parent">Introduction</a>';
-	document.getElementById('Lesson').innerHTML = '<a>Lessons</a><div id="lesson"><a href="Teaching/basic/" target="mainFrame" id="Basic">Properties</br></a><a href="Teaching/phenomenon/" target="mainFrame" id="Phero">Phenomenon</a></div>';
+	document.getElementById('Home').innerHTML = '<a href="Homepage/index.html" target="mainFrame">Homepage</a>';
+	document.getElementById('Intro').innerHTML = '<a href="../index.html" target="_parent">Introduction</a>';
+	document.getElementById('Lesson').innerHTML = '<a>Lessons</a><div id="lesson"><a href="Teaching/basic/index.html" target="mainFrame" id="Basic">Properties</br></a><a href="Teaching/phenomenon/index.html" target="mainFrame" id="Phero">Phenomenon</a></div>';
 	document.getElementById('MiniGames').innerHTML = '<a href="javascript:winpop();">Mini Games</a>';
 	document.getElementById('Test').innerHTML = '<a href="Test/Test.html" target="mainFrame">Test</a>';
 	document.getElementById('Opinion').innerHTML = '<a href="Opinion/Opinion.html" target="mainFrame">Opinions</a>';
@@ -100,9 +110,9 @@ if(getCookie("lang") === "eng") {
 }
 else{
 	if(getCookie("lang") === "simp"){
-	document.getElementById('Home').innerHTML = '<a href="Homepage" target="mainFrame">主页</a>';
-	document.getElementById('Intro').innerHTML = '<a href="../" target="_parent">引入</a>';
-	document.getElementById('Lesson').innerHTML = '<a>课程内容</a><div id="lesson"><a href="Teaching/basic/" target="mainFrame" id="Basic">波的基本性质</br></a><a href="Teaching/phenomenon/" target="mainFrame" id="Phero">波动现象</a></div>';
+	document.getElementById('Home').innerHTML = '<a href="Homepage/index.html" target="mainFrame">主页</a>';
+	document.getElementById('Intro').innerHTML = '<a href="../index.html" target="_parent">引入</a>';
+	document.getElementById('Lesson').innerHTML = '<a>课程内容</a><div id="lesson"><a href="Teaching/basic/index.html" target="mainFrame" id="Basic">波的基本性质</br></a><a href="Teaching/phenomenon/index.html" target="mainFrame" id="Phero">波动现象</a></div>';
 	document.getElementById('MiniGames').innerHTML = '<a href="javascript:winpop();">小游戏</a>';
 	document.getElementById('Test').innerHTML = '<a href="Test/Test.html" target="mainFrame">测试站</a>';
 	document.getElementById('Opinion').innerHTML = '<a href="Opinion/Opinion.html" target="mainFrame">意见反映</a>';

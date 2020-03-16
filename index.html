@@ -104,7 +104,7 @@ body {
 
 	<ul id="menu">
 		<li id="Skip Intro" data-menuanchor="page7"><a href="#page7">跳過引言</a></li>
-		<li id="Homepage"><a href="webpage">前往主頁</a></li>
+		<li id="Homepage"><a href="webpage/index.html">前往主頁</a></li>
 	</ul>
 
 	<div id="pagepiling">
@@ -258,11 +258,11 @@ body {
 				<table align="center" width="30%" border="0">
                   <tr align="center">
                     <td height="61" align="right">
-                    	<p align="center" class="Box" id="btn_txt_left" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_left','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_left','','backgroundColor','#ededed','P')"><a style="color:black;;" href="webpage#test">我已有基本認識</a></p>
+                    	<p align="center" class="Box" id="btn_txt_left" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_left','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_left','','backgroundColor','#ededed','P')"><a style="color:black;;" href="webpage/index.html#test">我已有基本認識</a></p>
                     </td>
                     <td width="5%">&nbsp;</td>
                     <td align="left">              
-                      <p align="center" class="Box" id="btn_txt_right" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_right','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_right','','backgroundColor','#ededed','P')"><a href="webpage" style="color:black;;">我想先前往學習</a></p>
+                      <p align="center" class="Box" id="btn_txt_right" style="font-size:18px;" onMouseOver="MM_changeProp('btn_txt_right','','backgroundColor','#ffffff','P')" onMouseOut="MM_changeProp('btn_txt_right','','backgroundColor','#ededed','P')"><a href="webpage/index.html" style="color:black;;">我想先前往學習</a></p>
                     </td>
                   </tr>
               </table>
@@ -285,7 +285,7 @@ function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIC
 if(getCookie("lang") === "eng") {
 		document.getElementById('title1').innerHTML = 'Wave';
 		document.getElementById('title2').innerHTML = '⇩Scroll Down and Know More⇩';
-		document.getElementById('Homepage').innerHTML = '<a href="webpage">Go to Homepage</a>';
+		document.getElementById('Homepage').innerHTML = '<a href="webpage/index.html">Go to Homepage</a>';
 		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">Skip Introduction</a>';
 		document.getElementById('sect_title1').innerHTML = 'Concept';
 		document.getElementById('sect_title2').innerHTML = 'Concept';
@@ -303,8 +303,8 @@ document.getElementById ('Sect4_2'). innerHTML = 'Unit: meter (m) <br> Symbol: �
 document.getElementById ('Sect5_1'). innerHTML = '<a style="font-size:72px"> Wave Rate </a> <br> Wave Rate is the distance the wave travels in one second. ';
 document.getElementById ('Sect5_2'). innerHTML = '<a> Unit: ms <sup> –1 </ sup> <br> Symbol: v </a>';
 document.getElementById ('FTitle1'). innerHTML = 'You can choose courses according to your learning progress';
-document.getElementById ('btn_txt_left'). innerHTML = '<a style="color:black;;" href="webpage#test"> Have a Test </a>';
-document.getElementById ('btn_txt_right'). innerHTML = '<a href="webpage" style="color:black;;"> Learn More</a>';
+document.getElementById ('btn_txt_left'). innerHTML = '<a style="color:black;;" href="webpage/index.html#test"> Have a Test </a>';
+document.getElementById ('btn_txt_right'). innerHTML = '<a href="webpage/index.html" style="color:black;;"> Learn More</a>';
 document.getElementById ('F_remindtxt'). innerHTML = '<Blink> <span class = "blink"> * Please make sure you are familiar with this introduction before entering the webpage * </span> </Blink> <br> ⇩Down Scroll to replay animation ⇩ ';
 document.getElementById ('source'). innerHTML = 'All the content are translated from Chinese Version';
 }
@@ -312,7 +312,7 @@ else{
 	if(getCookie("lang") === "simp"){
 		document.getElementById('title1').innerHTML = '波动学';
 		document.getElementById('title2').innerHTML = '⇩向下滚动以开始⇩';
-		document.getElementById('Homepage').innerHTML = '<a href="webpage">前往主页</a>';
+		document.getElementById('Homepage').innerHTML = '<a href="webpage/index.html">前往主页</a>';
 		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">跳过引言</a>';
 		document.getElementById('sect_title1').innerHTML = '概念';
 		document.getElementById('sect_title2').innerHTML = '概念';
@@ -330,8 +330,8 @@ else{
 		document.getElementById('Sect5_1').innerHTML = '<a style="font-size:72px">波速率</a><br>波速率是波在一秒内行进的距离。 ';
 		document.getElementById('Sect5_2').innerHTML = '<a>单位：ms<sup>–1</sup><br>符号：v </a>';
 		document.getElementById('FTitle1').innerHTML = '你可根据自己的学习进度选择课程';
-		document.getElementById('btn_txt_left').innerHTML = '<a style="color:black;;" href="webpage#test">我已有基本认识</a>';
-		document.getElementById('btn_txt_right').innerHTML = '<a href="webpage" style="color:black;;">我想先前往学习</a>';
+		document.getElementById('btn_txt_left').innerHTML = '<a style="color:black;;" href="webpage/index.html#test">我已有基本认识</a>';
+		document.getElementById('btn_txt_right').innerHTML = '<a href="webpage/index.html" style="color:black;;">我想先前往学习</a>';
 		document.getElementById('F_remindtxt').innerHTML = '<Blink><span class="blink">*请确保你在进入网页前熟悉本引入内容*</span></Blink><br>⇩向下滚动以重新播放动画⇩';
 		document.getElementById('source').innerHTML = '#网页中jQureyt取自开源项目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color: grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>#网页中大部分数学方程引用<a style="color: grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I> </em></a>以正确显示#';
 }

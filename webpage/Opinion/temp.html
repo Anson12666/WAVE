@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>無標題文件</title>
-
 <style type="text/css">
 </style>
 <link href="../../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
@@ -74,6 +73,7 @@ function validateCode() {
 	textShow.innerHTML = "您輸入的驗證碼有誤";
 	}
     textShow.style.color = "red";
+    createCode();
 	return false;
   } else {
 	    if(getCookie("lang") === "trad")
@@ -97,30 +97,15 @@ window.onload = function () {
   linkbt.onclick = function () { createCode() }
   inputCode.onclick = function () { validateCode(); }
 }
-
-function checktext()
-{
-	if(validateCode())
-	{
-document.getElementById('Submit').type = 'Submit';
-document.getElementById('Submit').value = 'Submit';
-	}
-	else{
-document.getElementById('Submit').type = 'button';
-document.getElementById('Submit').value = '填寫正確驗證碼';
-	}
-}
 </script>
 
 
 </head>
 
-<body bgcolor="lightblue">
-    <form id="form2" name="form2" method="post" action="Opinion.php">
-	<table width="96%" border="0" align="center" cellspacing="0" bgcolor="white" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
-<tr>
-  <td>
-    <table width="40%" border="0" align="center" cellspacing="30">
+<body bgcolor="black" style="color:white">
+
+<form id="form2" name="form2" method="post" action="Opinion.php">
+  <table width="40%" border="0" align="center" cellspacing="30">
     <tr>
       <td colspan="3" align="center"><h1 id="Title_Txt">用戶回饋</h1></td>
     </tr>
@@ -150,15 +135,23 @@ document.getElementById('Submit').value = '填寫正確驗證碼';
     <tr>
       <td id="Known_Label">你從哪裏得識此網站:</td>
       <td><span id="sprycheckbox1">
-      <input name="Known" type="checkbox" id="Known" value="Google" />
-      <label for="Known">Google</label>
-      <input name="Known" type="checkbox" id="Known" value="Yahoo" />
-      <label for="Known">Yahoo</label>
-      <input name="Known" type="checkbox" id="Known" value="Bing" />
-      <label for="Known">Bing</label>
-      <input name="Known" type="checkbox" id="Known" value="Friends" />
-      <label for="Known">朋友推薦</label>
-      <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span> </td>
+      
+      
+        <input name="Known" type="checkbox" id="Known" value="1" />
+        <label for="Known">Google</label>
+        
+        <input name="Known" type="checkbox" id="Known" value="2" />
+        <label for="Known">Yahoo</label>
+        
+       <input name="Known" type="checkbox" id="Known" value="3" />
+        <label for="Known">Bing</label>
+        
+       <input name="Known" type="checkbox" id="Known" value="4" />
+        <label for="Known">朋友推薦</label>
+        
+        
+        
+      <span class="checkboxRequiredMsg">請進行選取。</span></span> </td>
     </tr>
     <tr>
       <td id="Rank_Label">網頁評分：<br />
@@ -199,7 +192,7 @@ document.getElementById('Submit').value = '填寫正確驗證碼';
           <tr>
             <td width="50%" align="right">
                 <label for="inputCode" id="codetext">驗證碼：</label>
-                <input type="text" id="inputCode" style="height:100" onkeyup="javascript:checktext();"/>
+                <input type="text" id="inputCode" style="height:100"/>
             </td>
             <td align="left">
                 <span class="code" id="checkCode"></span>
@@ -213,25 +206,23 @@ document.getElementById('Submit').value = '填寫正確驗證碼';
       </td>
     </tr>
     <tr align="center">
-      <td colspan="3"><input type="reset" name="Submit" id="Submit" value="請先填寫驗證碼" onmousedown="javascript:createCode();"/>&nbsp;<input type="Reset" name="Reset" id="Reset" value="Reset" onclick="javascript:createCode();" onmouseup="javascript:checktext();"/></td>
+      <td colspan="3"><input type="Submit" name="Submit" id="Submit" value="Submit" />&nbsp;<input type="Reset" name="Reset" id="Reset" value="Reset" /></td>
     </tr>
   </table>
-  
-  </td>
-</tr>
-</table>
 </form>
 
+
+<p>&nbsp;</p>
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
-var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false, minSelections:1});
+var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1");
 var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0", validateOn:["change"]});
 var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
 </script>
-
 </body>
 </html>
+
 
 <script>
 function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}

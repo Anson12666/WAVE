@@ -12,11 +12,33 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
+#DownloadVideo {
+	position:absolute;
+	width: 557px;
+	height: 406px;
+	z-index: 1;
+	left: 30%;
+	top: 15%;
+	visibility: hidden;
+}
 </style>
 <script>
 function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
 function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
 function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
+function MM_changeProp(objId,x,theProp,theValue) { //v9.0
+  var obj = null; with (document){ if (getElementById)
+  obj = getElementById(objId); }
+  if (obj){
+    if (theValue == true || theValue == false)
+      eval("obj.style."+theProp+"="+theValue);
+    else eval("obj.style."+theProp+"='"+theValue+"'");
+  }
+}
+function MM_setTextOfLayer(objId,x,newText) { //v9.0
+  with (document) if (getElementById && ((obj=getElementById(objId))!=null))
+    with (obj) innerHTML = unescape(newText);
+}
 </script>
 </head>
 
@@ -31,11 +53,21 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
     <td align="center" valign="bottom" id="video_td" height="440"><table width="100%" border="0">
       <tr align="center">
         <td height="100%" colspan="3" valign="top" id="media">
-        <img width="65%" src="Elements/Wave.gif" alt="WAVE_GIF"/><p>
-    <audio id="Test_Audio" controls autoplay="true" loop="true" style="width:100%"> 
+        <table width="100%" border="0" cellspacing="30">
+
+          <tr>
+            <td align="center" valign="middle"><img src="Elements/Wave.gif" alt="WAVE_GIF" width="65%"/></td>
+          </tr>
+
+          <tr>
+            <td height="50" align="center" valign="middle">
+            <audio id="Test_Audio" controls autoplay="true" loop="true" style="width:40%"；> 
         <source src="Elements/bgmusic.mp3" type="audio/mpeg"> 
     </audio> 
-        </td>
+            </td>
+          </tr>
+
+        </table></td>
         </tr>
       <tr align="center">
         <td width="33%">影片播放方式：&nbsp;</td>
@@ -43,9 +75,46 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
         <td width="33%" id="right_control"><a href="javascript:playyoutube();">Youtube播放</a></td>
       </tr>
 </table></td>
-    <td width="20%" valign="bottom" id="right_td"><p>&nbsp;</p>
-      <p>&nbsp;</p>      
-      <a href="../Teaching/basic/"><img src="Elements/Start_learning_btn.png" width="95%" alt="Start_Learning" /></a>
+    <td width="20%" align="center" valign="bottom" id="right_td"><p>&nbsp;</p>
+      <p id="DownloadOptiontxt" onclick="MM_changeProp('DownloadVideo','','visibility','hidden','DIV');MM_setTextOfLayer('DownloadOptiontxt','','雙擊顯示下載影片選項')" ondblclick="MM_changeProp('DownloadVideo','','visibility','visible','DIV');MM_setTextOfLayer('DownloadOptiontxt','','點擊隱藏下載影片選項')">雙擊顯示下載影片選項</p>
+      <div id="DownloadVideo">
+        <table width="100%" border="1" cellpadding="10" bgcolor="white">
+          <tr>
+            <td height="57" colspan="3" align="center" valign="middle"><h1>下載影片（Not finished）</h1></td>
+          </tr>
+          <tr>
+            <td width="20%" height="30%" align="center" valign="middle"><p>360p<br />
+              點此下載<br />
+            </p></td>
+            <td width="40%" align="left" valign="middle"><p>檔案大小： MB<br />
+            解像度：<br />
+            數元率：            </p></td>
+            <td rowspan="3" align="left" valign="middle"><p>副檔名： </p>
+              <p>MP4</p>
+              <p>視訊編碼：</p>
+              <p>&nbsp;</p>
+              <p>音訊編碼：</p>
+              <p>&nbsp;</p>
+              <p>時長：</p>
+              <p>00:03:30</p></td>
+          </tr>
+          <tr>
+            <td height="30%" align="center" valign="middle">720p<br />
+            點此下載</td>
+            <td align="left" valign="middle"><p>檔案大小： MB<br />
+解像度：<br />
+數元率： </p></td>
+          </tr>
+                    <tr>
+            <td height="30%" align="center" valign="middle">1080p<br />
+              點此下載</td>
+            <td align="left" valign="middle"><p>檔案大小： MB<br />
+解像度：<br />
+數元率： </p></td>
+          </tr>          
+        </table>
+      </div>      
+      <a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="95%" alt="Start_Learning" /></a>
     
     
  </td>
@@ -79,7 +148,7 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
 <script>
 function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
 
-var choose_player_txt1 = '<a href="javascript:playlocal();">本網頁内串流(Chrome Unaviliable)</a>'
+var choose_player_txt1 = '<a href="javascript:playlocal();">本網頁内串流(For Mobile Devices)</a>'
 var choose_player_txt2 = '<a href="javascript:playyoutube();">Youtube播放</a>'
 var choose_player_txt3 = '<a href="javascript:playnothing();">關閉影片</a>';
 	
