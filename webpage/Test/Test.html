@@ -167,31 +167,41 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
 </script>
 
 <script>
-	function Q8MC(selection)
+function Q8MC(selection)
 	{
 		document.getElementById('Q8MC').value = selection;
 	}
+function MM_jumpMenuGo(objId,targ,restore){ //v9.0
+  var selObj = null;  with (document) { 
+  if (getElementById) selObj = getElementById(objId);
+  if (selObj) eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0; }
+}
 </script>
 </head>
 
 <body onload="MM_dragLayer('apDiv1','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" bgcolor="lightgrey">
 <div id="apDiv1">
-	<param name="movie" value="https://www.online-stopwatch.com/swf/online-countdown.swf"><param name="quality" value="high"><param name="menu" value="true"><embed src="https://www.online-stopwatch.com/swf/online-countdown.swf" width="100%" type="application/x-shockwave-flash" height="100%" quality="high" pluginspage="https://www.macromedia.com/go/getflashplayer" align="ABSMIDDLE"></embed>
+	<param name="movie" value="https://www.online-stopwatch.com/swf/online-countdown.swf"><param name="quality" value="high"><param name="menu" value="true"><embed src="https://www.online-stopwatch.com/swf/online-countdown.swf" width="100%" type="application/x-shockwave-flash" height="100%" quality="high" pluginspage="https://www.macromedia.com/go/getflashplayer" align="ABSMIDDLE" scale="noborder"></embed>
 </table>
 </div>
 
 
-<!-- start Body --->
 
-
-
-<form id="form1" name="form1" method="post" action="">
+<form action="javascript:quiz();" id="quiz">
 <table width="96%" border="0" align="center" cellspacing="15" bgcolor="white" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
   <tr>
     <td height="200" colspan="3" bgcolor="#33FFCC"><h1 align="center">測試站</h1></td>
   </tr>
   <tr>
-    <td colspan="3"><a href="../Teaching/Summary.pdf">下載筆記</a> <a href="Question.docx">下載測驗題目</a></td>
+    <td colspan="3">你可在此選擇下載筆記或下載測驗後列印讓更多人填寫
+      
+      <select name="jumpMenu" id="jumpMenu">
+        <option value="../Teaching/Summary.pdf" selected="selected">筆記</option>
+        <option value="Question.docx">測驗題目</option>
+        <option value="Answer.txt">測驗答案</option>
+    </select>
+      <input type="button" name="go_button" id= "go_button" value="下載" onclick="MM_jumpMenuGo('jumpMenu','parent',0)" /></td>
   </tr>
   <tr>
     <td colspan="3"><p>建議你在X分鐘内完成測驗。爲方便查看時間，你可以拖動以下計時器。（設定計時器可能需要雙擊）</p>
@@ -205,9 +215,9 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
     <p></p></td>
   </tr>
   <tr>
-    <td width="17" align="right" valign="top"><p>1</p></td>
-    <td colspan="2"><p>在橫波中，以下哪項選項不正確</p>
-      <div id="spryradio1">
+    <td width="17" align="right" valign="top" id="checkQ1"><p>1</p></td>
+    <td colspan="2"><p>在橫波中，以下哪項描述不正確</p>
+      <div id="Q1" name="Q1">
         <table width="100%">
           <tr>
             <td width="25%"><label>
@@ -227,134 +237,137 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
               粒子的周期 = 波的周期</label></td>
           </tr>
         </table>
-        <span class="radioRequiredMsg">請進行選取。</span></div>
-      <p>【C】</p></td>
+        <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
    <tr>
-    <td align="right" valign="top"><p>2</p></td>
-    <td colspan="2"><p>請選擇正確答案【A】</p>
+    <td align="right" valign="top" id="checkQ2"><p>2</p></td>
+    <td colspan="2"><p>請選擇正確答案</p>
       <p>行波可以傳遞        </p>
-      <div id="spryradio7">
+      <div id="Q2">
         <table width="100%">
           <tr>
             <td width="25%"><label>
-              <input type="radio" name="Q3" value="A" id="Q3_0" />
+              <input type="radio" name="Q2" value="A" id="Q2_0" />
               能量</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q3" value="B" id="Q3_1" />
+              <input type="radio" name="Q2" value="B" id="Q2_1" />
               物質</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q3" value="C" id="Q3_2" />
+              <input type="radio" name="Q2" value="C" id="Q2_2" />
               以上皆可</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q3" value="D" id="Q3_3" />
+              <input type="radio" name="Q2" value="D" id="Q2_3" />
               以上皆不可</label></td>
           </tr>
         </table>
       <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
     <tr>
-    <td align="right" valign="top"><p>3</p></td>
-    <td colspan="2"><p>小明正在研究波動【1】<br />
+    <td align="right" valign="top" id="checkQ3"><p>3</p></td>
+    <td colspan="2"><p>小明正在研究波動<br />
     他向一個距離發射器500cm的障礙物發射一個5ms<sup>-1</sup>的波</p>
       <p>問：他需要多少秒才能接收到反射的波。<span id="sprytextfield1">
-        <label for="Q3"></label>
+        <label for="Q2"></label>
         <input name="Q3" type="text" id="Q3" size="3" maxlength="2" />
       <span class="textfieldRequiredMsg">需要有一個值。</span></span>秒</p></td>
   </tr>
    <tr>
-    <td align="right" valign="top"><p>4</p></td>
-    <td colspan="2"><p>試根據以下數據計算敵軍飛機距離雷達的距離：【34】<br />
-    雷達發出超聲波信號，0.001秒後收到回音，已知超聲波的頻率是20000Hz，波長為0.017米</p>
-      <p>問：<span id="sprytextfield2">
+    <td align="right" valign="top" id="checkQ4"><p>4</p></td>
+    <td colspan="2"><p>試根據以下數據計算敵軍飛機距離雷達的距離：<br />
+    雷達發出超聲波信號，200秒後收到回音，已知超聲波的頻率是20000Hz，波長為0.017米</p>
+      <p>距離：<span id="sprytextfield2">
         <label for="Q4"></label>
         <input name="Q4" type="text" id="Q4" size="4" maxlength="3" />
-      <span class="textfieldRequiredMsg">需要有一個值。</span></span>厘米</p></td>
+      <span class="textfieldRequiredMsg">需要有一個值。</span></span>公里</p></td>
   </tr>
     <tr>
-    <td align="right" valign="top"><p>5</p></td>
-    <td colspan="2"><p>當水波由深水區進入淺水區時會發生哪項改變【D】</p>
-      <div id="spryradio6">
+    <td align="right" valign="top" id="checkQ5"><p>5</p></td>
+    <td colspan="2"><p>當水波由深水區進入淺水區時會發生哪項改變</p>
+      <div id="Q5">
         <table width="100%">
           <tr>
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup5" value="A" id="RadioGroup5_0" />
+              <input type="radio" name="Q5" value="A" id="Q5_0" />
               波速上升</label></td>
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup5" value="B" id="RadioGroup5_1" />
+              <input type="radio" name="Q5" value="B" id="Q5_1" />
               波長增加</label></td>
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup5" value="C" id="RadioGroup5_2" />
+              <input type="radio" name="Q5" value="C" id="Q5_2" />
               偏離法綫</label></td>
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup5" value="D" id="RadioGroup5_3" />
+              <input type="radio" name="Q5" value="D" id="Q5_3" />
               偏向法綫</label></td>
           </tr>
         </table>
       <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
    <tr>
-    <td align="right" valign="top"><p>6</p></td>
-    <td colspan="2"><p>繞射的別稱是什麽【B】</p>
+    <td align="right" valign="top" id="checkQ6"><p>6</p></td>
+    <td colspan="2"><p>繞射的別稱是什麽</p>
       <div id="spryradio5">
         <table width="100%">
           <tr>
-            <td width="25%"><label>
-              <input type="radio" name="RadioGroup4" value="A" id="RadioGroup4_0" />
+            <td width="25%"><label id="Q6">
+              <input type="radio" name="Q6" value="A" id="Q6_0" />
               反射</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup4" value="B" id="RadioGroup4_1" />
+              <input type="radio" name="Q6" value="B" id="Q6_1" />
               衍射</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup4" value="C" id="RadioGroup4_2" />
+              <input type="radio" name="Q6" value="C" id="Q6_2" />
               鐳射</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup4" value="D" id="RadioGroup4_3" />
+              <input type="radio" name="Q6" value="D" id="Q6_3" />
               輻射</label></td>
           </tr>
         </table>
         <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
     <tr>
-    <td align="right" valign="top"><p>7</p></td>
-    <td colspan="2"><p>試猜猜以下哪種情況與繞射現象最有關係【右上】</p>
-      <div id="spryradio4">
+    <td align="right" valign="top" id="checkQ7"><p>7</p></td>
+    <td colspan="2"><p>試猜猜以下哪種情況與繞射現象最有關係
+        <span class="radioRequiredMsg">請進行選取。</span></p>
+      <div id="Q7">
         <table width="100%">
           <tr>
             <td width="50%"><label>
-              <input type="radio" name="RadioGroup3" value="A" id="RadioGroup3_0" />
+              <input type="radio" name="Q7" value="A" id="Q7_0" />
               水波進入深水區時偏折</label></td>
-            <td width="50%"><label>
-              <input type="radio" name="RadioGroup3" value="B" id="RadioGroup3_1" />
+            <td><label>
+              <input type="radio" name="Q7" value="B" id="Q7_1" />
               在山谷大喊時聽到回音</label></td>
           </tr>
           <tr>
-            <td width="50%"><label>
-              <input type="radio" name="RadioGroup3" value="C" id="RadioGroup3_2" />
+            <td><label>
+              <input type="radio" name="Q7" value="C" id="Q7_2" />
               在四面環山下仍收到電話信號</label></td>
-            <td width="50%"><label>
-              <input type="radio" name="RadioGroup3" value="D" id="RadioGroup3_3" />
+            <td><label>
+              <input type="radio" name="Q7" value="D" id="Q7_3" />
               將光綫通過光柵</label></td>
           </tr>
         </table>
-        <span class="radioRequiredMsg">請進行選取。</span></div>
-      <p>&nbsp;</p></td>
+        <span class="radioRequiredMsg">請進行選取。</span></div></td>
   </tr>
    <tr>
-    <td align="right" valign="top"><p>8</p></td>
-    <td width="800">假設下圖實綫與實綫之間的距離為1ג，試選出音量最大的一點，請在右方選取答案或點擊下圖的麥克風作答。<br />
-      【右】<br />      
+    <td align="right" valign="top" id="checkQ8"><p>8</p></td>
+    <td width="800">假設下圖實綫與實綫之間的距離為1ג，試選出音量最大的一點，請在右方選取答案或點擊下圖的麥克風作答。<br />      
      <img src="Question_Elements/Q (8)/pic.jpg" width="729" usemap="#Map" border="0" /></td>
     <td>
       <span id="spryselect1">
-        <label for="Q8MC">音量最大點為：</label>
-        <select name="Q8MC" size="1" id="Q8MC" style="width:80">
+			  <script>
+                function Q8(action){
+                        document.getElementById('Q8').value=action
+                }
+                </script>
+        <label for="Q8">音量最大點為：</label>
+        <select name="Q8" size="1" id="Q8" style="width:80">
           <option value="0" selected="selected"></option>
           <option value="1">左</option>
           <option value="2">右</option>
@@ -363,32 +376,27 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
       請選取有效的項目。</span><span class="selectRequiredMsg">請選取項目。</span></span></td>
   </tr>
     <tr>
-    <td align="right" valign="top"><p>9</p></td>
-    <td colspan="2"><p>試聆聽以下音訊，並選取他們的不同。(如瀏覽器無法播放，請點擊下載。)【音品、音調、頻率、波形】</p>
+    <td align="right" valign="top" id="checkQ9">9</td>
+    <td colspan="2"><p>試聆聽以下音訊，並選取他們的不同。(如瀏覽器無法播放，請點擊下載。)</p>
       <table width="100%" border="0">
         <tr>
           <td width="400" height="50" valign="middle">
           
     <audio id="Test_Audio" controls style="width:40%"；> 
-        <source src="Question_Elements/Q (9)/Guitar.wma" type="audio/mpeg"> 
+        <source src="Question_Elements/Q (9)/Guitar.wav" type="audio/mpeg"> 
     </audio>
           <a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a>
           
           </td>
-          <td rowspan="2" valign="middle"><p>聲音性質的不同：<span id="sprycheckbox1">
-          <input type="checkbox" name="Q9i" id="Q9i" value="1" />
-音調
-<input name="Q9i" type="checkbox" id="Q9i" value="2" />
-音品
-<input name="Q9i" type="checkbox" id="Q9i" value="3" />
-響度 <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span></p>
-            <p>波動性質的不同：<span id="sprycheckbox2">
-            <input name="Q9ii" type="checkbox" id="Q9ii" value="1" />
-振幅
-<input name="Q9ii" type="checkbox" id="Q9ii" value="2" />
-頻率
-<input name="Q9ii" type="checkbox" id="Q9ii" value="3" />
-波形 <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span></p></td>
+          <td valign="middle"><p>聲音性質的不同：<span id="sprycheckbox3">
+            <input type="checkbox" name="Q9i" id="Q9i0" />
+            <label for="Q9i">音調</label>
+            <input type="checkbox" name="Q9i" id="Q9i1" />
+            <label for="Q9i">音品</label>
+            <input type="checkbox" name="Q9i" id="Q9i2" />
+            <label for="Q9i">響度</label>
+            <span class="checkboxRequiredMsg">請進行選取。</span></span></p>
+            </td>
         </tr>
         <tr>
           <td height="50" valign="middle">
@@ -399,81 +407,228 @@ function MM_dragLayer(objId,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,tar
     </audio>
           <a href="Question_Elements/Q (9)/Trombone.mid">[下載]</a>
           </td>
+          <td valign="middle"><p>波動性質的不同： <span id="sprycheckbox2">
+              <input type="checkbox" name="Q9ii" id="Q9ii0" />
+              <label for="Q9ii">振幅</label>
+              <input type="checkbox" name="Q9ii" id="Q9ii1" />
+              <label for="Q9ii">波形</label>
+              <input type="checkbox" name="Q9ii" id="Q9ii2" />
+              <label for="Q9ii">頻率</label>
+            <span class="checkboxRequiredMsg">請進行選取。</span></span></p></td>
           </tr>
       </table></td>
   </tr>
   <tr>
-    <td align="right" valign="top"><p>10</p></td>
-    <td colspan="2"><p>請判斷下述的陳述是否正確</p>
+    <td align="right" valign="top" id="checkQ10"><p>10</p></td>
+    <td colspan="2"><p>請選取最合適的答案</p>
       <p>光是
-      【C】<div id="spryradio2">
+
+      <div id="spryradio4">
         <table width="100%">
           <tr>
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup1" value="A" id="RadioGroup1_0" />
+              <input type="radio" name="Q10i" value="A" id="Q10i_0" />
               粒子</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup1" value="B" id="RadioGroup1_1" />
+              <input type="radio" name="Q10i" value="B" id="Q10i_1" />
               波</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup1" value="C" id="RadioGroup1_2" />
+              <input type="radio" name="Q10i" value="C" id="Q10i_2" />
               以上皆是</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="RadioGroup1" value="D" id="RadioGroup1_3" />
+              <input type="radio" name="Q10i" value="D" id="Q10i_3" />
               以上皆不是</label></td>
           </tr>
         </table>
         <span class="radioRequiredMsg">請進行選取。</span></div>
-        <p>&nbsp;</p>
-        <p>科學家透過哪項實驗得出以上結論 【A】       </p>
-        <div id="spryradio3">
+      <p>科學家透過哪項實驗得出以上結論 </p>
+        <div id="SQ10ii">
           <table width="100%">
             <tr>
-              <td width="25%"><label>
-                <input type="radio" name="RadioGroup2" value="A" id="RadioGroup2_0" />
-                雙縫實驗</label></td>
+              <td width="25%"><label id="Q10ii">
+                <input type="radio" name="Q10ii" value="A" id="Q10ii_0" />
+              雙縫實驗</label></td>
 
               <td width="25%"><label>
-                <input type="radio" name="RadioGroup2" value="B" id="RadioGroup2_1" />
+                <input type="radio" name="Q10ii" value="B" id="Q10ii_1" />
               相干實驗</label></td>
 
               <td width="25%"><label>
-                <input type="radio" name="RadioGroup2" value="C" id="RadioGroup2_2" />
+                <input type="radio" name="Q10ii" value="C" id="Q10ii_2" />
               干涉實驗</label></td>
 
               <td width="25%"><label>
-                <input type="radio" name="RadioGroup2" value="D" id="RadioGroup2_3" />
+                <input type="radio" name="Q10ii" value="D" id="Q10ii_3" />
               不清楚</label></td>
             </tr>
           </table>
-          <span class="radioRequiredMsg">請進行選取。</span></div>
-        <p>&nbsp; </p></td>
+          <span class="radioRequiredMsg">請進行選取。</span> </div></td>
   </tr>
   <tr>
-    <td colspan="3" align="center" valign="middle"><button>Working on it</button></td>
+    <td colspan="3" align="center" valign="middle"><input type="submit" name="Submit" id="Submit" value="Submit" /></td>
   </tr>
 </table>
 </form>
+
 <map name="Map" id="Map">
-  <area shape="circle" coords="287,129,21" href="javascript:Q8MC(1);" target="_self" />
-  <area shape="circle" coords="412,130,21" href="javascript:Q8MC(2);" target="_self" />
+  <area shape="circle" coords="287,129,21" href="javascript:Q8(1);" target="_self" />
+  <area shape="circle" coords="412,130,21" href="javascript:Q8(2);" target="_self" />
 </map>
 <script type="text/javascript">
 var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0"});
-var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false, minSelections:1});
-var sprycheckbox2 = new Spry.Widget.ValidationCheckbox("sprycheckbox2", {isRequired:false, minSelections:1});
-var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
-var spryradio2 = new Spry.Widget.ValidationRadio("spryradio2");
-var spryradio3 = new Spry.Widget.ValidationRadio("spryradio3");
-var spryradio4 = new Spry.Widget.ValidationRadio("spryradio4");
+
+var spryradio1 = new Spry.Widget.ValidationRadio("Q1");
+
+var spryradio3 = new Spry.Widget.ValidationRadio("SQ10ii");
 var spryradio5 = new Spry.Widget.ValidationRadio("spryradio5");
-var spryradio6 = new Spry.Widget.ValidationRadio("spryradio6");
+var spryradio6 = new Spry.Widget.ValidationRadio("Q5");
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
-var spryradio7 = new Spry.Widget.ValidationRadio("spryradio7");
+var spryradio7 = new Spry.Widget.ValidationRadio("Q2");
+var spryradio8 = new Spry.Widget.ValidationRadio("Q7");
+var spryradio4 = new Spry.Widget.ValidationRadio("spryradio4");
+var sprycheckbox2 = new Spry.Widget.ValidationCheckbox("sprycheckbox2");
+var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 </script>
 </body>
 </html>
+
+
+<script>
+  function quiz(){
+	  var username = window.prompt("[remember Later change to chinese]What's you name?")
+      var score = 0;
+
+      // question 1
+      if (document.getElementById('Q1MC_2').checked == true) {                 		
+         document.getElementById('checkQ1').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ1').bgColor = "red"     // display "wrong"
+      }
+
+      // question 2
+      if (document.getElementById('Q2_0').checked == true) {                 		
+         document.getElementById('checkQ2').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ2').bgColor = "red"     // display "wrong"
+      }
+
+      // question 3
+      if (document.getElementById('Q3').value == 1) {                 		
+         document.getElementById('checkQ3').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ3').bgColor = "red"     // display "wrong"
+      }
+	  
+      // question 4
+      if (document.getElementById('Q4').value == 34) {                 		
+         document.getElementById('checkQ4').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ4').bgColor = "red"     // display "wrong"
+      }
+
+      // question 5
+      if (document.getElementById('Q5_3').checked == true) {                 		
+         document.getElementById('checkQ5').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ5').bgColor = "red"     // display "wrong"
+      }
+
+      // question 6
+      if (document.getElementById('Q6_1').checked == true) {                 		
+         document.getElementById('checkQ6').bgColor = ""  // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ6').bgColor = "red"     // display "wrong"
+      }
+	  
+        // question 7
+      if (document.getElementById('Q7_1').checked == true) {                 		
+         document.getElementById('checkQ7').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ7').bgColor = "red"     // display "wrong"
+      }
+
+      // question 8
+      if (document.getElementById('Q8').value == 2) {                 		
+         document.getElementById('checkQ8').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ8').bgColor = "red"     // display "wrong"
+      }
+
+      // question 9i
+      if (document.getElementById('Q9i0').checked == 1 && document.getElementById('Q9i1').checked == 1 && document.getElementById('Q9i2').checked == 0) {                 		
+		var Q9ians = 1      }
+      else {
+         document.getElementById('checkQ9').bgColor = "red"     // display "wrong"
+      }
+	  
+  
+      // question 9ii
+      if (document.getElementById('Q9ii0').checked == 0 && document.getElementById('Q9ii1').checked == 1 && document.getElementById('Q9ii2').checked == 1 && Q9ians == 1) {                 		
+         document.getElementById('checkQ9').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+         document.getElementById('checkQ9').bgColor = "red"     // display "wrong"
+      }
+	  
+      // question 10i
+      if (document.getElementById('Q10i_2').checked == true) {                 		
+		 var Q10ians = 1                                // increment score
+      }
+
+	  
+  
+      // question 10ii
+      if (document.getElementById('Q10ii_0').checked == true && Q10ians == 1) {                 		
+         document.getElementById('checkQ10').bgColor = ""   // display "correct"
+		 score = score + 1;                                  // increment score
+      }
+      else {
+		  
+         document.getElementById('checkQ10').bgColor = "red"     // display "wrong"
+      }
+	  
+	  //different says
+	  var notice
+	  switch(score){
+		  case 1:
+		  case 2:
+		  case 3:
+		  notice = "Did you watch it seriously?"
+		  break;
+		  case 4:
+		  case 5:
+		  case 6:
+		  notice = "Read it again plz"
+		  break;
+		  case 10:
+		  notice = "Excellent Work!"
+		  break;
+		  default:
+		  notice = "Great, you can do better"
+	  }
+	  if(score!=10)
+	  notice = notice + "\n" + "Close the box and check the correct answer."+ "\n" + "Check the red text and correct the answers."
+	  window.alert( username + ", You score is "+ score + "/10" + "\n" + notice)
+}
+</script>

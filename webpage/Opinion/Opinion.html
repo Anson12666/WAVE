@@ -108,6 +108,8 @@ document.getElementById('Submit').value = 'Submit';
 	else{
 document.getElementById('Submit').type = 'button';
 document.getElementById('Submit').value = '填寫正確驗證碼';
+if (getCookie("lang") == "simp"||getCookie("lang") == "eng")
+document.getElementById('Submit').value = 'Incorrect Code';
 	}
 }
 </script>
@@ -234,38 +236,48 @@ var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
 </html>
 
 <script>
-function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+function translate(setlang,id,eng,simp){
+	if (setlang=='simp'||setlang=='eng'||setlang=='trad'){
+		document.cookie = "lang=" + setlang + ";path=/";parent.location.reload(false);
+		}
+	else{
+		var language = document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length)
+		
+		if (setlang==9){
+			window.alert("Available in Traditional Chinese only///只提供繁体中文版本");
+			return;
+		}
+		else{
+			switch(language){
+			case 'eng':
+				document.getElementById(id).innerHTML = eng;
+				break;
+			case 'simp':
+				document.getElementById(id).innerHTML = simp;
+				break;
+			default:
+			
+			}
+		}
+	}
+}
 
-if(getCookie("lang") === "eng") {
-		document.getElementById ('Title_Txt'). innerHTML = 'User feedback';
-		document.getElementById ('Name_Label'). innerHTML = 'Name:';
-		document.getElementById ('Age_Label'). innerHTML = 'Age:';
-		document.getElementById ('Known_Label'). innerHTML = 'Where did you find this site:';
-		document.getElementById('sprycheckbox1').innerHTML='<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Friend recommendation</label><span class="checkboxRequiredMsg">Please Make a selection.</span>';
-		document.getElementById ('Rank_Label'). innerHTML = 'Webpage rating: <br/> (lowest:1)';
-		document.getElementById('spryradio1').innerHTML='<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">Please select it.</span>';
-		document.getElementById ('Opinion_Label'). innerHTML = 'Other comments:';
-		document.getElementById ('spry1'). innerHTML = 'Requires a value. ';
-		document.getElementById ('spry2'). innerHTML = 'Please select a valid item. ';
-		document.getElementById ('spry3'). innerHTML = 'Please select an item. ';
-		document.getElementById ('spry4'). innerHTML = 'Requires a value. ';
-		document.getElementById('codetext').innerHTML = '';
-}
-else{
-	if(getCookie("lang") === "simp"){
-		document.getElementById('Title_Txt').innerHTML = '用户回馈';
-		document.getElementById('Name_Label').innerHTML = '姓名：';
-		document.getElementById('Age_Label').innerHTML = '年纪：';
-		document.getElementById('Known_Label').innerHTML = '你从哪里得识此网站:';
-		document.getElementById('sprycheckbox1').innerHTML='<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">朋友推荐</label><span class="checkboxRequiredMsg">请进行选取。</span>';
-		document.getElementById ('Rank_Label'). innerHTML = '网页评分：<br/>(一分最低五分最高)';
-		document.getElementById('spryradio1').innerHTML='<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">请进行选取。</span>';
-		document.getElementById('Opinion_Label').innerHTML = '其他意见：';
-		document.getElementById('spry1').innerHTML = '需要有一个值。 ';
-		document.getElementById('spry2').innerHTML = '请选取有效的项目。 ';
-		document.getElementById('spry3').innerHTML = '请选取项目。 ';
-		document.getElementById('spry4').innerHTML = '需要有一个值。 ';
-		document.getElementById('codetext').innerHTML = '';
-}
-}
+//translation(setlang,id,eng,simp)
+		translate(false,'Title_Txt','User feedback','用户回馈')
+		translate(false,'Name_Label','Name:','姓名：')
+		translate(false,'Age_Label','Age:','年纪：')
+		translate(false,'Known_Label','Where did you find this site:','你从哪里得识此网站:')
+		translate(false,'sprycheckbox1','<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Friend recommendation</label><span class="checkboxRequiredMsg">Please Make a selection.</span>','<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">朋友推荐</label><span class="checkboxRequiredMsg">请进行选取。</span>')
+		translate(false,'Rank_Label','Webpage rating: <br/> (lowest:1)','网页评分：<br/>(一分最低五分最高)')
+		translate(false,'spryradio1','<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">Please select it.</span>','<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">请进行选取。</span>')
+		translate(false,'Opinion_Label','Other comments:','其他意见：')
+		translate(false,'spry1','Requires a value.','需要有一个值。')
+		translate(false,'spry2','Please select a valid item.','请选取有效的项目。')
+		translate(false,'spry3','Please select an item.','请选取项目。')
+		translate(false,'spry4','Requires a value.','需要有一个值。')
+		translate(false,'codetext','','')
+		translate(false,'Submit','Incorrect code','X')
+		translate(false,'','','')
+		translate(false,'','','')
+
 </script>

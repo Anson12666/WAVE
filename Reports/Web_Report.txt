@@ -160,3 +160,21 @@ Build Scratch(interference)
 Test: 圖層(Q8)+midi(Q9)
 Opinion Rebuild 
 Made pdf notes
+
+20/3/2020
+Make audio
+(1)ding sound change pitch(A5 to A# 4)
+(2) wave bg cut+fade in/out+回音
+(3)recording
+Make Test Word
+(1)邊界（save more内容）
+（2）shorten link
+
+23/3/2020
+(1)Rewrite translate system code
+(2)Make textsize(puretxt)~plz fix link later
+(3)Make list for puretext map
+(4)MiniTest make 跳頁選單
+(5)MainPage bg Blue filter
+(6)Test Check
+(7)Complete test system!!! !plz do some translation work later

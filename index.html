@@ -18,12 +18,6 @@
 	window.open ("Resources/popup.html", "newwindow", "height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")
 </SCRIPT> 
 
-<script>
-function eng() {document.cookie = "lang=eng;path=/webpage/";document.cookie = "lang=eng;path=/";parent.location.reload(false);};
-function simp() {document.cookie = "lang=simp;path=/webpage/";document.cookie = "lang=simp;path=/";parent.location.reload(false);};
-function trad() {document.cookie = "lang=trad;path=/webpage/";document.cookie = "lang=trad;path=/";parent.location.reload(false);};
-</script>
-
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -119,9 +113,9 @@ body {
     <ul id="MenuBar1" class="MenuBarHorizontal">
       <li><a class="MenuBarItemSubmenu" href="#">語言 Language</a>
         <ul>
-          <li><a href="javascript:trad();">繁體中文</a></li>
-          <li><a href="javascript:simp();">簡體中文</a></li>
-          <li><a href="javascript:eng();">English</a></li>
+          <li><a href="javascript:translate('trad');">繁體中文</a></li>
+          <li><a href="javascript:translate('simp');">簡體中文</a></li>
+          <li><a href="javascript:translate('eng');">English</a></li>
         </ul>
       </li>
     </ul>
@@ -280,60 +274,55 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
 </html>
 
 <script>
-function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
+function translate(setlang,id,eng,simp){
+	if (setlang=='simp'||setlang=='eng'||setlang=='trad'){
+		document.cookie = "lang=" + setlang + ";path=/";parent.location.reload(false);
+		}
+	else{
+		var language = document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length)
+		
+		if (setlang==9){
+			window.alert("Available in Traditional Chinese only///只提供繁体中文版本");
+			return;
+		}
+		else{
+			switch(language){
+			case 'eng':
+				document.getElementById(id).innerHTML = eng;
+				break;
+			case 'simp':
+				document.getElementById(id).innerHTML = simp;
+				break;
+			default:
+			
+			}
+		}
+	}
+}
 
-if(getCookie("lang") === "eng") {
-		document.getElementById('title1').innerHTML = 'Wave';
-		document.getElementById('title2').innerHTML = '⇩Scroll Down and Know More⇩';
-		document.getElementById('Homepage').innerHTML = '<a href="webpage/index.html">Go to Homepage</a>';
-		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">Skip Introduction</a>';
-		document.getElementById('sect_title1').innerHTML = 'Concept';
-		document.getElementById('sect_title2').innerHTML = 'Concept';
-		document.getElementById('sect_title3').innerHTML = 'Concept';
-		document.getElementById('sect_title4').innerHTML = 'Concept';
-		document.getElementById('sect_title5').innerHTML = 'Concept';
-document.getElementById ('Sect1_1'). innerHTML = '<a style="font-size:72px">Amplitude </a> <br> Amplitude is the maximum distance from the equilibrium position of a particle when it vibrates. ';
-document.getElementById ('Sect1_2'). innerHTML = '<a> Unit: meter (m) <br> Symbol: A </a>';
-document.getElementById ('Sect2_1'). innerHTML = '<a style="font-size:72px"> Cycle </a> <br> A cycle is the time it takes for a particle to complete a complete vibration. ';
-document.getElementById ('Sect2_2'). innerHTML = '<a> Unit: Second (s) <br> Symbol: T <br> </a>';
-document.getElementById ('Sect3_1'). innerHTML = '<a style="font-size:72px"> Frequency </a> <br> Frequency is the number of times a particle vibrates in one second. ';
-document.getElementById ('Sect3_2'). innerHTML = '<a> Unit: Hz (number of vibrations per second) <br> Symbol: f </a> <br>';
-document.getElementById ('Sect4_1'). innerHTML = '<a style="font-size:72px">Wavelength </a> <br> Wavelength is the shortest distance that a waveform repeats. ';
-document.getElementById ('Sect4_2'). innerHTML = 'Unit: meter (m) <br> Symbol: ג';
-document.getElementById ('Sect5_1'). innerHTML = '<a style="font-size:72px"> Wave Rate </a> <br> Wave Rate is the distance the wave travels in one second. ';
-document.getElementById ('Sect5_2'). innerHTML = '<a> Unit: ms <sup> –1 </ sup> <br> Symbol: v </a>';
-document.getElementById ('FTitle1'). innerHTML = 'You can choose courses according to your learning progress';
-document.getElementById ('btn_txt_left'). innerHTML = '<a style="color:black;;" href="webpage/index.html#test"> Have a Test </a>';
-document.getElementById ('btn_txt_right'). innerHTML = '<a href="webpage/index.html" style="color:black;;"> Learn More</a>';
-document.getElementById ('F_remindtxt'). innerHTML = '<Blink> <span class = "blink"> * Please make sure you are familiar with this introduction before entering the webpage * </span> </Blink> <br> ⇩Down Scroll to replay animation ⇩ ';
-document.getElementById ('source'). innerHTML = 'All the content are translated from Chinese Version';
-}
-else{
-	if(getCookie("lang") === "simp"){
-		document.getElementById('title1').innerHTML = '波动学';
-		document.getElementById('title2').innerHTML = '⇩向下滚动以开始⇩';
-		document.getElementById('Homepage').innerHTML = '<a href="webpage/index.html">前往主页</a>';
-		document.getElementById('Skip Intro').innerHTML = '<a href="#page7">跳过引言</a>';
-		document.getElementById('sect_title1').innerHTML = '概念';
-		document.getElementById('sect_title2').innerHTML = '概念';
-		document.getElementById('sect_title3').innerHTML = '概念';
-		document.getElementById('sect_title4').innerHTML = '概念';
-		document.getElementById('sect_title5').innerHTML = '概念';
-		document.getElementById('Sect1_1').innerHTML = '<a style="font-size:72px">振幅</a><br>振幅是粒子振动时与平衡位置的最大距离。 ';
-		document.getElementById('Sect1_2').innerHTML = '<a>单位：米 (m)<br>符号：A </a>';
-		document.getElementById('Sect2_1').innerHTML = '<a style="font-size:72px">周期</a><br>周期是粒子完成一次完整振动所需的时间。 ';
-		document.getElementById('Sect2_2').innerHTML = '<a>单位：秒 (s)<br>符号：T <br></a>';
-		document.getElementById('Sect3_1').innerHTML = '<a style="font-size:72px">頻率 </a><br>频率是粒子在一秒内振动的次数。 ';
-		document.getElementById('Sect3_2').innerHTML = '<a>单位：Hz（即每秒的振动次数）<br>符号：f </a><br>';
-		document.getElementById('Sect4_1').innerHTML = '<a style="font-size:72px">波长</a><br>波长是波形重复的最短距离。 ';
-		document.getElementById('Sect4_2').innerHTML = '单位：米 (m)<br>符号：ג';
-		document.getElementById('Sect5_1').innerHTML = '<a style="font-size:72px">波速率</a><br>波速率是波在一秒内行进的距离。 ';
-		document.getElementById('Sect5_2').innerHTML = '<a>单位：ms<sup>–1</sup><br>符号：v </a>';
-		document.getElementById('FTitle1').innerHTML = '你可根据自己的学习进度选择课程';
-		document.getElementById('btn_txt_left').innerHTML = '<a style="color:black;;" href="webpage/index.html#test">我已有基本认识</a>';
-		document.getElementById('btn_txt_right').innerHTML = '<a href="webpage/index.html" style="color:black;;">我想先前往学习</a>';
-		document.getElementById('F_remindtxt').innerHTML = '<Blink><span class="blink">*请确保你在进入网页前熟悉本引入内容*</span></Blink><br>⇩向下滚动以重新播放动画⇩';
-		document.getElementById('source').innerHTML = '#网页中jQureyt取自开源项目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color: grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>#网页中大部分数学方程引用<a style="color: grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I> </em></a>以正确显示#';
-}
-}
+//translation(setlang,id,eng,simp)
+		translate(false,'title1','Wave','波动学')
+		translate(false,'title2','⇩Scroll Down and Know More⇩','⇩向下滚动以开始⇩')
+		translate(false,'Homepage','<a href="webpage/index.html">Go to Homepage</a>','<a href="webpage/index.html">前往主页</a>')
+		translate(false,'Skip Intro','<a href="#page7">Skip Introduction</a>','<a href="#page7">跳过引言</a>')
+		translate(false,'sect_title1','Concept','概念')
+		translate(false,'sect_title2','Concept','概念')
+		translate(false,'sect_title3','Concept','概念')
+		translate(false,'sect_title4','Concept','概念')
+		translate(false,'sect_title5','Concept','概念')
+		translate(false,'Sect1_1','<a style="font-size:72px">Amplitude </a> <br> Amplitude is the maximum distance from the equilibrium position of a particle when it vibrates. ','<a style="font-size:72px">振幅</a><br>振幅是粒子振动时与平衡位置的最大距离。')
+		translate(false,'Sect1_2','<a> Unit: meter (m) <br> Symbol: A </a>','<a>单位：米 (m)<br>符号：A </a>')
+		translate(false,'Sect2_1','<a style="font-size:72px"> Cycle </a> <br> A cycle is the time it takes for a particle to complete a complete vibration.','<a style="font-size:72px">周期</a><br>周期是粒子完成一次完整振动所需的时间。')
+		translate(false,'Sect2_2','<a> Unit: Second (s) <br> Symbol: T <br> </a>','<a>单位：秒 (s)<br>符号：T <br></a>')
+		translate(false,'Sect3_1','<a style="font-size:72px"> Frequency </a> <br> Frequency is the number of times a particle vibrates in one second.','<a style="font-size:72px">頻率 </a><br>频率是粒子在一秒内振动的次数。')
+		translate(false,'Sect3_2','<a> Unit: Hz (number of vibrations per second) <br> Symbol: f </a> <br>','<a>单位：Hz（即每秒的振动次数）<br>符号：f </a><br>')
+		translate(false,'Sect4_1','<a style="font-size:72px">Wavelength </a> <br> Wavelength is the shortest distance that a waveform repeats.','<a style="font-size:72px">波长</a><br>波长是波形重复的最短距离。')
+		translate(false,'Sect4_2','Unit: meter (m) <br> Symbol: ג','单位：米 (m)<br>符号：ג')
+		translate(false,'Sect5_1','<a style="font-size:72px"> Wave Rate </a> <br> Wave Rate is the distance the wave travels in one second.','<a style="font-size:72px">波速率</a><br>波速率是波在一秒内行进的距离。')
+		translate(false,'Sect5_2','<a> Unit: ms <sup> –1 </ sup> <br> Symbol: v </a>','<a>单位：ms<sup>–1</sup><br>符号：v </a>')
+		translate(false,'FTitle1','You can choose courses according to your learning progress','你可根据自己的学习进度选择课程')
+		translate(false,'btn_txt_left','<a style="color:black;;" href="javascript:translate(9);"> Have a Test </a>','<a style="color:black;;" href="javascript:translate(9);">我已有基本认识</a>')
+		translate(false,'btn_txt_right','<a href="webpage/index.html" style="color:black;;"> Learn More</a>','<a href="webpage/index.html" style="color:black;;">我想先前往学习</a>')
+		translate(false,'F_remindtxt','<Blink> <span class = "blink"> * Please make sure you are familiar with this introduction before entering the webpage * </span> </Blink> <br> ⇩Down Scroll to replay animation ⇩','<Blink><span class="blink">*请确保你在进入网页前熟悉本引入内容*</span></Blink><br>⇩向下滚动以重新播放动画⇩')
+		translate(false,'source','All the content are translated from Chinese Version','#网页中jQureyt取自开源项目-<a href="https://github.com/alvarotrigo/pagePiling.js" target="new" style="color: grey;font-size:14px;"><I><U>pagePiling.js</U></I></a>#<br>#网页中大部分数学方程引用<a style="color: grey;font-size:14px;" href="https://github.com/mathjax/MathJax-src" target="new"><em><I><u>MathJax</u></I> </em></a>以正确显示#')
 </script>

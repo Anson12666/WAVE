@@ -3,42 +3,161 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>無標題文件</title>
+
+<SCRIPT type="text/javascript">
+   var MENU = [];
+   MENU[0] = []; 
+   MENU[1] = [];
+   MENU[2] = [];
+   MENU[3] = [];
+
+   MENU[0][0] = new Option("歡迎頁面", "");                   
+   MENU[0][1] = new Option("主頁", "../Homepage/index.html");
+   MENU[0][2] = new Option("引入", "../../index.html");
+   
+   MENU[1][0] = new Option("課程内容", "");
+   MENU[1][1] = new Option("橫波/縱波", "../Teaching/basic/S-P wave/index.html");
+   MENU[1][2] = new Option("行波/駐波", "../Teaching/basic/T-S wave/index.html");
+   MENU[1][3] = new Option("反射現象", "../Teaching/phenomenon/reflection/index.html");
+   MENU[1][4] = new Option("反射應用", "../Teaching/apply/reflection/index.html");
+   MENU[1][5] = new Option("折射現象", "../Teaching/phenomenon/refraction/index.html");
+   MENU[1][6] = new Option("繞射現象", "../Teaching/phenomenon/diffraction/index.html");
+   MENU[1][7] = new Option("干涉現象", "../Teaching/phenomenon/interference/index.html");
+
+   MENU[2][0] = new Option("互動頁面", "");
+   MENU[2][1] = new Option("測試站", "../Test/Test.html");
+   MENU[2][2] = new Option("小游戲", "../Game/index.html");
+      
+   MENU[3][0] = new Option("其他", "");
+   MENU[3][1] = new Option("意見反映", "../Opinion/Opinion.html");
+   MENU[3][2] = new Option("返回主頁", "../index.html");
+
+ 
+   function populateMain(mainSel, subSel){
+      var mainMenu = mainSel;
+      var subMenu = subSel;
+      mainMenu.options.length = 0;
+      for (var i = 0; i < MENU.length; i++) {
+         mainMenu.options[i] = MENU[i][0];
+       }
+       populateSub(mainMenu, subMenu);
+   }
+
+   function populateSub(mainSel, subSel){
+      var mainMenu = mainSel;
+      var subMenu = subSel;
+      var optMainMenu;
+      subMenu.options.length = 1;
+      optMainMenu = mainMenu.selectedIndex;
+      for (var i = 1; i < MENU[optMainMenu].length; i++) {
+         subMenu.options[i] = MENU[optMainMenu][i];
+      }
+   }
+
+   function displayValue() {
+     if(menus.attribute.value!=0)
+	 window.location = menus.attribute.value
+   }
+   
+
+
+</SCRIPT>
+
+
 </head>
 
-<body>
-<p>網站地圖</p>
-<ol>
-  <li><a href="../Homepage/index.html">主頁  </a>  
-  <li><a href="../../index.html">引入  </a>  
-  <li>課程内容
-<ol>
-      <li><a href="../Teaching/basic/index.html">波的基本性質</a>
-<ol>
-          <li><a href="../Teaching/basic/S-P wave/index.html">橫波/縱波</a></li>
-          <li><a href="../Teaching/basic/T-S wave/index.html">行波/駐波</a></li>
+<body id="bodytxt" style="font-size:16px" onload="populateMain(document.menus.multimedia, document.menus.attribute);">
+<table width="100%" border="0">
+  <tr>
+    <td colspan="3" align="right">調整本頁文字大小 <a href="javascript:textsize('large');">【放大】</a> <a href="javascript:textsize('small');">【縮小】</a></td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center"><h1>網站地圖</h1></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+<FORM name="menus" onsubmit="visit();">
+   <h3>便捷搜尋
+     <SELECT name="multimedia" onChange="populateSub(this, this.form.attribute);">
+       </SELECT>
+     <SELECT name="attribute" onChange="displayValue();">
+       <option value="0">請選取頁面</option>
+     </SELECT>
+   </h3>
+</FORM></td>
+  </tr>
+  <tr>
+    <td colspan="3"><ol>
+      <li><a href="../Homepage/index.html">主頁 </a> </li>
+      <li><a href="../../index.html">引入 </a> </li>
+      <li>課程内容</li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td width="33%" align="left" valign="top"><ol>
+      <ol start="1">
+          <li><a href="../Teaching/basic/index.html">波的基本性質</a>
+        </li>
+        
+          <ol>
+            <li><a href="../Teaching/basic/S-P wave/index.html">橫波/縱波</a>
+            </li>
+            <li><a href="../Teaching/basic/T-S wave/index.html">行波/駐波</a></li>
+          </ol>
         </ol>
-      </li>
-      <li><a href="../Teaching/phenomenon/">波動現象</a>
-<ol>
-          <li><a href="../Teaching/phenomenon/reflection/index.html">反射現象</a></li>
-          <li><a href="../Teaching/phenomenon/refraction/index.html">折射現象</a></li>
-          <li><a href="../Teaching/phenomenon/interference/index.html">干涉現象</a></li>
+    </ol>    </td>
+    <td width="33%" align="left" valign="top"><ol>
+      <ol start="2">
+          <li><a href="../Teaching/phenomenon/index.html">波動現象</a>        </li>
+          <ol>
+            <li><a href="../Teaching/phenomenon/reflection/index.html">反射現象</a>
+              <ol>
+                <li><a href="../Teaching/apply/reflection/index.html">應用</a></li>
+              </ol>
+            </li>
+            <li><a href="../Teaching/phenomenon/refraction/index.html">折射現象</a></li>
+            <li><a href="../Teaching/phenomenon/diffraction/index.html">繞射現象</a></li>
+            <li><a href="../Teaching/phenomenon/interference/index.html">干涉現象</a></li>
+          </ol>
         </ol>
-      </li>
-      <li>波動學在日常生活的應用
-        <ol>
-          <li>聲音
-            <ol>
-              <li><a href="../Game/Game.html">小游戲</a></li>
-            </ol>
-          </li>
-        </ol>
-      </li>
-    </ol>
-  <li>測試站</li>
-  <li>意見反映</li>
-  </li>
-</ol>
-<p><a href="../index.html">【返回】</a></p>
+    </ol>    </td>
+    <td width="33%" align="left" valign="top"><ol>
+      <ol start="3">
+        <li>波動學在日常生活的應用
+          <ol>
+            <li>聲音
+              <ol>
+                <li><a href="../Game/index.html">小游戲</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </ol>    </td>
+  </tr>
+  <tr>
+    <td colspan="3"><ol start="4">
+      <li><a href="../Test/Test.html">測試站</a></li>
+      <li><a href="../Opinion/Opinion.html">意見反映</a></li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center"><a href="../index.html">【返回】</a></td>
+  </tr>
+</table>
 </body>
 </html>
+
+<script>
+function textsize(action){
+	switch (action) {
+		case "large":
+		document.getElementById('bodytxt').style.fontSize = parseInt(document.getElementById('bodytxt').style.fontSize.substr(0,2)) + 1 + "px"
+		break;
+		
+		case "small":
+		document.getElementById('bodytxt').style.fontSize = parseInt(document.getElementById('bodytxt').style.fontSize.substr(0,2)) - 1 + "px"
+		break;
+	}
+}
+</script>

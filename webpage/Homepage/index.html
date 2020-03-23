@@ -23,9 +23,6 @@ body {
 }
 </style>
 <script>
-function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
-function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
-function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
 function MM_changeProp(objId,x,theProp,theValue) { //v9.0
   var obj = null; with (document){ if (getElementById)
   obj = getElementById(objId); }
@@ -39,6 +36,9 @@ function MM_setTextOfLayer(objId,x,newText) { //v9.0
   with (document) if (getElementById && ((obj=getElementById(objId))!=null))
     with (obj) innerHTML = unescape(newText);
 }
+function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
+function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
+function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
 </script>
 </head>
 
@@ -62,7 +62,7 @@ function MM_setTextOfLayer(objId,x,newText) { //v9.0
           <tr>
             <td height="50" align="center" valign="middle">
             <audio id="Test_Audio" controls autoplay="true" loop="true" style="width:40%"；> 
-        <source src="Elements/bgmusic.mp3" type="audio/mpeg"> 
+        <source src="Audio/audio.mp3" type="audio/mpeg"> 
     </audio> 
             </td>
           </tr>
@@ -80,37 +80,37 @@ function MM_setTextOfLayer(objId,x,newText) { //v9.0
       <div id="DownloadVideo">
         <table width="100%" border="1" cellpadding="10" bgcolor="white">
           <tr>
-            <td height="57" colspan="3" align="center" valign="middle"><h1>下載影片（Not finished）</h1></td>
+            <td height="57" colspan="3" align="center" valign="middle"><h1>下載影片</h1></td>
           </tr>
           <tr>
-            <td width="20%" height="30%" align="center" valign="middle"><p>360p<br />
-              點此下載<br />
+            <td width="20%" height="30%" align="center" valign="middle"><p>母版文件<br />
+              <a href="https://mega.nz/#!XRVixaZY!G1OcM8mM_Kogx8XZiTpWff-zT9nko6d9iLFfIHtC8xU" target="new">點此下載</a><br />
             </p></td>
-            <td width="40%" align="left" valign="middle"><p>檔案大小： MB<br />
-            解像度：<br />
-            數元率：            </p></td>
-            <td rowspan="3" align="left" valign="middle"><p>副檔名： </p>
-              <p>MP4</p>
-              <p>視訊編碼：</p>
-              <p>&nbsp;</p>
-              <p>音訊編碼：</p>
-              <p>&nbsp;</p>
-              <p>時長：</p>
-              <p>00:03:30</p></td>
+            <td width="35%" align="left" valign="middle"><p>檔案大小：5.00 GB<br />
+            解像度： 1920x1080<br />
+            數元率： 203978 kbps           </p></td>
+            <td align="left" valign="middle"><p>副檔名： MOV </p>
+              <p>視訊編碼： Apple ProRes 422              </p>
+              <p>音訊文件格式：線型PCM </p>
+              <p>時長：00:03:30</p></td>
           </tr>
           <tr>
             <td height="30%" align="center" valign="middle">720p<br />
-            點此下載</td>
-            <td align="left" valign="middle"><p>檔案大小： MB<br />
-解像度：<br />
-數元率： </p></td>
+            <a href="https://mega.nz/#!aYEG2IDL!wt-pGt11yTHv8NUnygcD2gAtgM87WNUvBwW3X7ZVsyA" target="new">點此下載</a></td>
+            <td align="left" valign="middle"><p>檔案大小： 171 MB<br />
+解像度： 1280x720<br />
+數元率： 6833 kbps</p></td>
+<td rowspan="2"><p>副檔名： MP4</p>
+  <p>視訊編碼：  H.264</p>
+  <p>音訊文件格式：AAC</p>
+  <p>時長：00:03:30</p></td>
           </tr>
                     <tr>
-            <td height="30%" align="center" valign="middle">1080p<br />
-              點此下載</td>
-            <td align="left" valign="middle"><p>檔案大小： MB<br />
-解像度：<br />
-數元率： </p></td>
+            <td height="30%" align="center" valign="middle">480p<br />
+              <a href="https://mega.nz/#!7JcS0QDC!RLn-Nhq1MBE1wVrL799GV0CR_CiSSb3NQHw--c4HmNo" target="new">點此下載</a></td>
+            <td align="left" valign="middle"><p>檔案大小： 2.5 MB<br />
+解像度：854x480<br />
+數元率： 3691 kbps</p></td>
           </tr>          
         </table>
       </div>      
@@ -136,13 +136,48 @@ function MM_setTextOfLayer(objId,x,newText) { //v9.0
     </table></td>
   </tr>
   <tr>
-  	<td colspan="2" style="color:white"><p align="center" id="Pref1">建議使用瀏覽器: Google Chrome</p>
-  	  <p align="center"><img src="https://www.google.com/intl/zh-TW/chrome/static/images/chrome-logo.svg" /></p>
+  	<td colspan="2" style="color:white"><p align="center" id="Pref1">建議使用瀏覽器: Microsoft Edge</p>
+  	  <p align="center"><img width="75" src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4nqTh" /></p>
     <p align="center" id="Pref2">建議螢幕解像度: 1920 x 1080</p></td>
   </tr>
 </table>
 </body>
 </html>
+
+<script>
+function translate(setlang,id,eng,simp){
+	if (setlang=='simp'||setlang=='eng'||setlang=='trad'){
+		document.cookie = "lang=" + setlang + ";path=/";parent.location.reload(false);
+		}
+	else{
+		var language = document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length)
+		
+		if (setlang==9){
+			window.alert("Available in Traditional Chinese only///只提供繁体中文版本");
+			return;
+		}
+		else{
+			switch(language){
+			case 'eng':
+				document.getElementById(id).innerHTML = eng;
+				break;
+			case 'simp':
+				document.getElementById(id).innerHTML = simp;
+				break;
+			default:
+			
+			}
+		}
+	}
+}
+
+
+//translation(setlang,id,eng,simp)
+		translate(false,'content','<tr> <td> <p id = "content"> A wave is a physical phenomenon formed by vibration. Other media on the transmission path also vibrate in the same form, but no medium is passed.<p> except electromagnetic waves and gravity waves can be in a vacuum Outside of medium propagation, most waves such as mechanical waves can only propagate in the medium. </ p> <p> In this page, you can learn </ p> <ul> <li> Basic properties of waves </ li> <li> The phenomenon of fluctuations </ li> </ ul> </ td> </ tr>','<tr><td><p id="content">波是透过震动而形成的一种物理现象，传递路径上的其他介质也作同一形式振动，但不会传递介质。<p>除了电磁波、重力波能够在真空中传播外，大部分波如机械波只能在介质中传播。 </p><p>在此网页中，你可学到</p><ul><li>波的基本性质</li><li>波动的现象</li> </ul></td></tr>')
+		translate(false,'Pref1','Browser recommended: Microsoft Edge','建议使用浏览器: Microsoft Edge')
+		translate(false,'Pref2','Recommended screen resolution: 1920 x 1080','建议萤幕解像度: 1920 x 1080')
+		translate(false,'no_translate','<td  height="440" align="center" valign="middle" colspan="2"><p><img width="60%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>','<td height="440" align="center" valign="middle" colspan="2"><p><img width="60%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>')
+</script>
 
 
 <script>
@@ -163,25 +198,5 @@ var choose_player_txt3 = '<a href="javascript:playnothing();">關閉影片</a>';
 		document.getElementById('left_control').innerHTML = choose_player_txt1
 		document.getElementById('right_control').innerHTML = choose_player_txt3
 		}
-		}
-	
-	
-
-if(getCookie("lang") === "eng") {
-	document.getElementById('content').innerHTML = '<tr> <td> <p id = "content"> A wave is a physical phenomenon formed by vibration. Other media on the transmission path also vibrate in the same form, but no medium is passed.<p> except electromagnetic waves and gravity waves can be in a vacuum Outside of medium propagation, most waves such as mechanical waves can only propagate in the medium. </ p> <p> In this page, you can learn </ p> <ul> <li> Basic properties of waves </ li> <li> The phenomenon of fluctuations </ li> </ ul> </ td> </ tr> ';
-	
-	document.getElementById('Pref1').innerHTML = 'Browser recommended: Google Chrome';
-	document.getElementById('Pref2').innerHTML = 'Recommended screen resolution: 1920 x 1080';
-	document.getElementById('no_translate').innerHTML = '<td  height="440" align="center" valign="middle" colspan="2"><p><img width="60%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>'
-}
-else{
-	if(getCookie("lang") === "simp"){
-		document.getElementById('content').innerHTML = '<tr><td><p id="content">波是透过震动而形成的一种物理现象，传递路径上的其他介质也作同一形式振动，但不会传递介质。<p>除了电磁波、重力波能够在真空中传播外，大部分波如机械波只能在介质中传播。 </p><p>在此网页中，你可学到</p><ul><li>波的基本性质</li><li>波动的现象</li> </ul></td></tr>';
-	document.getElementById('Pref1').innerHTML = '建议使用浏览器: Google Chrome';
-	document.getElementById('Pref2').innerHTML = '建议萤幕解像度: 1920 x 1080';
-	document.getElementById('no_translate').innerHTML = '<td   height="440" align="center" valign="middle" colspan="2"><p><img width="60%" src="Elements/Wave.gif" alt="WAVE_GIF" /></p></td>'
 	}
-}
-
-
 </script>
