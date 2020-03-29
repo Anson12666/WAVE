@@ -62,21 +62,21 @@ function validateCode() {
   var inputCode = document.getElementById("inputCode").value;
   var textShow = document.getElementById("text_show")
   if (inputCode.length <= 0) {
-	      if(getCookie("lang") === "trad")
+	      if(document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length) == "trad")
 	{
     textShow.innerHTML = "請輸入驗證碼";
 	}
     textShow.style.color = "red";
 	return false;
   } else if (inputCode.toUpperCase() != code.toUpperCase()) {
-    if(getCookie("lang") === "trad")
+    if(document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length) == "trad")
 	{
 	textShow.innerHTML = "您輸入的驗證碼有誤";
 	}
     textShow.style.color = "red";
 	return false;
   } else {
-	    if(getCookie("lang") === "trad")
+	    if(document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length) == "trad")
 	{
     textShow.innerHTML = "驗證碼正確";
 	}
@@ -94,7 +94,6 @@ window.onload = function () {
   checkCode();
   createCode();
   document.getElementById("checkCode").onclick = function () { createCode() }
-  linkbt.onclick = function () { createCode() }
   inputCode.onclick = function () { validateCode(); }
 }
 
@@ -277,7 +276,5 @@ function translate(setlang,id,eng,simp){
 		translate(false,'spry4','Requires a value.','需要有一个值。')
 		translate(false,'codetext','','')
 		translate(false,'Submit','Incorrect code','X')
-		translate(false,'','','')
-		translate(false,'','','')
 
 </script>

@@ -23,6 +23,31 @@ body {
 }
 </style>
 <script>
+function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
+function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
+function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
 function MM_changeProp(objId,x,theProp,theValue) { //v9.0
   var obj = null; with (document){ if (getElementById)
   obj = getElementById(objId); }
@@ -32,17 +57,10 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
     else eval("obj.style."+theProp+"='"+theValue+"'");
   }
 }
-function MM_setTextOfLayer(objId,x,newText) { //v9.0
-  with (document) if (getElementById && ((obj=getElementById(objId))!=null))
-    with (obj) innerHTML = unescape(newText);
-}
-function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
-function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
-function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
 </script>
 </head>
 
-<body background="Elements/background.jpg" style="background-repeat:no-repeat; background-color:black; background-position:top center;">
+<body background="Elements/background.jpg" style="background-repeat:no-repeat; background-color:black; background-position:top center;" onload="MM_preloadImages('https://dabuttonfactory.com/button.png?t=Click+to+Cancel&amp;f=Ubuntu-Bold&amp;ts=26&amp;tc=fff&amp;hp=45&amp;vp=20&amp;c=11&amp;bgt=unicolored&amp;bgc=15d798')">
 <table width="1000" border="0" align="center" style="border-collapse: collapse;">
   <tr>
     <td height="180" colspan="2" align="center" valign="top" style="margin:0px; padding:0px;"><img src="Elements/banner.jpg" width="100%" style="margin:0px; padding:0px;"/></td>
@@ -56,7 +74,7 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
         <table width="100%" border="0" cellspacing="30">
 
           <tr>
-            <td align="center" valign="middle"><img src="Elements/Wave.gif" alt="WAVE_GIF" width="65%"/></td>
+            <td align="center" valign="middle" ><img src="Elements/Wave.gif" alt="WAVE_GIF" width="65%"/></td>
           </tr>
 
           <tr>
@@ -76,7 +94,7 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
       </tr>
 </table></td>
     <td width="20%" align="center" valign="bottom" id="right_td"><p>&nbsp;</p>
-      <p id="DownloadOptiontxt" onclick="MM_changeProp('DownloadVideo','','visibility','hidden','DIV');MM_setTextOfLayer('DownloadOptiontxt','','雙擊顯示下載影片選項')" ondblclick="MM_changeProp('DownloadVideo','','visibility','visible','DIV');MM_setTextOfLayer('DownloadOptiontxt','','點擊隱藏下載影片選項')">雙擊顯示下載影片選項</p>
+      <p id="DownloadOptiontxt"><img src='https://dabuttonfactory.com/button.png?t=Download(DoubleClick)&f=Ubuntu-Bold&ts=26&tc=fff&hp=45&vp=20&c=11&bgt=unicolored&bgc=15d798' name="Download" width="100%" id="Download" onclick="MM_swapImgRestore();MM_changeProp('DownloadVideo','','visibility','hidden','DIV')" ondblclick="MM_swapImage('Download','','https://dabuttonfactory.com/button.png?t=Cancel box (Click here)&amp;f=Ubuntu-Bold&amp;ts=26&amp;tc=fff&amp;hp=45&amp;vp=20&amp;c=11&amp;bgt=unicolored&amp;bgc=15d798',1);MM_changeProp('DownloadVideo','','visibility','visible','DIV')"></img></p>
       <div id="DownloadVideo">
         <table width="100%" border="1" cellpadding="10" bgcolor="white">
           <tr>
@@ -108,13 +126,13 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
                     <tr>
             <td height="30%" align="center" valign="middle">480p<br />
               <a href="https://mega.nz/#!7JcS0QDC!RLn-Nhq1MBE1wVrL799GV0CR_CiSSb3NQHw--c4HmNo" target="new">點此下載</a></td>
-            <td align="left" valign="middle"><p>檔案大小： 2.5 MB<br />
+            <td align="left" valign="middle"><p>檔案大小： 92.5 MB<br />
 解像度：854x480<br />
 數元率： 3691 kbps</p></td>
           </tr>          
         </table>
       </div>      
-      <a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="95%" alt="Start_Learning" /></a>
+      <a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="95%" alt="點擊這裏開始" /></a>
     
     
  </td>
@@ -124,19 +142,22 @@ function playnothing() {document.cookie = "playmethod=music";parent.location.rel
       
       <table width="100%" border="1" cellspacing="10" id="content">
         <tr>
-          <td>
-            <p>波是透過震動而形成的一種物理現象，傳遞路徑上的其他介質也作同一形式振動，但不會傳遞介質。</p>
-            <p>除了電磁波、重力波能夠在真空中傳播外，大部分波如機械波只能在介質中傳播。</p>
+          <td bgcolor="#FFD000" bordercolor="#CCCCCC" >
+            <p>波是透過<strong>震動</strong>而形成的一種<em><strong>物理現象</strong></em>，傳遞路徑上的其他介質也<strong>作同一形式振動</strong>，但<strong>不會傳遞介質</strong>。</p>
+            <p>除了電磁波、重力波能夠在真空中傳播外，大部分波如機械波<strong>只能在介質中傳播</strong>。</p>
             <p>在此網頁中，你可學到</p>
             <ul>
-              <li>波的基本性質</li>
-              <li>波動的現象</li>
+              <li><strong><u>波的基本性質</u></strong></li>
+              <li><u><strong>波動的現象</strong></u></li>
           </ul></td>
         </tr>
     </table></td>
   </tr>
   <tr>
   	<td colspan="2" style="color:white"><p align="center" id="Pref1">建議使用瀏覽器: Microsoft Edge</p>
+  	  <p align="center">你正在使用的瀏覽器：
+	  <script>document.write(window.navigator.userAgent)
+      </script></p>
   	  <p align="center"><img width="75" src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4nqTh" /></p>
     <p align="center" id="Pref2">建議螢幕解像度: 1920 x 1080</p></td>
   </tr>

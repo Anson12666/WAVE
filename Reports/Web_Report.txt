@@ -178,3 +178,49 @@ Make Test Word
 (5)MainPage bg Blue filter
 (6)Test Check
 (7)Complete test system!!! !plz do some translation work later
+
+27/3/2020(Big CHANGES)
+1. popup.html
+(1)add bg pic
+(2)fix size
+2.側邊欄
+（1）作者聯絡方式（bgcolor）
+3.PureText Map
+(1)Add bgcolor
+(2)Make <h1><h2><h3>.....
+4. game bgcolor 
+(1)更顯眼
+5.主頁
+(1)Make using browser
+(2)make bgcolor(table)
+（3）Make button
+6.現象
+（1）改表格 color
+7.橫波/縱波
+(1)uses <th>
+(2)替換顔色
+（3）H3標題
+8.行波/駐波
+（1）add many h3
+（2）add <th>
+(3)make bg color
+9.波的現象
+(1)change all txt to btn
+http://jirox.net/AsButtonGen/AsButtonGen.swf
+
+
+29/3/2020 big pic changes
+1.行波/駐波
+Wave_intro.jpg
+-remove scratch(text
+-+add arrows
+-長寬比（easier to see）
+/S_numbers.png
+-add circles
+
+行波/橫波pic
+-blur
+-change color
+
+反射
+-male a flash

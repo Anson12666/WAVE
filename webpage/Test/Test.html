@@ -11,7 +11,7 @@
 	height: 240px;
 	z-index: 1;
 	left: 64px;
-	top: 35%;
+	top: 37%;
 }
 </style>
 <link href="../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
@@ -178,11 +178,12 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
   if (restore) selObj.selectedIndex=0; }
 }
 </script>
+
 </head>
 
 <body onload="MM_dragLayer('apDiv1','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')" bgcolor="lightgrey">
 <div id="apDiv1">
-	<param name="movie" value="https://www.online-stopwatch.com/swf/online-countdown.swf"><param name="quality" value="high"><param name="menu" value="true"><embed src="https://www.online-stopwatch.com/swf/online-countdown.swf" width="100%" type="application/x-shockwave-flash" height="100%" quality="high" pluginspage="https://www.macromedia.com/go/getflashplayer" align="ABSMIDDLE" scale="noborder"></embed>
+	<param name="movie" value="https://www.online-stopwatch.com/swf/online-countdown.swf"><param name="quality" value="high"><param name="menu" value="true"><embed src="https://www.online-stopwatch.com/swf/online-countdown.swf" width="100%" type="application/x-shockwave-flash" height="100%" quality="high" pluginspage="https://www.macromedia.com/go/getflashplayer" align="ABSMIDDLE" scale="exactfit"></embed>
 </table>
 </div>
 
@@ -194,25 +195,22 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
     <td height="200" colspan="3" bgcolor="#33FFCC"><h1 align="center">測試站</h1></td>
   </tr>
   <tr>
-    <td colspan="3">你可在此選擇下載筆記或下載測驗後列印讓更多人填寫
-      
+    <td colspan="3" align="left" id="download_page">你可在此選擇下載筆記或下載測驗後列印讓更多人填寫
+    
       <select name="jumpMenu" id="jumpMenu">
-        <option value="../Teaching/Summary.pdf" selected="selected">筆記</option>
-        <option value="Question.docx">測驗題目</option>
-        <option value="Answer.txt">測驗答案</option>
-    </select>
-      <input type="button" name="go_button" id= "go_button" value="下載" onclick="MM_jumpMenuGo('jumpMenu','parent',0)" /></td>
+        <option value="../Teaching/Summary.docx" selected="selected">筆記(word)</option>
+        <option value="../Teaching/Summary.pdf">筆記(pdf)</option>
+        <option value="Question.docx">測驗題目(word)</option>
+        <option value="Question.pdf">測驗題目(pdf)</option>
+        <option value="Answer.docx">測驗答案(word)</option>
+        <option value="Answer.txt">測驗答案(txt)</option>
+      </select>
+      <input type="button" name="go_button" id= "go_button" value="下載" onclick="MM_jumpMenuGo('jumpMenu','parent',0)" /><button onclick='		document.cookie = "login=" + false + ";path=/";location.reload(false);'>登出</button></td>
   </tr>
+  
+
   <tr>
-    <td colspan="3"><p>建議你在X分鐘内完成測驗。爲方便查看時間，你可以拖動以下計時器。（設定計時器可能需要雙擊）</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-    <p></p></td>
+    <td height="338" colspan="3" valign="top"><p>建議你在15分鐘内完成測驗，你也可以自定更短的時間挑戰自己。爲方便查看時間，你可以拖動以下計時器。（設定計時器可能需要雙擊）</p></td>
   </tr>
   <tr>
     <td width="17" align="right" valign="top" id="checkQ1"><p>1</p></td>
@@ -268,7 +266,7 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
     <tr>
     <td align="right" valign="top" id="checkQ3"><p>3</p></td>
     <td colspan="2"><p>小明正在研究波動<br />
-    他向一個距離發射器500cm的障礙物發射一個5ms<sup>-1</sup>的波</p>
+    他向一個距離發射器1000cm的障礙物發射一個5ms<sup>-1</sup>的波</p>
       <p>問：他需要多少秒才能接收到反射的波。<span id="sprytextfield1">
         <label for="Q2"></label>
         <input name="Q3" type="text" id="Q3" size="3" maxlength="2" />
@@ -379,43 +377,43 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
     <td align="right" valign="top" id="checkQ9">9</td>
     <td colspan="2"><p>試聆聽以下音訊，並選取他們的不同。(如瀏覽器無法播放，請點擊下載。)</p>
       <table width="100%" border="0">
-        <tr>
-          <td width="400" height="50" valign="middle">
-          
-    <audio id="Test_Audio" controls style="width:40%"；> 
-        <source src="Question_Elements/Q (9)/Guitar.wav" type="audio/mpeg"> 
-    </audio>
-          <a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a>
-          
-          </td>
-          <td valign="middle"><p>聲音性質的不同：<span id="sprycheckbox3">
-            <input type="checkbox" name="Q9i" id="Q9i0" />
-            <label for="Q9i">音調</label>
-            <input type="checkbox" name="Q9i" id="Q9i1" />
-            <label for="Q9i">音品</label>
-            <input type="checkbox" name="Q9i" id="Q9i2" />
-            <label for="Q9i">響度</label>
-            <span class="checkboxRequiredMsg">請進行選取。</span></span></p>
-            </td>
-        </tr>
-        <tr>
-          <td height="50" valign="middle">
-          
-
-    <audio id="Test_Audio" controls style="width:40%"；> 
-        <source src="Question_Elements/Q (9)/Trombone.wav" type="audio/mpeg">
-    </audio>
-          <a href="Question_Elements/Q (9)/Trombone.mid">[下載]</a>
-          </td>
-          <td valign="middle"><p>波動性質的不同： <span id="sprycheckbox2">
-              <input type="checkbox" name="Q9ii" id="Q9ii0" />
-              <label for="Q9ii">振幅</label>
-              <input type="checkbox" name="Q9ii" id="Q9ii1" />
-              <label for="Q9ii">波形</label>
-              <input type="checkbox" name="Q9ii" id="Q9ii2" />
-              <label for="Q9ii">頻率</label>
-            <span class="checkboxRequiredMsg">請進行選取。</span></span></p></td>
-          </tr>
+      <tr>
+        <td valign="middle"><p><span id="sprycheckbox3">
+          </span></p>
+          <table width="100%" border="0">
+            <tr>
+              <td width="400" height="50" valign="middle"><audio id="Test_Audio" controls style="width:40%"；>
+                <source src="Question_Elements/Q (9)/Guitar.wav" type="audio/mpeg" />
+              </audio>
+                <a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a></td>
+              <td valign="middle"><p>聲音性質的不同：<span id="sprycheckbox">
+                <input type="checkbox" name="Q9i" id="Q9i0" />
+                <label for="Q9i2">音調</label>
+                <input type="checkbox" name="Q9i" id="Q9i1" />
+                <label for="Q9i2">音品</label>
+                <input type="checkbox" name="Q9i" id="Q9i2" />
+                <label for="Q9i2">響度</label>
+                <span class="checkboxRequiredMsg">請進行選取。</span></span></p></td>
+            </tr>
+            <tr>
+              <td height="50" valign="middle"><audio id="Test_Audio" controls style="width:40%"；>
+                <source src="Question_Elements/Q (9)/Trombone.wav" type="audio/mpeg" />
+              </audio>
+                <a href="Question_Elements/Q (9)/Trombone.mid">[下載]</a></td>
+              <td valign="middle"><p>波動性質的不同： <span id="sprycheckbox2">
+                <input type="checkbox" name="Q9ii" id="Q9ii0" />
+                <label for="Q9ii">振幅</label>
+                <input type="checkbox" name="Q9ii" id="Q9ii1" />
+                <label for="Q9ii">波形</label>
+                <input type="checkbox" name="Q9ii" id="Q9ii2" />
+                <label for="Q9ii">頻率</label>
+                <span class="checkboxRequiredMsg">請進行選取。</span></span></p></td>
+            </tr>
+          </table>
+          <p><span>
+            <label for="Q9i"></label>
+          </span></p></td>
+      </tr>
       </table></td>
   </tr>
   <tr>
@@ -470,8 +468,9 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
   <tr>
     <td colspan="3" align="center" valign="middle"><input type="submit" name="Submit" id="Submit" value="Submit" /></td>
   </tr>
+
 </table>
-</form>
+  </form>
 
 <map name="Map" id="Map">
   <area shape="circle" coords="287,129,21" href="javascript:Q8(1);" target="_self" />
@@ -499,7 +498,11 @@ var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 
 <script>
   function quiz(){
-	  var username = window.prompt("[remember Later change to chinese]What's you name?")
+
+	  var username = window.prompt("請輸入你的姓名")
+	  
+	  
+	  
       var score = 0;
 
       // question 1
@@ -614,21 +617,31 @@ var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 		  case 1:
 		  case 2:
 		  case 3:
-		  notice = "Did you watch it seriously?"
+		  notice = "請再觀看教學后再試一次"
 		  break;
 		  case 4:
 		  case 5:
 		  case 6:
-		  notice = "Read it again plz"
+		  notice = "檢查一下你的答案，看看有沒有不懂的地方"
 		  break;
 		  case 10:
-		  notice = "Excellent Work!"
+		  notice = "你做得很好!"
 		  break;
 		  default:
-		  notice = "Great, you can do better"
+		  notice = "加油，繼續努力"
 	  }
 	  if(score!=10)
-	  notice = notice + "\n" + "Close the box and check the correct answer."+ "\n" + "Check the red text and correct the answers."
-	  window.alert( username + ", You score is "+ score + "/10" + "\n" + notice)
+	  notice = notice + "\n" + "你可以關閉提示框並改正答案."+ "\n" + "檢查紅色框框並修正你的答案"
+	  window.alert( username + ", 你的分數是： "+ score + "/10" + "\n" + notice)
 }
+</script>
+
+<script>
+	if(document.cookie.includes("login=true"))
+	{}
+	else
+	{
+		document.getElementById('download_page').align = "center";
+		document.getElementById('download_page').innerHTML = '你可在此登入並下載筆記作溫習或下載測驗後列印讓更多人填寫<br /><button onclick="window.location='+"'" + 'Download/login.html' + "'" + '; return false;">登入</button>'
+	}
 </script>

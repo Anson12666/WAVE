@@ -10,6 +10,7 @@
    MENU[1] = [];
    MENU[2] = [];
    MENU[3] = [];
+   MENU[4] = [];
 
    MENU[0][0] = new Option("歡迎頁面", "");                   
    MENU[0][1] = new Option("主頁", "../Homepage/index.html");
@@ -19,18 +20,23 @@
    MENU[1][1] = new Option("橫波/縱波", "../Teaching/basic/S-P wave/index.html");
    MENU[1][2] = new Option("行波/駐波", "../Teaching/basic/T-S wave/index.html");
    MENU[1][3] = new Option("反射現象", "../Teaching/phenomenon/reflection/index.html");
-   MENU[1][4] = new Option("反射應用", "../Teaching/apply/reflection/index.html");
-   MENU[1][5] = new Option("折射現象", "../Teaching/phenomenon/refraction/index.html");
-   MENU[1][6] = new Option("繞射現象", "../Teaching/phenomenon/diffraction/index.html");
-   MENU[1][7] = new Option("干涉現象", "../Teaching/phenomenon/interference/index.html");
+   MENU[1][4] = new Option("折射現象", "../Teaching/phenomenon/refraction/index.html");
+   MENU[1][5] = new Option("繞射現象", "../Teaching/phenomenon/diffraction/index.html");
+   MENU[1][6] = new Option("干涉現象", "../Teaching/phenomenon/interference/index.html");
+   
+   MENU[2][0] = new Option("波動應用", ""); 
+   MENU[2][1] = new Option("反射現象", "../Teaching/apply/reflection/index.html");
+   MENU[2][2] = new Option("折射現象", "../Teaching/apply/refraction/index.html");
+   MENU[2][3] = new Option("繞射現象", "../Teaching/apply/diffraction/index.html");
+   MENU[2][4] = new Option("干涉現象", "../Teaching/apply/interference/index.html");
 
-   MENU[2][0] = new Option("互動頁面", "");
-   MENU[2][1] = new Option("測試站", "../Test/Test.html");
-   MENU[2][2] = new Option("小游戲", "../Game/index.html");
+   MENU[3][0] = new Option("互動頁面", "");
+   MENU[3][1] = new Option("測試站", "../Test/Test.html");
+   MENU[3][2] = new Option("小游戲", "../Game/index.html");
       
-   MENU[3][0] = new Option("其他", "");
-   MENU[3][1] = new Option("意見反映", "../Opinion/Opinion.html");
-   MENU[3][2] = new Option("返回主頁", "../index.html");
+   MENU[4][0] = new Option("其他", "");
+   MENU[4][1] = new Option("意見反映", "../Opinion/Opinion.html");
+   MENU[4][2] = new Option("返回主頁", "../index.html");
 
  
    function populateMain(mainSel, subSel){
@@ -67,12 +73,12 @@
 </head>
 
 <body id="bodytxt" style="font-size:16px" onload="populateMain(document.menus.multimedia, document.menus.attribute);">
-<table width="100%" border="0">
+<table width="100%" border="0" bordercolor="#00FF00">
   <tr>
-    <td colspan="3" align="right">調整本頁文字大小 <a href="javascript:textsize('large');">【放大】</a> <a href="javascript:textsize('small');">【縮小】</a></td>
+    <td colspan="3" align="right"><p>調整本頁文字大小 <a href="javascript:textsize('large');">【放大】</a> <a href="javascript:textsize('small');">【縮小】</a></p></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><h1>網站地圖</h1></td>
+    <td colspan="3" align="center" bgcolor="#00CC66"><h1>網站地圖</h1></td>
   </tr>
   <tr>
     <td colspan="3">
@@ -88,9 +94,15 @@
   </tr>
   <tr>
     <td colspan="3"><ol>
-      <li><a href="../Homepage/index.html">主頁 </a> </li>
-      <li><a href="../../index.html">引入 </a> </li>
-      <li>課程内容</li>
+      <li>
+        <h4><a href="../Homepage/index.html">主頁 </a> </h4>
+      </li>
+      <li>
+        <h4><a href="../../index.html">引入 </a> </h4>
+      </li>
+      <li>
+        <h4>課程内容</h4>
+      </li>
     </ol></td>
   </tr>
   <tr>
@@ -110,13 +122,11 @@
       <ol start="2">
           <li><a href="../Teaching/phenomenon/index.html">波動現象</a>        </li>
           <ol>
-            <li><a href="../Teaching/phenomenon/reflection/index.html">反射現象</a>
-              <ol>
-                <li><a href="../Teaching/apply/reflection/index.html">應用</a></li>
-              </ol>
-            </li>
-            <li><a href="../Teaching/phenomenon/refraction/index.html">折射現象</a></li>
-            <li><a href="../Teaching/phenomenon/diffraction/index.html">繞射現象</a></li>
+            <li><a href="../Teaching/phenomenon/reflection/index.html">反射現象</a>            </li>
+            <li><a href="../Teaching/phenomenon/refraction/index.html">折射現象</a>            </li>
+            
+            <li><a href="../Teaching/phenomenon/diffraction/index.html">繞射現象</a>            </li>
+            
             <li><a href="../Teaching/phenomenon/interference/index.html">干涉現象</a></li>
           </ol>
         </ol>
@@ -125,9 +135,13 @@
       <ol start="3">
         <li>波動學在日常生活的應用
           <ol>
+            <li><a href="../Teaching/apply/reflection/index.html">反射現象</a></li>
+            <li><a href="../Teaching/apply/refraction/index.html">折射現象</a></li>
+            <li><a href="../Teaching/apply/diffraction/index.html">繞射現象</a></li>
+            <li><a href="../Teaching/apply/interference/index.html">干涉現象</a></li>
             <li>聲音
               <ol>
-                <li><a href="../Game/index.html">小游戲</a></li>
+                <li><a href="../Game/index.html">小游戲</a>            </li>
               </ol>
             </li>
           </ol>
@@ -137,8 +151,12 @@
   </tr>
   <tr>
     <td colspan="3"><ol start="4">
-      <li><a href="../Test/Test.html">測試站</a></li>
-      <li><a href="../Opinion/Opinion.html">意見反映</a></li>
+      <li>
+        <h4><a href="../Test/Test.html">測試站</a></h4>
+      </li>
+      <li>
+        <h4><a href="../Opinion/Opinion.html">意見反映</a></h4>
+      </li>
     </ol></td>
   </tr>
   <tr>

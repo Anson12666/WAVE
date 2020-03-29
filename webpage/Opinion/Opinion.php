@@ -28,21 +28,6 @@ else
 {
 	echo '
 		<h1 align="center">Success</h1>
-		<table align="center" width="50%" border="10" style="font-size:30px">
-		  <tr align="center">
-		    <td>本表格將於SBA報告完成后刪除</td>
-	      </tr>
-		  <tr>
-		    <td>SQL <br/>
-		      Debug website: <a href="https://hkcloudstorage.online/SBA_PHP_DEBUG/sql.php?db=hkclouds_ICTSBA_Opinion&table=Opinion&pos=0" target="new">Direct Link</a> (wait few sec)<br />
-		      Username: hkclouds_SBAOPIN<br>
-		      Password: m%al@$=X%d?p[S*+Dk<br>
-		      <a style="font-size:16px">For copy and paste:
-		      hkclouds_SBAOPIN    m%al@$=X%d?p[S*+Dk</a><br>
-		      Database: hkclouds_ICTSBA_Opinion<br>
-	        Table: Opinion</td>
-	      </tr>
-    </table>
 	';
 }
 }
