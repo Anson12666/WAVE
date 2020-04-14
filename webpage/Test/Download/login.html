@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+<title>波動學</title>
 </head>
 
 <body bgcolor="#000000">
@@ -30,7 +30,7 @@
       <script>
 	  function reg_user(){
 		  var usrname = login_form.email.value
-		  if(usrname.includes("@"))
+		  if(usrname.includes("@") && usrname.includes("."))
 		  {
 		  document.cookie = "usrname=" + usrname
 		  window.alert(usrname + '，注冊成功，請重新登入');location.reload(false);
