@@ -10,8 +10,8 @@
 	width: 400px;
 	height: 240px;
 	z-index: 1;
-	left: 65px;
-	top: 41%;
+	left: 70px;
+	top: 65%;
 }
 </style>
 <link href="../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
@@ -192,7 +192,7 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
 <form action="javascript:quiz();" id="quiz">
 <table width="96%" border="0" align="center" cellspacing="15" bgcolor="white" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
   <tr>
-    <td height="200" colspan="3" bgcolor="#33FFCC"><h1 align="center"><a name="TOP" id="TOP"></a>測試站</h1></td>
+    <td height="200" colspan="3" bgcolor="#FFFFFF"><h1 align="center"><a name="TOP" id="TOP"></a><img src="Heading.jpg" width="80%" alt="橫幅" /></h1></td>
   </tr>
   <tr>
     <td colspan="3" align="left" id="download_page">你可在此選擇下載筆記或下載測驗後列印讓更多人填寫
@@ -221,19 +221,19 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
         <table width="100%">
           <tr>
             <td width="25%"><label>
-              <input type="radio" name="Q1MC" value="A" id="Q1MC_0" />
+              <input type="radio" name="Q1MC" value="A" id="Q1_0" />
               粒子的振幅 = 波的振幅</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q1MC" value="B" id="Q1MC_1" />
+              <input type="radio" name="Q1MC" value="B" id="Q1_1" />
               粒子的頻率 = 波的頻率</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q1MC" value="C" id="Q1MC_2" />
+              <input type="radio" name="Q1MC" value="C" id="Q1_2" />
               粒子的速率 = 波的速率</label></td>
 
             <td width="25%"><label>
-              <input type="radio" name="Q1MC" value="D" id="Q1MC_3" />
+              <input type="radio" name="Q1MC" value="D" id="Q1_3" />
               粒子的周期 = 波的周期</label></td>
           </tr>
         </table>
@@ -271,7 +271,7 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
     他向一個距離發射器1000cm的障礙物發射一個5ms<sup>-1</sup>的波</p>
       <p>問：他需要多少秒才能接收到反射的波。<span id="sprytextfield1">
         <label for="Q2"></label>
-        <input name="Q3" type="text" id="Q3" size="3" maxlength="2" />
+        <input name="Q3" type="text" id="Q3" size="6" maxlength="5" />
       <span class="textfieldRequiredMsg">需要有一個值。</span></span>秒</p></td>
   </tr>
    <tr>
@@ -280,7 +280,7 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
     雷達發出超聲波信號，200秒後收到回音，已知超聲波的頻率是20000Hz，波長為0.017米</p>
       <p>距離：<span id="sprytextfield2">
         <label for="Q4"></label>
-        <input name="Q4" type="text" id="Q4" size="4" maxlength="3" />
+        <input name="Q4" type="text" id="Q4" size="6" maxlength="5" />
       <span class="textfieldRequiredMsg">需要有一個值。</span></span>公里</p></td>
   </tr>
     <tr>
@@ -390,9 +390,9 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
                 <a href="Question_Elements/Q (9)/Guitar.mid">[下載]</a></td>
               <td valign="middle"><p>聲音性質的不同：<span id="sprycheckbox">
                 <input type="checkbox" name="Q9i" id="Q9i0" />
-                <label for="Q9i2">音調</label>
+                <label for="Q9i0">音調</label>
                 <input type="checkbox" name="Q9i" id="Q9i1" />
-                <label for="Q9i2">音品</label>
+                <label for="Q9i1">音品</label>
                 <input type="checkbox" name="Q9i" id="Q9i2" />
                 <label for="Q9i2">響度</label>
                 <span class="checkboxRequiredMsg">請進行選取。</span></span></p></td>
@@ -482,7 +482,7 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
   <area shape="circle" coords="412,130,21" href="javascript:Q8(2);" target="_self" />
 </map>
 <script type="text/javascript">
-var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0"});
+var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0", validateOn:["change"]});
 
 var spryradio1 = new Spry.Widget.ValidationRadio("Q1");
 
@@ -502,85 +502,83 @@ var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 
 
 <script>
+var score = 0;
+    function checkquiz(){
+        score = 0
+        var Question
+        for(Question = 1; Question <= 8; Question++){
+                //find
+                switch(Question){
+                    case 1:
+                        var Type = "MC"
+                        var Answer = "2"
+                        break;
+                    case 2:
+                        var Type = "MC"
+                        var Answer = "0"
+                        break;
+                    case 3:
+                        var Type = "SQ"
+                        var Answer = "1"
+                        break;
+                    case 4:
+                        var Type = "SQ"
+                        var Answer = "34"
+                        break;
+                    case 5:
+                        var Type = "MC"
+                        var Answer = "3"
+                        break;
+                    case 6:
+                        var Type = "MC"
+                        var Answer = "1"
+                        break;
+                    case 7:
+                        var Type = "MC"
+                        var Answer = "1"
+                        break;
+                    case 8:
+                        var Type = "SQ"
+                        var Answer = "2"
+                        break;
+                }
+
+
+                //Checking
+                switch(Type){
+                    case "MC":
+                        if (document.getElementById("Q" + Question + "_" + Answer).checked == true) {  
+                             document.getElementById("checkQ" + Question).bgColor = ""   // display "correct"
+                             score = score + 1;                                  // increment score
+                          }
+                          else {
+                             document.getElementById("checkQ" + Question).bgColor = "red"     // display "wrong"
+                          }
+                        break;
+                    case "SQ":
+                          if (document.getElementById("Q" + Question).value == Answer) {                 		
+                             document.getElementById("checkQ" + Question).bgColor = ""   // display "correct"
+                             score = score + 1;                                  // increment score
+                          }
+                          else {
+                             document.getElementById("checkQ" + Question).bgColor = "red"     // display "wrong"
+                          }
+                        break;
+                }
+            }
+        return score;
+    }
+    
+    
+    
+    
   function quiz(){
 
 	  var username = window.prompt("請輸入你的姓名")
 	  
-	  
-	  
-      var score = 0;
 
-      // question 1
-      if (document.getElementById('Q1MC_2').checked == true) {                 		
-         document.getElementById('checkQ1').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ1').bgColor = "red"     // display "wrong"
-      }
-
-      // question 2
-      if (document.getElementById('Q2_0').checked == true) {                 		
-         document.getElementById('checkQ2').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ2').bgColor = "red"     // display "wrong"
-      }
-
-      // question 3
-      if (document.getElementById('Q3').value == 1) {                 		
-         document.getElementById('checkQ3').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ3').bgColor = "red"     // display "wrong"
-      }
-	  
-      // question 4
-      if (document.getElementById('Q4').value == 34) {                 		
-         document.getElementById('checkQ4').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ4').bgColor = "red"     // display "wrong"
-      }
-
-      // question 5
-      if (document.getElementById('Q5_3').checked == true) {                 		
-         document.getElementById('checkQ5').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ5').bgColor = "red"     // display "wrong"
-      }
-
-      // question 6
-      if (document.getElementById('Q6_1').checked == true) {                 		
-         document.getElementById('checkQ6').bgColor = ""  // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ6').bgColor = "red"     // display "wrong"
-      }
-	  
-        // question 7
-      if (document.getElementById('Q7_1').checked == true) {                 		
-         document.getElementById('checkQ7').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ7').bgColor = "red"     // display "wrong"
-      }
-
-      // question 8
-      if (document.getElementById('Q8').value == 2) {                 		
-         document.getElementById('checkQ8').bgColor = ""   // display "correct"
-		 score = score + 1;                                  // increment score
-      }
-      else {
-         document.getElementById('checkQ8').bgColor = "red"     // display "wrong"
-      }
+      // question 1-8
+        score = checkquiz();
 
       // question 9i
       if (document.getElementById('Q9i0').checked == 1 && document.getElementById('Q9i1').checked == 1 && document.getElementById('Q9i2').checked == 0) {                 		
@@ -637,7 +635,7 @@ var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 	  }
 	  if(score!=10)
 	  notice = notice + "\n" + "你可以關閉提示框並改正答案."+ "\n" + "檢查紅色框框並修正你的答案"
-	  window.alert( username + ", 你的分數是： "+ score + "/10" + "\n" + notice)
+	  window.alert( username + "    你的分數是： "+ score + "/10" + "\n" + notice)
 }
 </script>
 

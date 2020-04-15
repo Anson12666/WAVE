@@ -44,11 +44,11 @@
 var code;
 function createCode() {
   code = "";
-  var codeLength = 6; //驗證碼的長度
+  var codeLength = 5; //驗證碼的長度
   var checkCode = document.getElementById("checkCode");
   var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-       'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-       'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+       0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'k','l','m','n','o','p',0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+       'A','B','C','D','E','F','G','H','I','J',0, 1, 2, 3, 4, 5, 6,'Q','R','S','T','U','V','W','X','Y','Z');
   for (var index = 0; index < codeLength; index++) {
     var charNum = Math.floor(Math.random() * 52);
     code += codeChars[charNum];
@@ -118,22 +118,22 @@ document.getElementById('Submit').value = 'Incorrect Code';
 
 <body bgcolor="lightblue">
     <form id="form2" name="form2" method="post" action="Opinion.php">
-	<table width="96%" border="0" align="center" cellspacing="0" bgcolor="white" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
+	<table width="96%" border="0" align="center" cellspacing="0" background="Background.jpg" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
 <tr>
   <td>
-    <table width="40%" border="0" align="center" cellspacing="30">
+    <table width="40%" border="0" align="center" cellspacing="30" bgcolor="white" style="margin-top: 11%; margin-left:30%; margin-right:30%; margin-bottom:11%">
     <tr>
       <td colspan="3" align="center"><h1 id="Title_Txt">用戶回饋</h1></td>
     </tr>
     <tr>
-      <td width="30%" id="Name_Label">姓名：</td>
+      <td width="30%" id="Name_Label">姓名：*</td>
       <td><span id="sprytextfield1">
         <label for="Name"></label>
         <input type="text" name="Name" id="Name" style="width:100%"/>
       <span class="textfieldRequiredMsg" id="spry1">需要有一個值。</span></span></td>
     </tr>
     <tr>
-      <td id="Age_Label">年紀：</td>
+      <td id="Age_Label">年紀：*</td>
       <td><label for="Age"></label>
         <span id="spryselect1">
         <label for="Age2"></label>
@@ -149,20 +149,20 @@ document.getElementById('Submit').value = 'Incorrect Code';
       <span class="selectInvalidMsg" id="spry2">請選取有效的項目。</span><span class="selectRequiredMsg" id="spry3">請選取項目。</span></span></td>
     </tr>
     <tr>
-      <td id="Known_Label">你從哪裏得識此網站:</td>
+      <td id="Known_Label">你從哪裏得識此網站:*</td>
       <td><span id="sprycheckbox1">
       <input name="Known" type="checkbox" id="Known" value="Google" />
-      <label for="Known">Google</label>
+      <label>Google</label>
       <input name="Known" type="checkbox" id="Known" value="Yahoo" />
-      <label for="Known">Yahoo</label>
+      <label>Yahoo</label>
       <input name="Known" type="checkbox" id="Known" value="Bing" />
-      <label for="Known">Bing</label>
+      <label>Bing</label>
       <input name="Known" type="checkbox" id="Known" value="Friends" />
-      <label for="Known">朋友推薦</label>
+      <label>朋友推薦</label>
       <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span> </td>
     </tr>
     <tr>
-      <td id="Rank_Label">網頁評分：<br />
+      <td id="Rank_Label">網頁評分：*<br />
 (一分最低五分最高)</td>
       <td><div id="spryradio1">
         <table width="100%">
@@ -188,10 +188,10 @@ document.getElementById('Submit').value = 'Incorrect Code';
     </tr>
     <tr>
       <td id="Opinion_Label">其他意見：</td>
-      <td><span id="sprytextarea1">
-        <label for="Opinion"></label>
-        <textarea style="width:100%" name="Opinion" id="Opinion" cols="45" rows="5"></textarea>
-      <span class="textareaRequiredMsg" id="spry4">需要有一個值。</span></span></td>
+      <td align="right"><span id="sprytextarea1">
+      <label for="Opinion"></label>
+      <textarea style="width:100%" name="Opinion" id="Opinion" cols="45" rows="5"></textarea>
+      <span id="countsprytextarea1">&nbsp;</span><span class="textareaMaxCharsMsg">已超出字元數目的最大值。</span></span></td>
     </tr>
     <tr align="center">
 
@@ -200,12 +200,22 @@ document.getElementById('Submit').value = 'Incorrect Code';
           <tr>
             <td width="50%" align="right">
                 <label for="inputCode" id="codetext">驗證碼：</label>
-                <input type="text" id="inputCode" style="height:100" onkeyup="javascript:checktext();"/>
+                <input type="text" id="inputCode" style="height:100" onkeyup="javascript:checktext();" maxlength="5"/>
             </td>
             <td align="left">
                 <span class="code" id="checkCode"></span>
                 <span id="text_show"></span>
-            </td>
+                <script>
+					var audio1 = document.createElement("audio");
+
+					function MM_callJS(jsStr) { //v2.0
+					  audio1.src = 'https://www.ispeech.org/p/generic/getaudio?action=convert&pitch=100&voice=usenglishfemale&speed=-5&text=' + document.getElementById('checkCode').innerHTML.toUpperCase() +'&bust=1586941731200'
+					  window.alert('有可能需要等待一段時間才能聽到錄音,請輸入錄音聽到的頭六個字')
+					  return eval(jsStr)
+					}
+				</script>
+			<a href="javascript:MM_callJS('audio1.play();')">||<img src="speaker.png" width="20" height="21" alt="Listen" />點擊聆聽驗證碼</a>
+		</td>
           </tr>
         </table>
 
@@ -225,7 +235,7 @@ document.getElementById('Submit').value = 'Incorrect Code';
 
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
-var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {counterType:"chars_remaining", counterId:"countsprytextarea1", maxChars:256, isRequired:false});
 var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false, minSelections:1});
 var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0", validateOn:["change"]});
 var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
