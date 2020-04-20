@@ -160,7 +160,7 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
   	  <p align="center">你正在使用的瀏覽器：
 	  <script>document.write(window.navigator.userAgent)
       </script></p>
-  	  <p align="center"><img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4nqTh" alt="Edge 瀏覽器" width="75" /></p>
+  	  <p align="center"><a href="https://www.microsoft.com/en-us/edge" target="new"><img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4nqTh" alt="Edge 瀏覽器" width="75" /></a></p>
     <p align="center" id="Pref2">建議螢幕解像度: 1920 x 1080</p></td>
   </tr>
 </table>
@@ -204,20 +204,18 @@ function translate(setlang,id,eng,simp){
 
 
 <script>
-function getCookie(cname) {var name = cname + "=";var decodedCookie = decodeURIComponent(document.cookie);var ca = decodedCookie.split(';');for(var i = 0; i <ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name) == 0) {return c.substring(name.length, c.length);}}return "";}
-
 var choose_player_txt1 = '<a href="javascript:playlocal();">本網頁内串流(For Mobile Devices)</a>'
 var choose_player_txt2 = '<a href="javascript:playyoutube();">Youtube播放</a>'
 var choose_player_txt3 = '<a href="javascript:playnothing();">關閉影片</a>';
 	
-	if(getCookie("playmethod") === "local") {
+	if(document.cookie.includes("playmethod=local")) {
 		document.getElementById('media').innerHTML = '<video width=90% src="Video_Loader.m3u8" controls autoplay></video>'
 		document.getElementById('left_control').innerHTML = choose_player_txt2
 		document.getElementById('right_control').innerHTML = choose_player_txt3
 	}
 	else{
-		if(getCookie("playmethod") === "youtube"){
-		document.getElementById('media').innerHTML = '<iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/Or2spONud2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+		if(document.cookie.includes("playmethod=youtube")){
+		document.getElementById('media').innerHTML = '<iframe width="720" height="408" src="https://www.youtube-nocookie.com/embed/Or2spONud2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 		document.getElementById('left_control').innerHTML = choose_player_txt1
 		document.getElementById('right_control').innerHTML = choose_player_txt3
 		}

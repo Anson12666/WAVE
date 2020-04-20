@@ -1,15 +1,9 @@
 ﻿遞交網址： http://ictsba5m03.epizy.com
 網頁壓縮檔： https://backup.hkcloudstorage.online
 ###所有原圖、原片於各項目的Elements内的Original子資料夾内
-完成5頁網頁：
-1.	/index.html
-2.	/Resources/popup.html
-2.	/webpage/index.html
-2.1	/webpage/universial_topframe.html
-2.2	/webpage/Homepage/index.html
-3.	/webpage/Game/Game.html
-4.	/webpage/Opinion/Opinion.html
-5.	/webpage/Essentials/PureTextMap.html
+
+Username: hkclouds_SBAOPIN
+Password: m%al@$=X%d?p[S*+Dk
 *-------------------**-------------------**-------------------*
 *-------------------**-------------------**-------------------*
 *-------------------**-------------------**-------------------*
@@ -206,7 +200,7 @@ Make Test Word
 (3)make bg color
 9.波的現象
 (1)change all txt to btn
-http://jirox.net/AsButtonGen/AsButtonGen.swf
+8
 
 
 29/3/2020 big pic changes
@@ -228,3 +222,7 @@ Wave_intro.jpg
 
 15/4
 -https://www.canva.com/design/DAD5gylt4mw/LC_clFTWgw2bfoxHdwHn1Q/edit?utm_source=onboarding
+http://jirox.net/AsButtonGen/AsButtonGen.swf
+
+18/4/2020
+pic(cover intro index cover)  -effect(H&S1)

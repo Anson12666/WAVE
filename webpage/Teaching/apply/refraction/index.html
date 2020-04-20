@@ -3,9 +3,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>波動學</title>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
 </head>
 
-<body bgcolor="#ffaf40">
+<body bgcolor="#ffaf40" onload="MM_preloadImages('Elements/diamond_light.png')">
 <table width="96%" border="0" align="center" cellspacing="15" bgcolor="white" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
   <tr>
     <td><h1 align="center">折射</h1>
@@ -15,20 +39,38 @@
     <td><h2>引入</h2></td>
   </tr>
   <tr>
-    <td align="left" valign="middle"><p><img src="Elements/Intro.png" alt="不同角度的折射" width="90%" /></p>
-    <p>從(a)可見，當光綫由玻璃傳播到空氣時會<strong>發生折射</strong>時，光綫會<strong>偏離法綫</strong>。</p>
-    <p>從(b)可見當光綫的<strong>入射角改變</strong>，<strong>折射角也會發生改變</strong>。</p>
-    <p>可是當折射角大於90°會發生什麽呢？</p>
-    <p>科學家發現所有光綫將<strong>不會發生折射</strong>，會全部<strong>變爲反射</strong>，這就是物理學上的<em><strong>全内反射</strong></em>。</p></td>
+    <td align="left" valign="middle"><table width="100%" border="0" cellspacing="30">
+      <tr>
+        <td width="40%"><img src="Elements/a.png" width="100%" alt="偏離法綫" /></td>
+        <td>從左圖可見，當光綫由玻璃傳播到空氣時會<strong>發生折射</strong>時，光綫會<strong>偏離法綫</strong>。</td>
+      </tr>
+      <tr>
+        <td><img src="Elements/b.png" width="100%" alt="折射角改變" /></td>
+        <td>從左圖可見當光綫的<strong>入射角改變</strong>，<strong>折射角也會發生改變</strong>。</td>
+      </tr>
+      <tr>
+        <td colspan="2"><p>可是當折射角大於90°會發生什麽呢？</p>
+          <p>科學家發現所有光綫將<strong>不會發生折射</strong>，會全部<strong>變爲反射</strong>，這就是物理學上的<em><strong>全内反射</strong></em>。（如下圖）</p></td>
+        </tr>
+      <tr>
+        <td colspan="2" align="center"><img src="Elements/c.png" width="40%" alt="全内反射" /></td>
+        </tr>
+    </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p></td>
   </tr>
   <tr>
     <td align="left" valign="middle"><h2>全内反射的應用</h2></td>
   </tr>
   <tr>
     <td align="left" valign="middle"><p>全内反射的應用非常廣，下面將會以鑽石作講解。</p>
-    <p><img src="Elements/diamond.png" alt="鑽石" width="300" /></p>
-    <p>鑽石之所以非常閃耀是因爲光綫會直接反射到人們的眼睛裏。以下為光進入鑽石後的光綫圖</p>
-    <p><img src="Elements/diamond_light.png" alt="鑽石光綫圖" width="300" /></p></td>
+    <p><img src="Elements/diamond.png" alt="鑽石" name="diam" width="300" id="diam" onmouseover="MM_swapImage('diam','','Elements/diamond_light.png',1)" onmouseout="MM_swapImgRestore()" /></p>
+    <p>鑽石之所以非常閃耀是因爲光綫會直接反射到人們的眼睛裏。</p>
+    <p>將鼠標移至圖片查看光進入鑽石後的光綫圖！</p></td>
   </tr>
   <tr>
     <td align="left" valign="middle"><p>正是因爲這個原因，鑽石才可以閃閃發光，</p>

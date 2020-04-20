@@ -19,8 +19,28 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
 }
 </script>
 
-</head><body bgcolor="#000000" style="color:white">
-<h1 align="center" id="Title">波動學</h1>
+<SCRIPT language="JavaScript">
+function play(onLoadv) {
+
+		if( localStorage.getItem('play_stat') != 'playing'){
+			embed = document.createElement("embed");
+			embed.setAttribute("src", "Essentials/bgm.mp3");
+			embed.setAttribute("hidden", true);
+			embed.setAttribute("autostart", true);
+			document.body.appendChild(embed);
+			localStorage.setItem('play_stat', 'playing');
+		}
+		else
+		{
+			localStorage.removeItem('play_stat');
+			location.reload(false)
+		}
+
+}
+</SCRIPT>
+
+</head><body bgcolor="#000000" style="color:white" onload="localStorage.removeItem('play_stat');">
+<h1 align="center" id="Title"><a href="index.html" target="_parent">波動學</a></h1>
 <table width="95%" border="1" align="center">
   <tr>
     <td>
@@ -72,14 +92,24 @@ window.alert(y);
     <button onclick="javascript:debug();"> show debug msg</button>
 </td></tr>
 </table>
-<table style="position:absolute; bottom:1%; width:92%" width="100%" cellspacing="20" bgcolor="#666666">
+<table id="contact_label" style="position:absolute; bottom:1%; width:92%" width="100%" cellspacing="10" bgcolor="#666666">
+
 <tr align="center">
-  <td colspan="3" id="contact_label">作者聯絡方式</td>
+  <td colspan="3">
+  <table width="100%" border="0" cellspacing="10" bgcolor="#666666">
+    <tr>
+      <td colspan="3" align="center">作者聯絡方式</td>
+    </tr>
+    <tr align="center">
+        <td width="33%" bgcolor="#FFFFFF"><a href="https://www.facebook.com/Anson.cheng03" target="new"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="前往Facebook" width="100%" border="0"/></a></td>
+        <td width="33%"><a href="https://www.instagram.com/heart_creat/" target="new"><img src="https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw" alt="前往Instagram" width="100%"/></a></td>
+        <td width="33%"><a href="http://t.me/AnsonCheng03" target="new"><img src="https://store-images.s-microsoft.com/image/apps.38955.9007199266722211.565d6b3f-07d3-47a7-adfa-2a2f2e2cc6f0.6dac87a1-75b5-4c5f-b7a9-3afb037201c9?mode=scale&q=90&h=300&w=300" alt="前往Telegram" width="100%"/></a></td>
+    </tr>
+  </table>
+    </td>
   </tr>
 <tr align="center">
-<td width="33%" bgcolor="#FFFFFF"><a href="https://www.facebook.com/Anson.cheng03" target="new"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="前往Facebook" width="100%" border="0"/></a></td>
-<td width="33%"><a href="https://www.instagram.com/heart_creat/" target="new"><img src="https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw" alt="前往Instagram" width="100%"/></a></td>
-<td width="33%"><a href="http://t.me/AnsonCheng03" target="new"><img src="https://store-images.s-microsoft.com/image/apps.38955.9007199266722211.565d6b3f-07d3-47a7-adfa-2a2f2e2cc6f0.6dac87a1-75b5-4c5f-b7a9-3afb037201c9?mode=scale&q=90&h=300&w=300" alt="前往Telegram" width="100%"/></a></td>
+  <td colspan="3"><img src="Essentials/play_bgmusic.png" alt="music_player" name="not" width="100%" id="not" onClick="play();" /></td>
 </tr>
 </table>
 </body>
