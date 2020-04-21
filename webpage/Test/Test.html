@@ -470,17 +470,19 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
   <tr>
     <td colspan="3" align="center" valign="middle"><input type="submit" name="Submit" id="Submit" value="Submit" /></td>
   </tr>
-  <tr>
-    <td colspan="3" align="center" valign="middle"><a href="#TOP">【TOP】</a></td>
-  </tr>
-
-</table>
+  </table>
   </form>
 
-<map name="Map" id="Map">
-  <area shape="circle" coords="287,129,21" href="javascript:Q8(1);" target="_self" />
-  <area shape="circle" coords="412,130,21" href="javascript:Q8(2);" target="_self" />
-</map>
+<div align="center">
+  <p>
+    <map name="Map" id="Map">
+      <area shape="circle" coords="287,129,21" href="javascript:Q8(1);" target="_self" />
+      <area shape="circle" coords="412,130,21" href="javascript:Q8(2);" target="_self" />
+    </map>
+  <a href="#TOP"><img src="top_btn.png" width="100" height="60" alt="TOP" /></a></p>
+  <p><br />
+  </p>
+</div>
 <script type="text/javascript">
 var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0", validateOn:["change"]});
 
@@ -496,7 +498,7 @@ var spryradio8 = new Spry.Widget.ValidationRadio("Q7");
 var spryradio4 = new Spry.Widget.ValidationRadio("spryradio4");
 var sprycheckbox2 = new Spry.Widget.ValidationCheckbox("sprycheckbox2");
 var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
-</script>
+  </script>
 </body>
 </html>
 
