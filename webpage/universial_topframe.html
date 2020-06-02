@@ -153,8 +153,8 @@ function translate(setlang,id,eng,simp){
 		translate(false,'Map','<a href="javascript:translate(9);">Pure Text Map</a>','<a href="javascript:translate(9);">网页地图</a>')
 		translate(false,'contact_label','','')
 
-if(location.hostname != "beta.ictsba.hkcloudstorage.online")
-{
+if(location.hostname.includes("beta"))
+{}else{
 		document.getElementById('debug').innerHTML = '';
 }
 

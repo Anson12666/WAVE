@@ -23,8 +23,8 @@ body {
 }
 </style>
 <script>
-function playlocal() {document.cookie = "playmethod=local";parent.location.reload(false);};
-function playyoutube() {document.cookie = "playmethod=youtube";parent.location.reload(false);};
+function playlocal() {document.cookie = "playmethod=local";location.reload(false);};
+function playyoutube() {document.cookie = "playmethod=youtube";location.reload(false);};
 function playnothing() {document.cookie = "playmethod=music";parent.location.reload(false);};
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
@@ -71,26 +71,13 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
     <td align="center" valign="bottom" id="video_td" height="440"><table width="100%" border="0">
       <tr align="center">
         <td height="100%" colspan="3" valign="top" id="media">
-        <table width="100%" border="0" cellspacing="30">
-
-          <tr>
-            <td align="center" valign="middle" ><img src="Elements/Wave.gif" alt="波動示意圖" width="64%"/></td>
-          </tr>
-
-          <tr>
-            <td height="50" align="center" valign="middle">
-            <audio id="Test_Audio" controls style="width:40%"；> 
-        <source src="Audio/audio.mp3" type="audio/mpeg"> 
-    </audio> 
-            </td>
-          </tr>
-
-        </table></td>
+        <iframe frameborder="0" scrolling="no" width="720" height="410" src="iFrame/GIF.html" id="media_source"></iframe>
+        </td>
         </tr>
-      <tr align="center">
-        <td width="33%">影片播放方式：&nbsp;</td>
-        <td width="33%" id="left_control"><a href="javascript:playlocal();">本網頁内串流(For Mobile Devices)</a></td>
-        <td width="33%" id="right_control"><a href="javascript:playyoutube();">Youtube播放</a></td>
+      <tr align="center" >
+        <td width="33%" height="58" style="background-color: lightgreen; border-radius: 30px; border: thin;">影片播放方式：&nbsp;</td>
+        <td width="33%" id="left_control" style="background-color: lightyellow; border-radius: 30px; border: thin;"><a href="javascript:playlocal();" style="text-decoration:none">本網頁内串流</a></td>
+        <td width="33%" id="right_control" style="background-color: lightyellow; border-radius: 30px; border: thin; background-size:50%"><a href="javascript:playyoutube();" style="text-decoration:none">Youtube播放</a></td>
       </tr>
 </table></td>
     <td width="20%" align="center" valign="bottom" id="right_td"><p>&nbsp;</p>
@@ -134,13 +121,13 @@ function MM_changeProp(objId,x,theProp,theValue) { //v9.0
           </tr>          
         </table>
       </div>      
-      <a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="95%" alt="點擊這裏開始" /></a>
+      <a href="../Teaching/basic/index.html"><img src="Elements/Start_learning_btn.png" width="95%" alt="點擊這裏開始" title="點擊這裏開始" /></a>
     
     
  </td>
   </tr>
   <tr>
-    <td height="460" colspan="2" >
+    <td height="414" colspan="2" >
       
       <table width="100%" border="1" cellspacing="10" id="content">
         <tr>
@@ -204,18 +191,18 @@ function translate(setlang,id,eng,simp){
 
 
 <script>
-var choose_player_txt1 = '<a href="javascript:playlocal();">本網頁内串流(For Mobile Devices)</a>'
-var choose_player_txt2 = '<a href="javascript:playyoutube();">Youtube播放</a>'
-var choose_player_txt3 = '<a href="javascript:playnothing();">關閉影片</a>';
+var choose_player_txt1 = '<a href="javascript:playlocal();" style="text-decoration:none">本網頁内串流</a>'
+var choose_player_txt2 = '<a href="javascript:playyoutube();" style="text-decoration:none">Youtube播放</a>'
+var choose_player_txt3 = '<a href="javascript:playnothing();" style="text-decoration:none">關閉影片</a>';
 	
 	if(document.cookie.includes("playmethod=local")) {
-		document.getElementById('media').innerHTML = '<video width=90% src="Video_Loader.m3u8" controls autoplay></video>'
+		document.getElementById('media_source').src = 'iFrame/localvideo.html'
 		document.getElementById('left_control').innerHTML = choose_player_txt2
 		document.getElementById('right_control').innerHTML = choose_player_txt3
 	}
 	else{
 		if(document.cookie.includes("playmethod=youtube")){
-		document.getElementById('media').innerHTML = '<iframe width="720" height="408" src="https://www.youtube-nocookie.com/embed/Or2spONud2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+		document.getElementById('media_source').src = 'iFrame/youtube.html'
 		document.getElementById('left_control').innerHTML = choose_player_txt1
 		document.getElementById('right_control').innerHTML = choose_player_txt3
 		}

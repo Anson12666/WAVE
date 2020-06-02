@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="autoredirect" http-equiv="refresh" content="600;url=quit.html" />
 <title>波動學</title>
 
 <style type="text/css">
@@ -11,7 +12,7 @@
 	height: 240px;
 	z-index: 1;
 	left: 70px;
-	top: 68%;
+	top: 70%;
 }
 </style>
 <link href="../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
@@ -210,7 +211,31 @@ function MM_jumpMenuGo(objId,targ,restore){ //v9.0
   
 
   <tr>
-    <td height="338" colspan="2" valign="top"><p>建議你在15分鐘内完成測驗，你也可以自定更短的時間挑戰自己。<br />
+    <td height="338" colspan="2" valign="top"><p>為防止作弊，本網頁會在
+        <input name="dmstimer" type="text" id="dmstimer" value="10分鐘" size="7" maxlength="6" readonly="readonly" align="middle"/>
+        <script>
+var countDownDate = new Date().getTime()+ 600 *1000;
+
+// Update the count down every 1 second
+setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  // Find the distance between now and the count down date
+  var minutes = Math.floor(((countDownDate - now) % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor(((countDownDate - now) % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  if(minutes>=0||seconds>=0)
+  document.getElementById('dmstimer').value = minutes + "分鐘 " + seconds + "秒 ";
+
+
+}, 1000);
+	</script>
+    
+    
+    後關閉，若你不能完成測驗，你將會被强制退出。<br />
+        建議你在5分鐘内完成測驗，你也可以自定更短的時間挑戰自己。<br />
       爲方便查看時間，你可以拖動以下計時器。（設定計時器可能需要雙擊）</p></td>
     <td width="340" height="340" valign="top"><img src="../Teaching/Summary.JPG" alt="SUMMARY" height="100%"/></td>
   </tr>
@@ -506,6 +531,7 @@ var sprycheckbox3 = new Spry.Widget.ValidationCheckbox("sprycheckbox3");
 <script>
 var score = 0;
     function checkquiz(){
+		
         score = 0
         var Question
         for(Question = 1; Question <= 8; Question++){

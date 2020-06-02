@@ -17,7 +17,7 @@ $Known = $conn->real_escape_string($_POST['Known']);
 $Rank = $conn->real_escape_string($_POST['Rank']);
 $Opinion = $conn->real_escape_string($_POST['Opinion']);
 $Submit = $conn->real_escape_string($_POST['Submit']);
-if($Submit == "Submit")
+if($Submit == "提交")
 {
 $sql="INSERT INTO `Opinion` (`Name`, `Age`, `Known`, `Rank`, `Opinion`, `Submit`) VALUES ('".$Name."','".$Age."','".$Known."','".$Rank."','".$Opinion."','".$Submit."')";
 
@@ -27,9 +27,14 @@ die('SQL server Error [' . $conn->error . ']');
 else
 {
 	echo '
-		<h1 align="center">Success</h1>
+		<h1 align="center">成功提交數據</h1>
 	';
 }
+}
+else{
+		echo '
+		<h1 align="center">請先填寫表格</h1>
+		';
 }
 ?>
 
