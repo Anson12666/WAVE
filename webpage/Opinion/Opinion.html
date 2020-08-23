@@ -1,273 +1,553 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>波動學</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>波動學</title>
 
-<style type="text/css">
-</style>
-<link href="../../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
-<link href="../../SpryAssets/SpryValidationCheckbox.css" rel="stylesheet" type="text/css" />
-<link href="../../SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
-<link href="../../SpryAssets/SpryValidationRadio.css" rel="stylesheet" type="text/css" />
-<script src="../../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
-<script src="../../SpryAssets/SpryValidationCheckbox.js" type="text/javascript"></script>
-<script src="../../SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
-<script src="../../SpryAssets/SpryValidationRadio.js" type="text/javascript"></script>
+    <style type="text/css"></style>
+    <link
+      href="../../SpryAssets/SpryValidationTextarea.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../../SpryAssets/SpryValidationCheckbox.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../../SpryAssets/SpryValidationSelect.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../../SpryAssets/SpryValidationRadio.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="../../SpryAssets/SpryValidationTextarea.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../SpryAssets/SpryValidationCheckbox.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../SpryAssets/SpryValidationSelect.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../SpryAssets/SpryValidationRadio.js"
+      type="text/javascript"
+    ></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://www.google.com/recaptcha/api.js?render=6LcKGOAUAAAAAIMjiEGQEzLAMSf02Hjl6OnllJwM"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcKGOAUAAAAAIMjiEGQEzLAMSf02Hjl6OnllJwM"></script>
 
+    <style>
+      .code {
+        font-style: italic;
+        background-color: #f5f5f5;
+        color: blue;
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bolder;
+        cursor: pointer;
+        padding: 0 5px;
+        text-align: center;
+      }
+      #inputCode {
+        width: 100px;
+        height: 30px;
+      }
+    </style>
 
-<style>
-.code {
-  font-style: italic;
-  background-color: #f5f5f5;
-  color: blue;
-  font-size: 30px;
-  letter-spacing: 3px;
-  font-weight: bolder;
-  cursor: pointer;
-  padding: 0 5px;
-  text-align: center;
-}
-#inputCode {
-  width: 100px;
-  height: 30px;
-}
-</style>
+    <script>
+      var code;
+      function createCode() {
+        code = "";
+        var codeLength = 5; //驗證碼的長度
+        var checkCode = document.getElementById("checkCode");
+        var codeChars = new Array(
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        );
+        for (var index = 0; index < codeLength; index++) {
+          var charNum = Math.floor(Math.random() * 52);
+          code += codeChars[charNum];
+        }
+        if (checkCode) {
+          checkCode.className = "code";
+          checkCode.innerHTML = code;
+        }
+      }
+      function validateCode() {
+        var inputCode = document.getElementById("inputCode").value;
+        var textShow = document.getElementById("text_show");
+        if (inputCode.length <= 0) {
+          return false;
+        } else if (inputCode.toUpperCase() != code.toUpperCase()) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+      function checkCode() {
+        var btn = document.getElementById("Submit");
+        btn.onclick = function () {
+          validateCode();
+        };
+      }
+      window.onload = function () {
+        checkCode();
+        createCode();
+        document.getElementById("checkCode").onclick = function () {
+          createCode();
+        };
+        inputCode.onclick = function () {
+          validateCode();
+        };
+      };
 
-<script>
-var code;
-function createCode() {
-  code = "";
-  var codeLength = 5; //驗證碼的長度
-  var checkCode = document.getElementById("checkCode");
-  var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-       0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'k','l','m','n','o','p',0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-       'A','B','C','D','E','F','G','H','I','J',0, 1, 2, 3, 4, 5, 6,'Q','R','S','T','U','V','W','X','Y','Z');
-  for (var index = 0; index < codeLength; index++) {
-    var charNum = Math.floor(Math.random() * 52);
-    code += codeChars[charNum];
-  }
-  if (checkCode) {
-    checkCode.className = "code";
-    checkCode.innerHTML = code;
-  }
-}
-function validateCode() {
-  var inputCode = document.getElementById("inputCode").value;
-  var textShow = document.getElementById("text_show")
-  if (inputCode.length <= 0) {
-    
-	return false;
-  } else if (inputCode.toUpperCase() != code.toUpperCase()) {
-    
-    
-	return false;
-  } else {
-	    
-    
-	return true;
-  }
-}
-function checkCode(){
-  var btn = document.getElementById("Submit");
-  btn.onclick=function(){
-    validateCode();
-  }
-}
-window.onload = function () {
-  checkCode();
-  createCode();
-  document.getElementById("checkCode").onclick = function () { createCode() }
-  inputCode.onclick = function () { validateCode(); }
-}
+      function checktext() {
+        if (validateCode()) {
+          document.getElementById("Submit").type = "Submit";
+          document.getElementById("Submit").value = "提交";
+        } else {
+          document.getElementById("Submit").type = "button";
+          document.getElementById("Submit").value = "填寫正確驗證碼";
+        }
+      }
+    </script>
+  </head>
 
-function checktext()
-{
-	if(validateCode())
-	{
-document.getElementById('Submit').type = 'Submit';
-document.getElementById('Submit').value = '提交';
-	}
-	else{
-document.getElementById('Submit').type = 'button';
-document.getElementById('Submit').value = '填寫正確驗證碼';
-	}
-}
-</script>
-
-
-</head>
-
-<body bgcolor="lightblue">
+  <body bgcolor="lightblue">
     <form id="form2" name="form2" method="post" action="Opinion.php">
-    
-	<table width="96%" border="0" align="center" cellspacing="0" background="Background.jpg" style="margin-top:2%; margin-left:2%; margin-right:2%; margin-bottom:2%">
-<tr>
-  <td>
-    <table width="40%" border="0" align="center" cellspacing="30" bgcolor="white" style="margin-top: 9%; margin-left:30%; margin-right:30%; margin-bottom: 9%">
-    <tr>
-      <td colspan="3" align="center" valign="middle"><h1 id="Title_Txt">用戶回饋<img src="survey.png" width="33" height="31" alt="圖標" /></h1></td>
-    </tr>
-    <tr>
-      <td width="30%" id="Name_Label">姓名：*</td>
-      <td><label for="Name"></label>
-        <input type="text" name="Name" id="Name" style="width:100%" required="required" autofocus="autofocus"/></td>
-    </tr>
-    <tr>
-      <td id="Age_Label">年紀：*</td>
-      <td><label for="Age"></label>
-        <span id="spryselect1">
-        <label for="Age2"></label>
-        <select name="Age" id="Age2" style="width:100%">
-          <option value="0" selected="selected"></option>
-          <option value="1">1-12</option>
-          <option value="2">13-17</option>
-          <option value="3">18-30</option>
-          <option value="4">30-45</option>
-          <option value="5">45-60</option>
-          <option value="6">&gt;60</option>
-        </select>
-      <span class="selectInvalidMsg" id="spry2">請選取有效的項目。</span><span class="selectRequiredMsg" id="spry3">請選取項目。</span></span></td>
-    </tr>
-    <tr>
-      <td id="Known_Label">你從哪裏得識此網站:*</td>
-      <td><span id="sprycheckbox1">
-      <input name="Known" type="checkbox" id="Known_1" value="Google" />
-      <label>Google</label>
-      <input name="Known" type="checkbox" id="Known_2" value="Yahoo" />
-      <label>Yahoo</label>
-      <input name="Known" type="checkbox" id="Known_3" value="Bing" />
-      <label>Bing</label>
-      <input name="Known" type="checkbox" id="Known_4" value="Friends" />
-      <label>朋友推薦</label>
-      <span class="checkboxMinSelectionsMsg">未達到選取數目的最小值。</span></span> </td>
-    </tr>
-    <tr>
-      <td id="Rank_Label">網頁評分：*<br />
-(一分最低五分最高)</td>
-      <td><div id="spryradio1">
-        <table width="100%">
-          <tr>
-            <td><label>
-              <input type="radio" name="Rank" value="1" id="Rank_0" />
-              1</label></td>
-            <td width="20%"><label>
-              <input type="radio" name="Rank" value="2" id="Rank_1" />
-              2</label></td>
-            <td width="20%"><label>
-              <input type="radio" name="Rank" value="3" id="Rank_2" />
-              3</label></td>
-            <td width="20%"><label>
-              <input type="radio" name="Rank" value="4" id="Rank_3" />
-              4</label></td>
-            <td width="20%"><label>
-              <input type="radio" name="Rank" value="5" id="Rank_4" />
-              5</label></td>
-            </tr>
-          </table>
-      <span class="radioRequiredMsg">請進行選取。</span></div></td>
-    </tr>
-    <tr>
-      <td id="Opinion_Label">其他意見：</td>
-      <td align="right"><span id="sprytextarea1">
-      <label for="Opinion"></label>
-      <textarea style="width:100%" name="Opinion" id="Opinion" cols="45" rows="5"></textarea>
-      <span id="countsprytextarea1">&nbsp;</span><span class="textareaMaxCharsMsg">已超出字元數目的最大值。</span></span></td>
-    </tr>
-    <tr align="center">
+      <table
+        width="96%"
+        border="0"
+        align="center"
+        cellspacing="0"
+        background="Background.jpg"
+        style="
+          margin-top: 2%;
+          margin-left: 2%;
+          margin-right: 2%;
+          margin-bottom: 2%;
+        "
+      >
+        <tr>
+          <td>
+            <table
+              width="40%"
+              border="0"
+              align="center"
+              cellspacing="30"
+              bgcolor="white"
+              style="
+                margin-top: 9%;
+                margin-left: 30%;
+                margin-right: 30%;
+                margin-bottom: 9%;
+              "
+            >
+              <tr>
+                <td colspan="3" align="center" valign="middle">
+                  <h1 id="Title_Txt">
+                    用戶回饋<img
+                      src="survey.png"
+                      width="33"
+                      height="31"
+                      alt="圖標"
+                    />
+                  </h1>
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" id="Name_Label">姓名：*</td>
+                <td>
+                  <label for="Name"></label>
+                  <input
+                    type="text"
+                    name="Name"
+                    id="Name"
+                    style="width: 100%;"
+                    required="required"
+                    autofocus="autofocus"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td id="Age_Label">年紀：*</td>
+                <td>
+                  <label for="Age"></label>
+                  <span id="spryselect1">
+                    <label for="Age2"></label>
+                    <select name="Age" id="Age2" style="width: 100%;">
+                      <option value="0" selected="selected"></option>
+                      <option value="1">1-12</option>
+                      <option value="2">13-17</option>
+                      <option value="3">18-30</option>
+                      <option value="4">30-45</option>
+                      <option value="5">45-60</option>
+                      <option value="6">&gt;60</option>
+                    </select>
+                    <span class="selectInvalidMsg" id="spry2"
+                      >請選取有效的項目。</span
+                    ><span class="selectRequiredMsg" id="spry3"
+                      >請選取項目。</span
+                    ></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td id="Known_Label">你從哪裏得識此網站:*</td>
+                <td>
+                  <span id="sprycheckbox1">
+                    <input
+                      name="Known"
+                      type="checkbox"
+                      id="Known_1"
+                      value="Google"
+                    />
+                    <label>Google</label>
+                    <input
+                      name="Known"
+                      type="checkbox"
+                      id="Known_2"
+                      value="Yahoo"
+                    />
+                    <label>Yahoo</label>
+                    <input
+                      name="Known"
+                      type="checkbox"
+                      id="Known_3"
+                      value="Bing"
+                    />
+                    <label>Bing</label>
+                    <input
+                      name="Known"
+                      type="checkbox"
+                      id="Known_4"
+                      value="Friends"
+                    />
+                    <label>朋友推薦</label>
+                    <span class="checkboxMinSelectionsMsg"
+                      >未達到選取數目的最小值。</span
+                    ></span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td id="Rank_Label">
+                  網頁評分：*<br />
+                  (一分最低五分最高)
+                </td>
+                <td>
+                  <div id="spryradio1">
+                    <table width="100%">
+                      <tr>
+                        <td>
+                          <label>
+                            <input
+                              type="radio"
+                              name="Rank"
+                              value="1"
+                              id="Rank_0"
+                            />
+                            1</label
+                          >
+                        </td>
+                        <td width="20%">
+                          <label>
+                            <input
+                              type="radio"
+                              name="Rank"
+                              value="2"
+                              id="Rank_1"
+                            />
+                            2</label
+                          >
+                        </td>
+                        <td width="20%">
+                          <label>
+                            <input
+                              type="radio"
+                              name="Rank"
+                              value="3"
+                              id="Rank_2"
+                            />
+                            3</label
+                          >
+                        </td>
+                        <td width="20%">
+                          <label>
+                            <input
+                              type="radio"
+                              name="Rank"
+                              value="4"
+                              id="Rank_3"
+                            />
+                            4</label
+                          >
+                        </td>
+                        <td width="20%">
+                          <label>
+                            <input
+                              type="radio"
+                              name="Rank"
+                              value="5"
+                              id="Rank_4"
+                            />
+                            5</label
+                          >
+                        </td>
+                      </tr>
+                    </table>
+                    <span class="radioRequiredMsg">請進行選取。</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td id="Opinion_Label">其他意見：</td>
+                <td align="right">
+                  <span id="sprytextarea1">
+                    <label for="Opinion"></label>
+                    <textarea
+                      style="width: 100%;"
+                      name="Opinion"
+                      id="Opinion"
+                      cols="45"
+                      rows="5"
+                    ></textarea>
+                    <span id="countsprytextarea1">&nbsp;</span
+                    ><span class="textareaMaxCharsMsg"
+                      >已超出字元數目的最大值。</span
+                    ></span
+                  >
+                </td>
+              </tr>
+              <tr align="center">
+                <td colspan="3" valign="middle">
+                  <table width="100%" border="0">
+                    <tr>
+                      <td width="50%" align="right">
+                        <label for="inputCode" id="codetext">驗證碼：</label>
+                        <input
+                          type="text"
+                          id="inputCode"
+                          style="height: 100;"
+                          onkeyup="javascript:checktext();"
+                          maxlength="5"
+                        />
+                      </td>
+                      <td align="left">
+                        <span class="code" id="checkCode"></span>
+                        <span id="text_show"></span>
+                        <script>
+                          var audio1 = document.createElement("audio");
 
-      <td colspan="3" valign="middle">
-        <table width="100%" border="0">
-          <tr>
-            <td width="50%" align="right">
-                <label for="inputCode" id="codetext">驗證碼：</label>
-                <input type="text" id="inputCode" style="height:100" onkeyup="javascript:checktext();" maxlength="5"/>
-            </td>
-            <td align="left">
-                <span class="code" id="checkCode"></span>
-                <span id="text_show"></span>
-                <script>
-					var audio1 = document.createElement("audio");
+                          function MM_callJS(jsStr) {
+                            //v2.0
+                            audio1.src =
+                              "https://www.ispeech.org/p/generic/getaudio?action=convert&pitch=100&voice=usenglishfemale&speed=-5&text=" +
+                              document
+                                .getElementById("checkCode")
+                                .innerHTML.toUpperCase() +
+                              "&bust=1586941731200";
+                            window.alert(
+                              "有可能需要等待一段時間才能聽到錄音,請輸入錄音聽到的頭六個字"
+                            );
+                            return eval(jsStr);
+                          }
+                        </script>
+                        <a href="javascript:MM_callJS('audio1.play();')"
+                          >||<img
+                            src="speaker.png"
+                            width="20"
+                            height="21"
+                            alt="Listen"
+                          />點擊聆聽驗證碼</a
+                        >
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr align="center">
+                <td colspan="3">
+                  <input
+                    type="button"
+                    name="Submit"
+                    id="Submit"
+                    value="請先填寫驗證碼"
+                    onmousedown="javascript:createCode();"
+                  />&nbsp;<input
+                    type="Reset"
+                    name="Reset"
+                    id="Reset"
+                    value="重置"
+                    onclick="javascript:createCode();"
+                    onmouseup="javascript:checktext();"
+                  />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </form>
 
-					function MM_callJS(jsStr) { //v2.0
-					  audio1.src = 'https://www.ispeech.org/p/generic/getaudio?action=convert&pitch=100&voice=usenglishfemale&speed=-5&text=' + document.getElementById('checkCode').innerHTML.toUpperCase() +'&bust=1586941731200'
-					  window.alert('有可能需要等待一段時間才能聽到錄音,請輸入錄音聽到的頭六個字')
-					  return eval(jsStr)
-					}
-				</script>
-			<a href="javascript:MM_callJS('audio1.play();')">||<img src="speaker.png" width="20" height="21" alt="Listen" />點擊聆聽驗證碼</a>
-		</td>
-          </tr>
-        </table>
-
-
-
-      </td>
-    </tr>
-    <tr align="center">
-      <td colspan="3"><input type="button" name="Submit" id="Submit" value="請先填寫驗證碼" onmousedown="javascript:createCode();"/>&nbsp;<input type="Reset" name="Reset" id="Reset" value="重置" onclick="javascript:createCode();" onmouseup="javascript:checktext();"/></td>
-    </tr>
-  </table>
-  
-  </td>
-</tr>
-</table>
-</form>
-
-<script type="text/javascript">
-var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {counterType:"chars_remaining", counterId:"countsprytextarea1", maxChars:256, isRequired:false});
-var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {isRequired:false, minSelections:1});
-var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:"0", validateOn:["change"]});
-var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
-</script>
-
-</body>
+    <script type="text/javascript">
+      var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {
+        counterType: "chars_remaining",
+        counterId: "countsprytextarea1",
+        maxChars: 256,
+        isRequired: false,
+      });
+      var sprycheckbox1 = new Spry.Widget.ValidationCheckbox("sprycheckbox1", {
+        isRequired: false,
+        minSelections: 1,
+      });
+      var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {
+        invalidValue: "0",
+        validateOn: ["change"],
+      });
+      var spryradio1 = new Spry.Widget.ValidationRadio("spryradio1");
+    </script>
+  </body>
 </html>
 
 <script>
-function translate(setlang,id,eng,simp){
-	if (setlang=='simp'||setlang=='eng'||setlang=='trad'){
-		document.cookie = "lang=" + setlang + ";path=/";parent.location.reload(false);
-		}
-	else{
-		var language = document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length)
-		
-		if (setlang==9){
-			window.alert("Available in Traditional Chinese only///只提供繁体中文版本");
-			return;
-		}
-		else{
-			switch(language){
-			case 'eng':
-				document.getElementById(id).innerHTML = eng;
-				break;
-			case 'simp':
-				document.getElementById(id).innerHTML = simp;
-				break;
-			default:
-			
-			}
-		}
-	}
-}
+  function translate(setlang, id, eng, simp) {
+    if (setlang == "simp" || setlang == "eng" || setlang == "trad") {
+      document.cookie = "lang=" + setlang + ";path=/";
+      parent.location.reload(false);
+    } else {
+      var language = document.cookie.substr(
+        document.cookie.search(/lang=/) + 5,
+        document.cookie.length - "lang=".length
+      );
 
-//translation(setlang,id,eng,simp)
-		translate(false,'Title_Txt','User feedback','用户回馈')
-		translate(false,'Name_Label','Name:','姓名：')
-		translate(false,'Age_Label','Age:','年纪：')
-		translate(false,'Known_Label','Where did you find this site:','你从哪里得识此网站:')
-		translate(false,'sprycheckbox1','<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Friend recommendation</label><span class="checkboxRequiredMsg">Please Make a selection.</span>','<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">朋友推荐</label><span class="checkboxRequiredMsg">请进行选取。</span>')
-		translate(false,'Rank_Label','Webpage rating: <br/> (lowest:1)','网页评分：<br/>(一分最低五分最高)')
-		translate(false,'spryradio1','<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">Please select it.</span>','<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">请进行选取。</span>')
-		translate(false,'Opinion_Label','Other comments:','其他意见：')
-		translate(false,'spry1','Requires a value.','需要有一个值。')
-		translate(false,'spry2','Please select a valid item.','请选取有效的项目。')
-		translate(false,'spry3','Please select an item.','请选取项目。')
-		translate(false,'spry4','Requires a value.','需要有一个值。')
-		translate(false,'codetext','','')
-		translate(false,'Submit','Incorrect code','X')
+      if (setlang == 9) {
+        window.alert(
+          "Available in Traditional Chinese only///只提供繁体中文版本"
+        );
+        return;
+      } else {
+        switch (language) {
+          case "eng":
+            document.getElementById(id).innerHTML = eng;
+            break;
+          case "simp":
+            document.getElementById(id).innerHTML = simp;
+            break;
+          default:
+        }
+      }
+    }
+  }
 
+  //translation(setlang,id,eng,simp)
+  translate(false, "Title_Txt", "User feedback", "用户回馈");
+  translate(false, "Name_Label", "Name:", "姓名：");
+  translate(false, "Age_Label", "Age:", "年纪：");
+  translate(
+    false,
+    "Known_Label",
+    "Where did you find this site:",
+    "你从哪里得识此网站:"
+  );
+  translate(
+    false,
+    "sprycheckbox1",
+    '<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Friend recommendation</label><span class="checkboxRequiredMsg">Please Make a selection.</span>',
+    '<input type="checkbox" name="Known" id="Known"/><label for="Known">Google</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Yahoo</label><input type="checkbox" name="Known" id="Known"/><label for="Known">Bing</label><input type="checkbox" name="Known" id="Known"/><label for="Known">朋友推荐</label><span class="checkboxRequiredMsg">请进行选取。</span>'
+  );
+  translate(
+    false,
+    "Rank_Label",
+    "Webpage rating: <br/> (lowest:1)",
+    "网页评分：<br/>(一分最低五分最高)"
+  );
+  translate(
+    false,
+    "spryradio1",
+    '<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">Please select it.</span>',
+    '<table width="100%"><tr><td><label><input type="radio" name="Rank" value="1" id="Rank_0"/>1</label></td><td width="20%"><label><input type="radio" name="Rank" value="2" id="Rank_1"/>2</label></td><td width="20%"><label><input type="radio" name="Rank" value="3" id="Rank_2"/>3</label></td><td width="20%"><label><input type="radio" name="Rank" value="4" id="Rank_3"/>4</label></td><td width="20%"><label><input type="radio" name="Rank" value="5" id="Rank_4"/>5</label></td></tr></table><span class="radioRequiredMsg">请进行选取。</span>'
+  );
+  translate(false, "Opinion_Label", "Other comments:", "其他意见：");
+  translate(false, "spry1", "Requires a value.", "需要有一个值。");
+  translate(
+    false,
+    "spry2",
+    "Please select a valid item.",
+    "请选取有效的项目。"
+  );
+  translate(false, "spry3", "Please select an item.", "请选取项目。");
+  translate(false, "spry4", "Requires a value.", "需要有一个值。");
+  translate(false, "codetext", "", "");
+  translate(false, "Submit", "Incorrect code", "X");
 </script>

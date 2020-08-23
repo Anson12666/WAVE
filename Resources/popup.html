@@ -1,59 +1,83 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>波動學</title>
-<style type="text/css">
-body {
-	margin: 0px;
-	padding: 0px;
-	border-top-width: 0px;
-	border-right-width: 0px;
-	border-bottom-width: 0px;
-	border-left-width: 0px;
-}
-</style>
-</head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>波動學</title>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        padding: 0px;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    </style>
+  </head>
 
-<body>
-<table align="center" width="100%" height="295" border="0">
-  <tr align="center" style="background-image:url(popup_Elements/Framework.jpg); background-size:100% 100%;">
-    <td><p id="Alert">本網站之教學内容僅供參考之用<br />
-    如有缺失，請在<a href="../webpage/Opinion/Opinion.html" target="new">網頁内</a>提交意見。</p></td>
-  </tr>
-</table>
-</body>
+  <body>
+    <table align="center" width="100%" height="295" border="0">
+      <tr
+        align="center"
+        style="
+          background-image: url(popup_Elements/Framework.jpg);
+          background-size: 100% 100%;
+        "
+      >
+        <td>
+          <p id="Alert">
+            本網站之教學内容僅供參考之用<br />
+            如有缺失，請在<a href="../webpage/Opinion/Opinion.html" target="new"
+              >網頁内</a
+            >提交意見。
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
 
 <script>
-function translate(setlang,id,eng,simp){
-	if (setlang=='simp'||setlang=='eng'||setlang=='trad'){
-		document.cookie = "lang=" + setlang + ";path=/";parent.location.reload(false);
-		}
-	else{
-		var language = document.cookie.substr(document.cookie.search(/lang=/)+5, document.cookie.length-"lang=".length)
-		
-		if (setlang==9){
-			window.alert("Available in Traditional Chinese only///只提供繁体中文版本");
-			return;
-		}
-		else{
-			switch(language){
-			case 'eng':
-				document.getElementById(id).innerHTML = eng;
-				break;
-			case 'simp':
-				document.getElementById(id).innerHTML = simp;
-				break;
-			default:
-			
-			}
-		}
-	}
-}
+  function translate(setlang, id, eng, simp) {
+    if (setlang == "simp" || setlang == "eng" || setlang == "trad") {
+      document.cookie = "lang=" + setlang + ";path=/";
+      parent.location.reload(false);
+    } else {
+      var language = document.cookie.substr(
+        document.cookie.search(/lang=/) + 5,
+        document.cookie.length - "lang=".length
+      );
 
-//translation(setlang,id,eng,simp)
-		translate(false,'Alert','The teaching content of this website is for reference only. <br> If it is missing, please submit your comments on the <a href="../webpage/Opinion/Opinion.html" target="new"> page </a>.','<tr><td><p id="content">本网站之教学内容仅供参考之用<br>如有缺失，请在<a href="../webpage/Opinion/Opinion.html" target="new">网页内</a>提交意见。')
-		translate(false,'Temp','Report available in Traditional Chinese only','報告只提供繁体中文版本')
+      if (setlang == 9) {
+        window.alert(
+          "Available in Traditional Chinese only///只提供繁体中文版本"
+        );
+        return;
+      } else {
+        switch (language) {
+          case "eng":
+            document.getElementById(id).innerHTML = eng;
+            break;
+          case "simp":
+            document.getElementById(id).innerHTML = simp;
+            break;
+          default:
+        }
+      }
+    }
+  }
+
+  //translation(setlang,id,eng,simp)
+  translate(
+    false,
+    "Alert",
+    'The teaching content of this website is for reference only. <br> If it is missing, please submit your comments on the <a href="../webpage/Opinion/Opinion.html" target="new"> page </a>.',
+    '<tr><td><p id="content">本网站之教学内容仅供参考之用<br>如有缺失，请在<a href="../webpage/Opinion/Opinion.html" target="new">网页内</a>提交意见。'
+  );
+  translate(
+    false,
+    "Temp",
+    "Report available in Traditional Chinese only",
+    "報告只提供繁体中文版本"
+  );
 </script>
-

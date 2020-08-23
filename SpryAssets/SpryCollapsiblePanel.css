@@ -17,12 +17,12 @@
  * CollapsiblePanel container.
  */
 .CollapsiblePanel {
-	margin: 0px;
-	padding: 0px;
-	border-left: solid 1px #CCC;
-	border-right: solid 1px #999;
-	border-top: solid 1px #999;
-	border-bottom: solid 1px #CCC;
+  margin: 0px;
+  padding: 0px;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #999;
+  border-top: solid 1px #999;
+  border-bottom: solid 1px #ccc;
 }
 
 /* This is the selector for the CollapsiblePanelTab. This container houses
@@ -34,14 +34,14 @@
  * CollapsiblePanel panel tab container.
  */
 .CollapsiblePanelTab {
-	font: bold 0.7em sans-serif;
-	background-color: #DDD;
-	border-bottom: solid 1px #CCC;
-	margin: 0px;
-	padding: 2px;
-	cursor: pointer;
-	-moz-user-select: none;
-	-khtml-user-select: none;
+  font: bold 0.7em sans-serif;
+  background-color: #ddd;
+  border-bottom: solid 1px #ccc;
+  margin: 0px;
+  padding: 2px;
+  cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
 }
 
 /* This is the selector for a CollapsiblePanel's Content area. It's important to note that
@@ -54,8 +54,8 @@
  * CollapsiblePanel content container.
  */
 .CollapsiblePanelContent {
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* An anchor tag can be used inside of a CollapsiblePanelTab so that the
@@ -64,8 +64,8 @@
  * like non-anchor (normal) text.
  */
 .CollapsiblePanelTab a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 /* This is an example of how to change the appearance of the panel tab that is
@@ -73,7 +73,7 @@
  * from panels as the user clicks on the tabs within the CollapsiblePanel.
  */
 .CollapsiblePanelOpen .CollapsiblePanelTab {
-	background-color: #EEE;
+  background-color: #eee;
 }
 
 /* This is an example of how to change the appearance of the panel tab when the
@@ -82,15 +82,16 @@
  */
 
 .CollapsiblePanelClosed .CollapsiblePanelTab {
- /* background-color: #EFEFEF */
+  /* background-color: #EFEFEF */
 }
 
 /* This is an example of how to change the appearance of the panel tab as the
  * mouse hovers over it. The class "CollapsiblePanelTabHover" is programatically added
  * and removed from panel tab containers as the mouse enters and exits the tab container.
  */
-.CollapsiblePanelTabHover,  .CollapsiblePanelOpen .CollapsiblePanelTabHover {
-	background-color: #CCC;
+.CollapsiblePanelTabHover,
+.CollapsiblePanelOpen .CollapsiblePanelTabHover {
+  background-color: #ccc;
 }
 
 /* This is an example of how to change the appearance of all the panel tabs when the
@@ -98,5 +99,5 @@
  * whenever the CollapsiblePanel gains or loses keyboard focus.
  */
 .CollapsiblePanelFocused .CollapsiblePanelTab {
-	background-color: #3399FF;
+  background-color: #3399ff;
 }

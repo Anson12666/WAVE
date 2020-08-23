@@ -4,13 +4,14 @@
 
 /* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
 
-
 /* These are the classes applied on the messages
  * (required message, minSelections message and maxSelections message)
  * which prevent them from being displayed by default.
  */
-.checkboxRequiredMsg, .checkboxMinSelectionsMsg, .checkboxMaxSelectionsMsg{
-	display: none;
+.checkboxRequiredMsg,
+.checkboxMinSelectionsMsg,
+.checkboxMaxSelectionsMsg {
+  display: none;
 }
 
 /* These selectors change the way messages look when the widget is in one of the error states.
@@ -21,7 +22,7 @@
 .checkboxRequiredState .checkboxRequiredMsg,
 .checkboxMinSelectionsState .checkboxMinSelectionsMsg,
 .checkboxMaxSelectionsState .checkboxMaxSelectionsMsg {
-	display: inline;
-	color: #CC3333;
-	border: 1px solid #CC3333;
+  display: inline;
+  color: #cc3333;
+  border: 1px solid #cc3333;
 }

@@ -1,9 +1,9 @@
 
 <?php
 $host = "localhost";
-$userName = "hkclouds_SBAOPIN";
-$password = "m%al@$=X%d?p[S*+Dk";
-$dbName = "hkclouds_ICTSBA_Opinion";
+$userName = "136149";
+$password = "ICTSBAPW";
+$dbName = "136149";
 // Create database connection
 $conn = new mysqli($host, $userName, $password, $dbName);
 // Check connection
